@@ -1,0 +1,66 @@
+- type: entity
+  name: battle rifle
+  parent: BaseItem
+  id: BaseWeaponRifleBattle
+  description: A rooty tooty point and shooty.
+  abstract: true
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Item
+    size: Huge
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Guns/BattleRifles/m999modern.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - FullAuto
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg
+  - type: ChamberClipAmmoProviderComponent
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/sf_rifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_clip:
+        name: Clip
+        startingItem: ClipBattleRifleLight
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - ClipBattleRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: ContainerContainer
+    containers:
+      gun_clip: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  name: m999 modern
+  parent: BaseWeaponRifleBattle
+  id: WeaponRifleBattleM999Modern
+  description: A weapon for hunting, or endless trench warfare. Uses .30 rifle ammo.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/BattleRifles/m999modern.rsi
+  - type: StaticPrice
+    price: 210

@@ -1,0 +1,49 @@
+# Empty clips
+- type: entity
+  id: BaseClipBattleRifle
+  name: "clip (.30 rifle)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - ClipBattleRifle
+  - type: ClipAmmoProviderComponent
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeLightRifle
+    proto: CartridgeLightRifle
+    capacity: 10
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/light_rifle_mag.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+# Clips
+- type: entity
+  id: ClipBattleRifleLight
+  name: "clip (.30 rifle)"
+  parent: BaseClipBattleRifle
+  components:
+  - type: ClipAmmoProviderComponent
+    proto: CartridgeLightRifle
+  - type: Sprite
+    layers:
+    - state: red
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
