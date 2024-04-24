@@ -14,6 +14,7 @@
     MagazineBoxRifleRubber: 8
     MagazineBoxLightRifleRubber: 4
     MagazineBoxCaselessRifleRubber: 4
+    SpeedLoaderHeavyRifleNFRubber: 20
   contrabandInventory:
     WeaponRifleBB: 2
     BoxCartridgeBB: 10

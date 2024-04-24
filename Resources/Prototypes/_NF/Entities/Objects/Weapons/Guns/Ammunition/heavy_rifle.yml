@@ -1,0 +1,78 @@
+- type: entity
+  id: BaseSpeedLoaderHeavyRifleNF
+  name: "speed loader (.20 rifle)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - SpeedLoaderHeavyRifleNF
+  - type: SpeedLoader
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeRifle
+    capacity: 6
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/SpeedLoaders/Pistol/pistol_speed_loader.rsi
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+        ents: []
+
+- type: entity
+  id: SpeedLoaderHeavyRifleNF
+  name: "speed loader (.20 rifle)"
+  parent: BaseSpeedLoaderHeavyRifleNF
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRifle
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: base-6
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: base
+    steps: 7
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: SpeedLoaderHeavyRifleNFPractice
+  name: "speed loader (.20 rifle practice)"
+  parent: BaseSpeedLoaderHeavyRifleNF
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeRiflePractice
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: practice-6
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: practice
+    steps: 7
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: SpeedLoaderHeavyRifleNFRubber
+  name: "speed loader (.20 rifle rubber)"
+  parent: BaseSpeedLoaderHeavyRifleNF
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistolRubber
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: rubber-6
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: rubber
+    steps: 7
+    zeroVisible: false
+  - type: Appearance

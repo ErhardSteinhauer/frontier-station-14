@@ -15,6 +15,7 @@
     whitelist:
       tags:
         - CartridgeRifle
+        - SpeedLoaderHeavyRifleNF
     proto: CartridgeRifle
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
@@ -31,6 +32,7 @@
     whitelist:
       tags:
         - CartridgeRifle
+        - SpeedLoaderHeavyRifleNF
     proto: CartridgeRifleRubber
     capacity: 6
     chambers: [ True, True, True, True, True, True ]
