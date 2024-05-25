@@ -1,0 +1,82 @@
+# GENERIC
+- type: entity
+  parent: ClothingBackpack
+  id: ClothingBackpackCourier
+  name: courier bag
+  description: A trendy looking courier bag in tasteful colors.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Back/Courier/color.rsi
+    layers:
+    - state: icon-base
+      color: "#777b83"
+    - state: icon-sling
+      color: "#776756"
+    - state: icon-zipper
+      color: "#777b83"
+    - state: icon-zipper-slider
+      color: "#eeeeee"
+  - type: Clothing
+    sprite: _NF/Clothing/Back/Messenger/color.rsi
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#777b83"
+      - state: sling-equipped-BACKPACK
+        color: "#776756"
+      - state: zipper-equipped-BACKPACK
+        color: "#777b83"
+      - state: zipper-slider-equipped-BACKPACK
+        color: "#eeeeee"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#777b83"
+      right:
+      - state: base-inhand-right
+        color: "#777b83"
+
+# DEPARTMENTAL
+## Command
+- type: entity
+  parent: ClothingBackpackCourier
+  id: ClothingBackpackCourierCaptain
+  name: captain's courier bag
+  description: An exclusive courier bag for Nanotrasen officers.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Back/Courier/color.rsi
+    layers:
+    - state: icon-base
+      color: "#3c6381"
+    - state: icon-sling
+      color: "#d6a033"
+    - state: icon-zipper
+      color: "#3c6381"
+    - state: icon-decor-02
+      color: "#f6d56a"
+    - state: icon-zipper-slider
+      color: "#eeeeee"
+  - type: Clothing
+    sprite: _NF/Clothing/Back/Messenger/color.rsi
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#3c6381"
+      - state: sling-equipped-BACKPACK
+        color: "#d6a033"
+      - state: zipper-equipped-BACKPACK
+        color: "#3c6381"
+      - state: decor-equipped-BACKPACK-02
+        color: "#f6d56a"
+      - state: zipper-slider-equipped-BACKPACK
+        color: "#eeeeee"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#3c6381"
+      right:
+      - state: base-inhand-right
+        color: "#3c6381"
