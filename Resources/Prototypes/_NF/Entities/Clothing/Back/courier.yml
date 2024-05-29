@@ -33,8 +33,12 @@
       left:
       - state: base-inhand-left
         color: "#777b83"
+      - state: zipper-inhand-left
+        color: "#777b83"
       right:
       - state: base-inhand-right
+        color: "#777b83"
+      - state: zipper-inhand-right
         color: "#777b83"
 
 # DEPARTMENTAL
@@ -77,6 +81,154 @@
       left:
       - state: base-inhand-left
         color: "#3c6381"
+      - state: zipper-inhand-left
+        color: "#f6d56a"
       right:
       - state: base-inhand-right
         color: "#3c6381"
+      - state: zipper-inhand-right
+        color: "#f6d56a"
+
+- type: entity
+  parent: ClothingBackpackCourier
+  id: ClothingBackpackCourierSR
+  name: station representative's courier bag
+  description: An exclusive courier bag for Nanotrasen officers.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Back/Courier/color.rsi
+    layers:
+    - state: icon-base
+      color: "#2c6a30"
+    - state: icon-sling
+      color: "#fbe6b8"
+    - state: icon-zipper
+      color: "#3c6381"
+    - state: icon-decor-02
+      color: "#eca615"
+    - state: icon-zipper-slider
+      color: "#eca615"
+  - type: Clothing
+    sprite: _NF/Clothing/Back/Messenger/color.rsi
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#2c6a30"
+      - state: sling-equipped-BACKPACK
+        color: "#fbe6b8"
+      - state: zipper-equipped-BACKPACK
+        color: "#3c6381"
+      - state: decor-equipped-BACKPACK-02
+        color: "#eca615"
+      - state: zipper-slider-equipped-BACKPACK
+        color: "#eeeeee"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#2c6a30"
+      - state: zipper-inhand-left
+        color: "#eca615"
+      right:
+      - state: base-inhand-right
+        color: "#2c6a30"
+      - state: zipper-inhand-right
+        color: "#eca615"
+
+## Engineering
+- type: entity
+  parent: ClothingBackpackCourier
+  id: ClothingBackpackCourierAtmospherics
+  name: atmospherics courier bag
+  description: A tough messenger bag with extra pockets.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Back/Courier/color.rsi
+    layers:
+    - state: icon-base
+      color: "#c9a569"
+    - state: icon-sling
+      color: "#776756"
+    - state: icon-zipper
+      color: "#c9a569"
+    - state: icon-decor-02
+      color: "#eca615"
+    - state: icon-decor-04
+      color: "#69c7b6"
+    - state: icon-zipper-slider
+      color: "#eeeeee"
+  - type: Clothing
+    sprite: _NF/Clothing/Back/Messenger/color.rsi
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#c9a569"
+      - state: sling-equipped-BACKPACK
+        color: "#776756"
+      - state: zipper-equipped-BACKPACK
+        color: "#c9a569"
+      - state: decor-equipped-BACKPACK-02
+        color: "#eca615"
+      - state: decor-equipped-BACKPACK-04
+        color: "#69c7b6"
+      - state: zipper-slider-equipped-BACKPACK
+        color: "#eeeeee"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#c9a569"
+      - state: zipper-inhand-left
+        color: "#c9a569"
+      right:
+      - state: base-inhand-right
+        color: "#c9a569"
+      - state: zipper-inhand-right
+        color: "#c9a569"
+
+- type: entity
+  parent: ClothingBackpackCourier
+  id: ClothingBackpackCourierEngineering
+  name: engineering courier bag
+  description: A tough messenger bag with extra pockets.
+  components:
+  - type: Sprite
+    sprite: _NF/Clothing/Back/Courier/color.rsi
+    layers:
+    - state: icon-base
+      color: "#c9a569"
+    - state: icon-sling
+      color: "#776756"
+    - state: icon-zipper
+      color: "#c9a569"
+    - state: icon-decor-04
+      color: "#e78c2e"
+    - state: icon-zipper-slider
+      color: "#eeeeee"
+  - type: Clothing
+    sprite: _NF/Clothing/Back/Messenger/color.rsi
+    clothingVisuals:
+      back:
+      - state: base-equipped-BACKPACK
+        color: "#c9a569"
+      - state: sling-equipped-BACKPACK
+        color: "#776756"
+      - state: zipper-equipped-BACKPACK
+        color: "#c9a569"
+      - state: decor-equipped-BACKPACK-04
+        color: "#e78c2e"
+      - state: zipper-slider-equipped-BACKPACK
+        color: "#eeeeee"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: base-inhand-left
+        color: "#c9a569"
+      - state: zipper-inhand-left
+        color: "#c9a569"
+      right:
+      - state: base-inhand-right
+        color: "#c9a569"
+      - state: zipper-inhand-right
+        color: "#c9a569"
+

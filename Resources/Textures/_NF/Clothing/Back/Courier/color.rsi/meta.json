@@ -70,6 +70,14 @@
     {
       "name": "base-inhand-right",
       "directions": 4
+    },
+    {
+      "name": "zipper-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "zipper-inhand-right",
+      "directions": 4
     }
   ]
 }
