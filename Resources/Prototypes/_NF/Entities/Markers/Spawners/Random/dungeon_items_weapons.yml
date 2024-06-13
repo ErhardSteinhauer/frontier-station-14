@@ -144,9 +144,7 @@
     - WeaponCaseShortDeckardExpedition
     - WeaponCaseShortPython
     - WeaponCaseLongKammererExpedition
-    - WeaponCaseLongWT550Expedition
-    - WeaponCaseLongDrozdExpedition
-    - WeaponCaseLongLecterExpedition
+    - WeaponCaseLongGestioExpedition
     - WeaponCaseLongEnergyGunExpedition
     - WeaponCaseLongRepeaterExpedition
     chance: 0.95
@@ -228,7 +226,9 @@
       color: red
   - type: RandomSpawner
     prototypes:
-    - WeaponCaseShortN1984Expedition
+    - WeaponCaseLongWT550Expedition
+    - WeaponCaseLongDrozdExpedition
+    - WeaponCaseLongLecterExpedition
     - WeaponCaseLongM90Expedition
     - WeaponCaseLongLaserCarbineExpedition
     - WeaponCaseLongHristovExpedition
@@ -311,6 +311,7 @@
       color: red
   - type: RandomSpawner
     prototypes:
+    - WeaponCaseShortN1984Expedition
     - WeaponCaseLongC20r
     - WeaponCaseLongAtreidesExpedition
     - WeaponCaseLongAkExpedition
