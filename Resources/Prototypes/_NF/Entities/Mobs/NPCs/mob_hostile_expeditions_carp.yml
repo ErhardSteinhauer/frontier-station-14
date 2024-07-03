@@ -173,3 +173,26 @@
       types:
         Slash: 7
         Bloodloss: 5
+
+- type: entity
+  parent: MobCarpRainbowExpeditions
+  id: MobCarpRainbowRideable
+  name: goblin carp
+  components:
+  - type: Strap
+    buckleOffset: "0.10, 0.10"
+    maxBuckleDistance: 1
+  - type: NPCImprintingOnSpawnBehaviour
+    whitelist:
+      components:
+      - Goblin
+  - type: HTN
+    rootTask:
+       task: KillerTomatoCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true

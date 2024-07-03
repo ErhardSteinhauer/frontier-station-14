@@ -1,0 +1,66 @@
+- type: entity
+  parent: DehydratedSpaceCarp
+  id: DehydratedGoblinCarp
+  name: dehydrated goblin carp
+  description: Looks like a plush toy carp, but just add water and it becomes a real-life space carp! Traditional means of goblin transportation.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Fun/toys.rsi
+    state: goblincarpplush
+  - type: Item
+    heldPrefix: goblincarpplush
+    storedRotation: -90
+  - type: Rehydratable
+    possibleSpawns:
+    - MobCarpGoblinRideable
+  - type: EmitSoundOnUse
+    handle: false
+    sound:
+      path: /Audio/Effects/bite.ogg
+  - type: StaticPrice
+    price: 220 # The same price as dead (-20)
+
+- type: entity
+  parent: BaseMobCarpExpeditions
+  id: MobCarpGoblinRideable
+  name: goblin carp
+  components:
+  - type: Strap
+    buckleOffset: "0.10, 0.36"
+    maxBuckleDistance: 1
+  - type: Sprite
+    sprite: _NF/Mobs/Aliens/goblin_carp.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: alive
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: alive_mouth
+      shader: unshaded
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      60: Dead
+  - type: Stamina
+    critThreshold: 150
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: alive
+        BaseUnshaded: alive_mouth
+      Dead:
+        Base: dead
+        BaseUnshaded: dead_mouth
+  - type: NPCImprintingOnSpawnBehaviour
+    whitelist:
+      components:
+      - Goblin
+  - type: HTN
+    rootTask:
+       task: KillerTomatoCompound
+    blackboard:
+      NavClimb: !type:Bool
+        false
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
