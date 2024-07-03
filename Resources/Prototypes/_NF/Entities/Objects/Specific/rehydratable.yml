@@ -10,9 +10,6 @@
   - type: Item
     heldPrefix: goblincarpplush
     storedRotation: -90
-  - type: Rehydratable
-    possibleSpawns:
-    - MobCarpGoblinRideable
   - type: EmitSoundOnUse
     handle: false
     sound:
