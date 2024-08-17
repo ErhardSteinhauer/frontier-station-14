@@ -129,3 +129,42 @@
       - state: inhand-right
       - state: inhand-right-unshaded
         shader: unshaded
+
+# Plasma cutter
+- type: entity
+  id: WeaponPlasmaCutter
+  parent: BaseWeaponBatterySmall
+  name: plasma cutter
+  description: plasma cutter.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Guns/Battery/plasma_cutter.rsi
+  - type: Item
+    sprite: _NF/Objects/Weapons/Guns/Battery/plasma_cutter.rsi
+    size: Normal
+  - type: Gun
+    fireRate: 1
+    selectedMode: SemiAuto
+    #angleDecay: 45
+    #minAngle: 44
+    #maxAngle: 45
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: AmmoCounter
+  - type: Appearance
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletPlasmaCutter
+    fireCost: 100
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+    quickEquip: false
+    slots:
+    - suitStorage
+    - Belt
+  - type: UseDelay
+    delay: 1
+  - type: Tag
+    tags:
+    - Sidearm

@@ -12,3 +12,70 @@
     soundHit:
       collection: WeakHit
     forceSound: true
+
+# Plasma cutter effects
+- type: entity
+  id: BulletPlasmaCutter
+  name: plasma bolt
+  parent: BaseBullet
+  noSpawn: true
+  description: Not too bad, but you still don't want to get hit by it.
+  components:
+  - type: Reflective
+    reflective:
+      - Energy
+  - type: Sprite
+    noRot: false
+    sprite: _NF/Effects/plasmacutterbeam.rsi
+    layers:
+    - state: plasmacutter-tracer
+      shader: unshaded
+  - type: Ammo
+    muzzleFlash: MuzzleFlashEffectPlasmaCutter
+  - type: Projectile
+    impactEffect: BulletImpactEffectPlasmaCutter
+    damage:
+      types:
+        Heat: 14
+        Structural: 20
+  # Short lifespan
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: GatheringProjectile
+
+- type: entity
+  id: BulletImpactEffectPlasmaCutter
+  noSpawn: true
+  components:
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _NF/Effects/plasmacutterbeam.rsi
+      state: plasmacutter-impact
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+
+- type: entity
+  id: MuzzleFlashEffectPlasmaCutter
+  noSpawn: true
+  components:
+  - type: TimedDespawn
+    lifetime: 0.4
+  - type: Sprite
+    drawdepth: Effects
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: _NF/Effects/plasmacutterbeam.rsi
+      state: plasmacutter-muzzle
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+      - HideContextMenu
+  - type: AnimationPlayer
