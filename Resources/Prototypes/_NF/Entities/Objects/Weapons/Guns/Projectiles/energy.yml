@@ -37,7 +37,7 @@
     damage:
       types:
         Heat: 14
-        Structural: 20
+        Structural: 25
   # Short lifespan
   - type: TimedDespawn
     lifetime: 0.4

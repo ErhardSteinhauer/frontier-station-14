@@ -139,9 +139,19 @@
   components:
   - type: Sprite
     sprite: _NF/Objects/Weapons/Guns/Battery/plasma_cutter.rsi
-  - type: Item
-    sprite: _NF/Objects/Weapons/Guns/Battery/plasma_cutter.rsi
-    size: Normal
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+    - state: welder_flame
+      visible: false
+      shader: unshaded
+      map: ["enum.ToggleVisuals.Layer"]
+  #- type: Item
+    #sprite: _NF/Objects/Weapons/Guns/Battery/plasma_cutter.rsi
+    #size: Normal
   - type: Gun
     fireRate: 1
     selectedMode: SemiAuto
@@ -151,20 +161,103 @@
     availableModes:
     - SemiAuto
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
-  - type: AmmoCounter
-  - type: Appearance
+      path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
   - type: ProjectileBatteryAmmoProvider
     proto: BulletPlasmaCutter
-    fireCost: 100
+    fireCost: 75
+  - type: AmmoCounter
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: true
+  - type: Appearance
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+    sprite: _NF/Objects/Weapons/Guns/Battery/plasma_cutter.rsi
     quickEquip: false
     slots:
     - suitStorage
     - Belt
-  - type: UseDelay
-    delay: 1
-  - type: Tag
-    tags:
-    - Sidearm
+  # Welder part
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleVisuals.Toggled:
+        enum.ToggleVisuals.Layer:
+          True: { visible: true }
+          False: { visible: false }
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      collection: WelderOn
+      params:
+        variation: 0.125
+        volume: -5
+    soundDeactivate:
+      collection: WelderOff
+      params:
+        variation: 0.125
+        volume: -5
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/Guns/Hits/energy_meat1.ogg
+      params:
+        variation: 0.250
+        volume: -12
+    deactivatedSoundOnHitNoDamage:
+      collection: MetalThud
+    activatedDamage:
+        types:
+            Heat: 8
+  - type: ItemToggleSize
+    activatedSize: Large
+  - type: ItemToggleHot
+  - type: ComponentToggler
+    components:
+    - type: DisarmMalus
+      malus: 0.6
+  - type: ToggleableLightVisuals
+    spriteLayer: flame
+    inhandVisuals:
+      left:
+      - state: inhand-left-flame
+        shader: unshaded
+      right:
+      - state: inhand-right-flame
+        shader: unshaded
+  - type: MeleeWeapon
+    wideAnimationRotation: -90
+    damage:
+      types:
+        Blunt: 5 #i mean... i GUESS you could use it like that
+    soundHit:
+      collection: MetalThud
+  - type: Tool
+    useSound:
+      collection: Welder
+    qualities: Welding
+  - type: Welder
+  - type: PointLight
+    enabled: false
+    radius: 1.5
+    color: orange
+    netsync: false
+  - type: RequiresEyeProtection
+  - type: IgnitionSource
+    temperature: 700
+  - type: SolutionContainerManager
+    solutions:
+      Welder:
+        reagents:
+        - ReagentId: WeldingFuel
+          Quantity: 1000
+        maxVol: 1000
+  - type: SolutionRegeneration
+    solution: Welder
+    generated:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 1
