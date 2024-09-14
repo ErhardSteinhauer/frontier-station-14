@@ -46,6 +46,7 @@
   metamorphicSprite:
     sprite: _NF/Objects/Consumable/Drinks/ginandsonic.rsi
     state: icon_empty
+    scale: 0.4,0.4
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
@@ -69,6 +70,7 @@
   metamorphicSprite:
     sprite: _NF/Objects/Consumable/Drinks/goldencat.rsi
     state: icon_empty
+    scale: 0.4,0.4
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
@@ -99,6 +101,7 @@
   metamorphicSprite:
     sprite: _NF/Objects/Consumable/Drinks/pineappleblast.rsi
     state: icon_empty
+    scale: 0.4,0.4
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
@@ -122,6 +125,7 @@
   metamorphicSprite:
     sprite: _NF/Objects/Consumable/Drinks/torpedojuice.rsi
     state: icon_empty
+    scale: 0.4,0.4
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
@@ -158,6 +162,7 @@
   metamorphicSprite:
     sprite: _NF/Objects/Consumable/Drinks/beesknees.rsi
     state: icon_empty
+    scale: 0.4,0.4
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
