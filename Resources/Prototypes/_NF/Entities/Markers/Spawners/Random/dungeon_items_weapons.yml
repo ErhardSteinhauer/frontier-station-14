@@ -1,10 +1,11 @@
-# T1: common
+# Spawners
+# Melee weapon spawners
 - type: entity
   name: random weapon
   id: SpawnDungeonLootMeleeT1
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Melee, T1"
-  categories: [ HideSpawnMenu ]
+  suffix: "Melee, T1"
+  #categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -15,31 +16,150 @@
     - sprite: Effects/crayondecals.rsi
       state: 1
       color: red
-  - type: RandomSpawner
-    prototypes:
-    - BrokenBottle
-    - Shiv
-    - ReinforcedShiv
-    - PlasmaShiv
-    - UraniumShiv
-    - ScalpelShiv
-    - BaseBallBat
-    - Stunprod
-    - WhiteCane
-    - CombatKnife
-    - SurvivalKnife
-    chance: 1.0
+  - type: EntityTableSpawner
     offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootMeleeT2
-    rareChance: 0.1
+    prob: 1.00
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        weight: 80
+        tableId: TableLootWeaponsMeleeT1
+      - !type:NestedSelector
+        weight: 12
+        tableId: TableLootWeaponsMeleeT2
+      - !type:NestedSelector
+        weight: 5
+        tableId: TableLootWeaponsMeleeT3
+      - !type:NestedSelector
+        weight: 2
+        tableId: TableLootWeaponsMeleeT4
+      - !type:NestedSelector
+        weight: 1
+        tableId: TableLootWeaponsMeleeT5
 
+- type: entity
+  name: random weapon
+  id: SpawnDungeonLootMeleeT2
+  parent: MarkerBasePlaceFree
+  suffix: "Melee, T2"
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+      scale: 0.7, 0.7
+    - sprite: Objects/Weapons/Melee/katana.rsi
+      state: icon
+    - sprite: Effects/crayondecals.rsi
+      state: 2
+      color: red
+  - type: EntityTableSpawner
+    offset: 0.0
+    prob: 1.00
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        weight: 80
+        tableId: TableLootWeaponsMeleeT2
+      - !type:NestedSelector
+        weight: 12
+        tableId: TableLootWeaponsMeleeT3
+      - !type:NestedSelector
+        weight: 5
+        tableId: TableLootWeaponsMeleeT4
+      - !type:NestedSelector
+        weight: 2
+        tableId: TableLootWeaponsMeleeT5
+
+- type: entity
+  name: random weapon
+  id: SpawnDungeonLootMeleeT3
+  parent: MarkerBasePlaceFree
+  suffix: "Melee, T3"
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+      scale: 0.7, 0.7
+    - sprite: Objects/Weapons/Melee/katana.rsi
+      state: icon
+    - sprite: Effects/crayondecals.rsi
+      state: 3
+      color: red
+  - type: EntityTableSpawner
+    offset: 0.0
+    prob: 1.00
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        weight: 80
+        tableId: TableLootWeaponsMeleeT3
+      - !type:NestedSelector
+        weight: 12
+        tableId: TableLootWeaponsMeleeT4
+      - !type:NestedSelector
+        weight: 5
+        tableId: TableLootWeaponsMeleeT5
+
+- type: entity
+  name: random weapon
+  id: SpawnDungeonLootMeleeT4
+  parent: MarkerBasePlaceFree
+  suffix: "Melee, T4"
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+      scale: 0.7, 0.7
+    - sprite: Objects/Weapons/Melee/katana.rsi
+      state: icon
+    - sprite: Effects/crayondecals.rsi
+      state: 4
+      color: red
+  - type: EntityTableSpawner
+    offset: 0.0
+    prob: 1.00
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        weight: 80
+        tableId: TableLootWeaponsMeleeT4
+      - !type:NestedSelector
+        weight: 12
+        tableId: TableLootWeaponsMeleeT5
+
+- type: entity
+  name: random weapon
+  id: SpawnDungeonLootMeleeT5
+  parent: MarkerBasePlaceFree
+  suffix: "Melee, T5"
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+      scale: 0.7, 0.7
+    - sprite: Objects/Weapons/Melee/katana.rsi
+      state: icon
+    - sprite: Effects/crayondecals.rsi
+      state: 5
+      color: red
+  - type: EntityTableContainerFill
+    offset: 0.0
+    prob: 1.00
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: TableLootWeaponsMeleeT5
+
+# Ranged weapon spawners
 - type: entity
   name: random weapon
   id: SpawnDungeonLootGunT1
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Gun, T1"
-  categories: [ HideSpawnMenu ]
+  suffix: "Gun, T1"
+  #categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     layers:
@@ -50,30 +170,149 @@
     - sprite: Effects/crayondecals.rsi
       state: 1
       color: red
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortMk58Expedition
-    - WeaponCaseShortUniversalExpedition
-    - WeaponCaseShortPollockExpedition
-    - WeaponCaseShortFaithExpedition
-    - WeaponCaseShortArgentiExpedition
-    - WeaponCaseShortLaserGunExpedition
-    #- WeaponCaseShortHandmadeExpedition
-    #- WeaponCaseLongShotgunDoubleBarreledExpedition
-    - WeaponCaseShortSawnExpedition
-    - WeaponCaseLongMosinExpedition
-    - WeaponCaseLongSniperCeremonialExpedition
-    chance: 1.0
+  - type: EntityTableSpawner
     offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootGunT2
-    rareChance: 0.1
+    prob: 1.00
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        weight: 80
+        tableId: TableLootWeaponsRangedT1
+      - !type:NestedSelector
+        weight: 12
+        tableId: TableLootWeaponsRangedT2
+      - !type:NestedSelector
+        weight: 5
+        tableId: TableLootWeaponsRangedT3
+      - !type:NestedSelector
+        weight: 2
+        tableId: TableLootWeaponsRangedT4
+      - !type:NestedSelector
+        weight: 1
+        tableId: TableLootWeaponsRangedT5
 
+- type: entity
+  name: random weapon
+  id: SpawnDungeonLootGunT2
+  parent: MarkerBasePlaceFree
+  suffix: "Gun, T2"
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+      scale: 0.7, 0.7
+    - sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+      state: icon
+    - sprite: Effects/crayondecals.rsi
+      state: 2
+      color: red
+  - type: EntityTableSpawner
+    offset: 0.0
+    prob: 1.00
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        weight: 80
+        tableId: TableLootWeaponsRangedT2
+      - !type:NestedSelector
+        weight: 12
+        tableId: TableLootWeaponsRangedT3
+      - !type:NestedSelector
+        weight: 5
+        tableId: TableLootWeaponsRangedT4
+      - !type:NestedSelector
+        weight: 2
+        tableId: TableLootWeaponsRangedT5
+
+- type: entity
+  name: random weapon
+  id: SpawnDungeonLootGunT3
+  parent: MarkerBasePlaceFree
+  suffix: "Gun, T3"
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+      scale: 0.7, 0.7
+    - sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+      state: icon
+    - sprite: Effects/crayondecals.rsi
+      state: 3
+      color: red
+  - type: EntityTableSpawner
+    offset: 0.0
+    prob: 1.00
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        weight: 80
+        tableId: TableLootWeaponsRangedT3
+      - !type:NestedSelector
+        weight: 12
+        tableId: TableLootWeaponsRangedT4
+      - !type:NestedSelector
+        weight: 5
+        tableId: TableLootWeaponsRangedT5
+
+- type: entity
+  name: random weapon
+  id: SpawnDungeonLootGunT4
+  parent: MarkerBasePlaceFree
+  suffix: "Gun, T4"
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+      scale: 0.7, 0.7
+    - sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+      state: icon
+    - sprite: Effects/crayondecals.rsi
+      state: 4
+      color: red
+  - type: EntityTableSpawner
+    offset: 0.0
+    prob: 1.00
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        weight: 80
+        tableId: TableLootWeaponsRangedT4
+      - !type:NestedSelector
+        weight: 12
+        tableId: TableLootWeaponsRangedT5
+
+- type: entity
+  name: random weapon
+  id: SpawnDungeonLootGunT5
+  parent: MarkerBasePlaceFree
+  suffix: "Gun, T5"
+  #categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+      scale: 0.7, 0.7
+    - sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
+      state: icon
+    - sprite: Effects/crayondecals.rsi
+      state: 5
+      color: red
+  - type: EntityTableContainerFill
+    offset: 0.0
+    prob: 1.00
+    containers:
+      storagebase: !type:NestedSelector
+        tableId: TableLootWeaponsRangedT5
+
+# Explosives spawners
 - type: entity
   name: random weapon
   id: SpawnDungeonLootExplosivesT1
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Explosives, T1"
+  suffix: "Explosives, T1"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -94,79 +333,11 @@
     - SpawnDungeonLootExplosivesT2
     rareChance: 0.1
 
-# T2: uncommon
-- type: entity
-  name: random weapon
-  id: SpawnDungeonLootMeleeT2
-  parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Melee, T2"
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-      scale: 0.7, 0.7
-    - sprite: Objects/Weapons/Melee/katana.rsi
-      state: icon
-    - sprite: Effects/crayondecals.rsi
-      state: 2
-      color: red
-  - type: RandomSpawner
-    prototypes:
-    - CombatKnife
-    - SurvivalKnife
-    - CaneSheathFilled
-    - Machete
-    - KukriKnife
-    - Stunbaton
-    - ThrowingKnife
-    chance: 1.0
-    offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootMeleeT3
-    rareChance: 0.15
-
-- type: entity
-  name: random weapon
-  id: SpawnDungeonLootGunT2
-  parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Gun, T2"
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-      scale: 0.7, 0.7
-    - sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
-      state: icon
-    - sprite: Effects/crayondecals.rsi
-      state: 2
-      color: red
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortViper
-    - WeaponCaseShortDeckardExpedition
-    - WeaponCaseShortRevolverPirate
-    - WeaponCaseShortPython
-    - WeaponCaseShortFitzExpedition
-    - WeaponCaseShortLuckyExpedition
-    - WeaponCaseLongGestioExpedition
-    - WeaponCaseLongWeaponRifleNovaliteC1Expedition
-    - WeaponCaseLongKammererExpedition
-    - WeaponCaseLongEnergyGunExpedition
-    - WeaponCaseLongRepeaterExpedition
-    - WeaponCaseLongSVSExpedition
-    chance: 1.0
-    offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootGunT3
-    rareChance: 0.15
-
 - type: entity
   name: random weapon
   id: SpawnDungeonLootExplosivesT2
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Explosives, T2"
+  suffix: "Explosives, T2"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -187,74 +358,11 @@
     - SpawnDungeonLootExplosivesT3
     rareChance: 0.1
 
-# T3: rare
-- type: entity
-  name: random weapon
-  id: SpawnDungeonLootMeleeT3
-  parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Melee, T3"
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-      scale: 0.7, 0.7
-    - sprite: Objects/Weapons/Melee/katana.rsi
-      state: icon
-    - sprite: Effects/crayondecals.rsi
-      state: 3
-      color: red
-  - type: RandomSpawner
-    prototypes:
-    - PlasteelArmingSword
-    - Cutlass
-    - Claymore
-    - Truncheon
-    - WeaponCaseShortEnergyDaggerExpedition
-    chance: 1.0
-    offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootMeleeT4
-    rareChance: 0.15
-
-- type: entity
-  name: random weapon
-  id: SpawnDungeonLootGunT3
-  parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Gun, T3"
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-      scale: 0.7, 0.7
-    - sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
-      state: icon
-    - sprite: Effects/crayondecals.rsi
-      state: 3
-      color: red
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortMateba
-    - WeaponCaseShortCobra
-    - WeaponCaseLongWT550Expedition
-    - WeaponCaseLongDrozdExpedition
-    - WeaponCaseLongLecterExpedition
-    - WeaponCaseLongLaserCarbineExpedition
-    - WeaponCaseShortSvalinnExpedition
-    - WeaponCaseShortAdvancedLaserExpedition
-    #- WeaponCaseLongMusketExpedition
-    chance: 1.0
-    offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootGunT4
-    rareChance: 0.15
-
 - type: entity
   name: random weapon
   id: SpawnDungeonLootExplosivesT3
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Explosives, T3"
+  suffix: "Explosives, T3"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -275,73 +383,11 @@
     - SpawnDungeonLootExplosivesT4
     rareChance: 0.1
 
-# T4: extremely rare
-- type: entity
-  name: random weapon
-  id: SpawnDungeonLootMeleeT4
-  parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Melee, T4"
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-      scale: 0.7, 0.7
-    - sprite: Objects/Weapons/Melee/katana.rsi
-      state: icon
-    - sprite: Effects/crayondecals.rsi
-      state: 4
-      color: red
-  - type: RandomSpawner
-    prototypes:
-    - Katana
-    - CaptainSabre
-    - SecBreachingHammer
-    - WeaponCaseShortEnergySwordExpedition
-    - WeaponCaseShortEnergyCutlassExpedition
-    chance: 1.0
-    offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootMeleeT5
-    rareChance: 0.05
-
-- type: entity
-  name: random weapon
-  id: SpawnDungeonLootGunT4
-  parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Gun, T4"
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-      scale: 0.7, 0.7
-    - sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
-      state: icon
-    - sprite: Effects/crayondecals.rsi
-      state: 4
-      color: red
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortN1984Expedition
-    - WeaponCaseShortAntiqueLaserExpedition
-    - WeaponCaseLongM90Expedition
-    - WeaponCaseLongC20r
-    - WeaponCaseLongAk
-    - WeaponCaseLongEnforcerExpedition
-    - WeaponCaseLongLaserCannonExpedition
-    - WeaponCaseLongVulcanExpedition
-    chance: 1.0
-    offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootGunT5
-    rareChance: 0.1
-
 - type: entity
   name: random weapon
   id: SpawnDungeonLootExplosivesT4
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Explosives, T4"
+  suffix: "Explosives, T4"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -362,65 +408,11 @@
     - SpawnDungeonLootExplosivesT5
     rareChance: 0.01
 
-# T5: next to unobtainable
-- type: entity
-  name: random weapon
-  id: SpawnDungeonLootMeleeT5
-  parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Melee, T5"
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-      scale: 0.7, 0.7
-    - sprite: Objects/Weapons/Melee/katana.rsi
-      state: icon
-    - sprite: Effects/crayondecals.rsi
-      state: 5
-      color: red
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortEnergySwordDoubleExpedition
-    chance: 1.0
-    offset: 0.0
-
-- type: entity
-  name: random weapon
-  id: SpawnDungeonLootGunT5
-  parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Gun, T5"
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Sprite
-    layers:
-    - state: green
-      scale: 0.7, 0.7
-    - sprite: Objects/Weapons/Guns/Pistols/mk58.rsi
-      state: icon
-    - sprite: Effects/crayondecals.rsi
-      state: 5
-      color: red
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseLongBulldog
-    - WeaponCaseLongAtreidesExpedition
-    - WeaponCaseLongLauncherRocketExpedition
-    - WeaponCaseLongLauncherChinaLake
-    - WeaponCaseLongLightMachineGunL6
-    - WeaponCaseHeavyAsmgtExpeditions
-    - WeaponCaseLongXrayCannonExpedition
-    - WeaponCaseLongJackdaw
-    - WeaponCaseLongTypewriterExpedition
-    - WeaponCaseLongHristovExpedition
-    chance: 1.0
-    offset: 0.0
-
 - type: entity
   name: random weapon
   id: SpawnDungeonLootExplosivesT5
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Explosives, T5"
+  suffix: "Explosives, T5"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -443,7 +435,7 @@
   name: random ammo
   id: SpawnDungeonLootAmmoLethal
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Ammo, Lethal"
+  suffix: "Ammo, Lethal"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -452,34 +444,35 @@
       scale: 0.7, 0.7
     - sprite: _NF/Objects/Storage/Cases/ammocaseshort.rsi
       state: icon
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortAmmoBoxLethal20
-    - WeaponCaseShortAmmoBoxLethal30
-    - WeaponCaseShortAmmoBoxLethal35
-    - WeaponCaseShortAmmoBoxLethal25
-    - WeaponCaseShortAmmoBoxLethalShotgun
-    - WeaponCaseShortAmmoBoxSlugShotgun
-    - WeaponCaseShortAmmoBoxLethal45
-    chance: 0.8
+  - type: EntityTableSpawner
     offset: 0.0
-    rarePrototypes:
-    - WeaponCaseShortAmmoBoxBigLethal20
-    - WeaponCaseShortAmmoBoxBigLethal30
-    - WeaponCaseShortAmmoBoxBigLethal25
-    - WeaponCaseShortAmmoBoxEmp35
-    - WeaponCaseShortAmmoBoxFlareShotgun
-    - SpawnDungeonLootAmmoRubber
-    - SpawnDungeonLootAmmoPractice
-    - SpawnDungeonLootAmmoIncendiary
-    - SpawnDungeonLootAmmoUranium
-    rareChance: 0.01
+    prob: 1.00
+    table: !type:GroupSelector
+      children:
+      - !type:NestedSelector
+        weight: 80
+        tableId: TableLootAmmoBoxLethal
+      - !type:NestedSelector
+        weight: 10
+        tableId: TableLootAmmoBoxRubber
+      - !type:NestedSelector
+        weight: 5
+        tableId: TableLootAmmoBoxIncendiary
+      - !type:NestedSelector
+        weight: 2
+        tableId: TableLootAmmoBoxUranium
+      - !type:NestedSelector
+        weight: 2
+        tableId: TableLootAmmoBoxExotic
+      - !type:NestedSelector
+        weight: 1
+        tableId: TableLootAmmoBoxPractice
 
 - type: entity
   name: random ammo
   id: SpawnDungeonLootAmmoRubber
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Ammo, Rubber"
+  suffix: "Ammo, Rubber"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -488,26 +481,17 @@
       scale: 0.7, 0.7
     - sprite: _NF/Objects/Storage/Cases/ammocaseshort.rsi
       state: icon
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortAmmoBoxRubber20
-    - WeaponCaseShortAmmoBoxRubber30
-    - WeaponCaseShortAmmoBoxRubber35
-    - WeaponCaseShortAmmoBoxRubber25
-    - WeaponCaseShortAmmoBoxRubberShotgun
-    - WeaponCaseShortAmmoBoxRubber45
-    chance: 0.7
+  - type: EntityTableSpawner
     offset: 0.0
-    rarePrototypes:
-    - WeaponCaseShortAmmoBoxBigRubber20
-    - WeaponCaseShortAmmoBoxBigRubber25
-    rareChance: 0.01
+    table: !type:NestedSelector
+      tableId: TableLootAmmoBoxRubber
+      prob: 1.00
 
 - type: entity
   name: random ammo
   id: SpawnDungeonLootAmmoPractice
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Ammo, Practice"
+  suffix: "Ammo, Practice"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -516,22 +500,17 @@
       scale: 0.7, 0.7
     - sprite: _NF/Objects/Storage/Cases/ammocaseshort.rsi
       state: icon
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortAmmoBoxPractice20
-    - WeaponCaseShortAmmoBoxPractice30
-    - WeaponCaseShortAmmoBoxPractice35
-    - WeaponCaseShortAmmoBoxPractice25
-    - WeaponCaseShortAmmoBoxPracticeShotgun
-    - WeaponCaseShortAmmoBoxPractice45
-    chance: 0.6
+  - type: EntityTableSpawner
     offset: 0.0
+    table: !type:NestedSelector
+      tableId: TableLootAmmoBoxPractice
+      prob: 1.00
 
 - type: entity
   name: random ammo
   id: SpawnDungeonLootAmmoIncendiary
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Ammo, Incendiary"
+  suffix: "Ammo, Incendiary"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -540,24 +519,17 @@
       scale: 0.7, 0.7
     - sprite: _NF/Objects/Storage/Cases/ammocaseshort.rsi
       state: icon
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortAmmoBoxIncendiary20
-    - WeaponCaseShortAmmoBoxIncendiary30
-    - WeaponCaseShortAmmoBoxIncendiary35
-    - WeaponCaseShortAmmoBoxIncendiaryShotgun
-    - WeaponCaseShortAmmoBoxIncendiary45
-    chance: 0.5
+  - type: EntityTableSpawner
     offset: 0.0
-    rarePrototypes:
-    - SpawnDungeonLootAmmoUranium
-    rareChance: 0.01
+    table: !type:NestedSelector
+      tableId: TableLootAmmoBoxIncendiary
+      prob: 1.00
 
 - type: entity
   name: random ammo
   id: SpawnDungeonLootAmmoUranium
   parent: MarkerBasePlaceFree
-  suffix: "Dungeon, Ammo, Uranium"
+  suffix: "Ammo, Uranium"
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
@@ -566,12 +538,247 @@
       scale: 0.7, 0.7
     - sprite: _NF/Objects/Storage/Cases/ammocaseshort.rsi
       state: icon
-  - type: RandomSpawner
-    prototypes:
-    - WeaponCaseShortAmmoBoxUranium20
-    - WeaponCaseShortAmmoBoxUranium30
-    - WeaponCaseShortAmmoBoxUranium35
-    - WeaponCaseShortAmmoBoxUraniumShotgun
-    - WeaponCaseShortAmmoBoxUranium45
-    chance: 0.4
+  - type: EntityTableSpawner
     offset: 0.0
+    table: !type:NestedSelector
+      tableId: TableLootAmmoBoxUranium
+      prob: 1.00
+
+# Tables
+# Melee Weapons
+- type: entityTable
+  id: TableLootWeaponsMeleeT1
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: BrokenBottle
+      - id: Shiv
+      - id: ReinforcedShiv
+      - id: PlasmaShiv
+      - id: UraniumShiv
+      - id: ScalpelShiv
+      - id: BaseBallBat
+      - id: Stunprod
+      - id: WhiteCane
+      - id: CombatKnife
+      - id: SurvivalKnife
+
+- type: entityTable
+  id: TableLootWeaponsMeleeT2
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: CombatKnife
+      - id: SurvivalKnife
+      - id: CaneSheathFilled
+      - id: Machete
+      - id: KukriKnife
+      - id: Stunbaton
+      - id: ThrowingKnife
+
+- type: entityTable
+  id: TableLootWeaponsMeleeT3
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: PlasteelArmingSword
+      - id: Cutlass
+      - id: Claymore
+      - id: Truncheon
+      - id: WeaponCaseShortEnergyDaggerExpedition
+
+- type: entityTable
+  id: TableLootWeaponsMeleeT4
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: Katana
+      - id: CaptainSabre
+      - id: SecBreachingHammer
+      - id: WeaponCaseShortEnergySwordExpedition
+      - id: WeaponCaseShortEnergyCutlassExpedition
+
+- type: entityTable
+  id: TableLootWeaponsMeleeT5
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseShortEnergySwordDoubleExpedition
+
+# Ranged Weapons
+- type: entityTable
+  id: TableLootWeaponsRangedT1
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseShortMk58Expedition
+      - id: WeaponCaseShortUniversalExpedition
+      - id: WeaponCaseShortPollockExpedition
+      - id: WeaponCaseShortFaithExpedition
+      - id: WeaponCaseShortArgentiExpedition
+      - id: WeaponCaseShortLaserGunExpedition
+      #- id: WeaponCaseShortHandmadeExpedition
+      #- id: WeaponCaseLongShotgunDoubleBarreledExpedition
+      - id: WeaponCaseShortSawnExpedition
+      - id: WeaponCaseLongMosinExpedition
+      - id: WeaponCaseLongSniperCeremonialExpedition
+
+- type: entityTable
+  id: TableLootWeaponsRangedT2
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseShortViper
+      - id: WeaponCaseShortDeckardExpedition
+      - id: WeaponCaseShortRevolverPirate
+      - id: WeaponCaseShortPython
+      - id: WeaponCaseShortFitzExpedition
+      - id: WeaponCaseShortLuckyExpedition
+      - id: WeaponCaseLongGestioExpedition
+      - id: WeaponCaseLongWeaponRifleNovaliteC1Expedition
+      - id: WeaponCaseLongKammererExpedition
+      - id: WeaponCaseLongEnergyGunExpedition
+      - id: WeaponCaseLongRepeaterExpedition
+      - id: WeaponCaseLongSVSExpedition
+
+- type: entityTable
+  id: TableLootWeaponsRangedT3
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseShortMateba
+      - id: WeaponCaseShortCobra
+      - id: WeaponCaseLongWT550Expedition
+      - id: WeaponCaseLongDrozdExpedition
+      - id: WeaponCaseLongLecterExpedition
+      - id: WeaponCaseLongLaserCarbineExpedition
+      - id: WeaponCaseShortSvalinnExpedition
+      - id: WeaponCaseShortAdvancedLaserExpedition
+      #- id: WeaponCaseLongMusketExpedition
+
+- type: entityTable
+  id: TableLootWeaponsRangedT4
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseShortN1984Expedition
+      - id: WeaponCaseShortAntiqueLaserExpedition
+      - id: WeaponCaseLongM90Expedition
+      - id: WeaponCaseLongC20r
+      - id: WeaponCaseLongAk
+      - id: WeaponCaseLongEnforcerExpedition
+      - id: WeaponCaseLongLaserCannonExpedition
+      - id: WeaponCaseLongVulcanExpedition
+
+- type: entityTable
+  id: TableLootWeaponsRangedT5
+  table: !type:AllSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseLongBulldog
+      - id: WeaponCaseLongAtreidesExpedition
+      - id: WeaponCaseLongLauncherRocketExpedition
+      - id: WeaponCaseLongLauncherChinaLake
+      - id: WeaponCaseLongLightMachineGunL6
+      - id: WeaponCaseHeavyAsmgtExpeditions
+      - id: WeaponCaseLongXrayCannonExpedition
+      - id: WeaponCaseLongJackdaw
+      - id: WeaponCaseLongTypewriterExpedition
+      - id: WeaponCaseLongHristovExpedition
+
+# Ammo
+- type: entityTable
+  id: TableLootAmmoBoxLethal
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 85
+      children:
+      - id: WeaponCaseShortAmmoBoxLethal20
+      - id: WeaponCaseShortAmmoBoxLethal25
+      - id: WeaponCaseShortAmmoBoxLethal30
+      - id: WeaponCaseShortAmmoBoxLethal35
+      - id: WeaponCaseShortAmmoBoxLethal45
+      - id: WeaponCaseShortAmmoBoxLethalShotgun
+      - id: WeaponCaseShortAmmoBoxSlugShotgun
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: WeaponCaseShortAmmoBoxBigLethal20
+      - id: WeaponCaseShortAmmoBoxBigLethal30
+      - id: WeaponCaseShortAmmoBoxBigLethal25
+
+- type: entityTable
+  id: TableLootAmmoBoxRubber
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      weight: 85
+      children:
+      - id: WeaponCaseShortAmmoBoxRubber20
+      - id: WeaponCaseShortAmmoBoxRubber25
+      - id: WeaponCaseShortAmmoBoxRubber30
+      - id: WeaponCaseShortAmmoBoxRubber35
+      - id: WeaponCaseShortAmmoBoxRubber45
+      - id: WeaponCaseShortAmmoBoxRubberShotgun
+    - !type:GroupSelector
+      weight: 15
+      children:
+      - id: WeaponCaseShortAmmoBoxBigRubber20
+      - id: WeaponCaseShortAmmoBoxBigRubber25
+
+- type: entityTable
+  id: TableLootAmmoBoxPractice
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseShortAmmoBoxPractice20
+      - id: WeaponCaseShortAmmoBoxPractice25
+      - id: WeaponCaseShortAmmoBoxPractice30
+      - id: WeaponCaseShortAmmoBoxPractice35
+      - id: WeaponCaseShortAmmoBoxPractice45
+      - id: WeaponCaseShortAmmoBoxPracticeShotgun
+
+- type: entityTable
+  id: TableLootAmmoBoxIncendiary
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseShortAmmoBoxIncendiary20
+      - id: WeaponCaseShortAmmoBoxIncendiary30
+      - id: WeaponCaseShortAmmoBoxIncendiary35
+      - id: WeaponCaseShortAmmoBoxIncendiary45
+      - id: WeaponCaseShortAmmoBoxIncendiaryShotgun
+
+- type: entityTable
+  id: TableLootAmmoBoxUranium
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseShortAmmoBoxUranium20
+      - id: WeaponCaseShortAmmoBoxUranium30
+      - id: WeaponCaseShortAmmoBoxUranium35
+      - id: WeaponCaseShortAmmoBoxUranium45
+      - id: WeaponCaseShortAmmoBoxUraniumShotgun
+
+- type: entityTable
+  id: TableLootAmmoBoxExotic
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: WeaponCaseShortAmmoBoxEmp35
+      - id: WeaponCaseShortAmmoBoxFlareShotgun
