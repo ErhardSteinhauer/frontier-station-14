@@ -105,6 +105,13 @@
     idleState: icon
     runningState: icon
     staticPacks:
+    - NFRecipePackStaticBasicTools
+    - NFRecipePackStaticBasicStorage
+    - NFRecipePackStaticBasicElectronics
+    - LightsStatic
+    - PowerCellsStatic
+    - CablesStatic
+    - PartsStatic
     - NFEngineeringTechfabDeprecatedStatic
   - type: BlueprintReceiver
     whitelist:
