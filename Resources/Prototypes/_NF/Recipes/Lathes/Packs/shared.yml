@@ -19,6 +19,7 @@
     - ToolboxElectricalNF
     - ToolboxMechanicalNF
     - ToolboxEmergencyNF
+    - AirTank
 
 - type: latheRecipePack
   id: NFRecipePackStaticBasicElectronics
@@ -26,4 +27,3 @@
     - CellRechargerCircuitboard
     - BorgChargerCircuitboard
     - WeaponCapacitorRechargerCircuitboard
-    - AirTank
