@@ -1,0 +1,44 @@
+
+- type: latheRecipePack
+  id: NFRecipePackStaticBasicTools
+    - Wirecutter
+    - Screwdriver
+    - Welder
+    - Wrench
+    - CrowbarGreen
+    - Multitool
+    - FlashlightLantern
+    - AppraisalTool
+    - HandLabeler
+    - Signaller
+    - ClothingMaskWeldingGas
+
+- type: latheRecipePack
+  id: NFRecipePackStaticBasicStorage
+    - ToolboxArtisticNF
+    - ToolboxElectricalNF
+    - ToolboxMechanicalNF
+    - ToolboxEmergencyNF
+
+- type: latheRecipePack
+  id: NFRecipePackStaticBasicParts
+    - CableStack
+    - LightTube
+    - LedLightTube
+    - SodiumLightTube
+    - ExteriorLightTube
+    - LightBulb
+    - LedLightBulb
+    - SodiumLightBulb
+    - ExteriorLightBulb
+    - ConveyorBeltAssembly
+    - PowerCellSmall
+    - PowerCellMedium
+
+- type: latheRecipePack
+  id: NFRecipePackStaticBasicElectronics
+    - SignalTimerElectronics
+    - CellRechargerCircuitboard
+    - BorgChargerCircuitboard
+    - WeaponCapacitorRechargerCircuitboard
+    - AirTank
