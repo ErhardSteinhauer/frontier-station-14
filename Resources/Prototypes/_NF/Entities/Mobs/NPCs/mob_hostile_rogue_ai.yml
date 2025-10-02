@@ -213,9 +213,9 @@
   description: Hacked and reprogrammed by a rogue AI departmental drones.
   abstract: true
   components:
-  - type: Loadout
-    prototypes:
-    - MobRogueSiliconLootT1
+  #- type: Loadout
+  #  prototypes:
+  #  - MobRogueSiliconLootT1
   - type: CanMoveInAir
   - type: Fixtures
     fixtures:
@@ -261,6 +261,27 @@
     volume: -6
     range: 5
     sound: /Audio/_NF/Effects/Scrapbots/thruster-droning.ogg
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 24
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBulletImpact
+          params:
+            variation: 0.250
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          NFScrapDroneWreck:
+            min: 1
+            max: 1
+          ClothingBackpackRogueSiliconT1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
 
 # VARIATIONS
 #region Tier 1
@@ -1355,3 +1376,34 @@
       path: /Audio/Weapons/Guns/Gunshots/laser.ogg
       params:
         variation: 0.2
+
+#region Wrecked Silicons
+- type: entity
+  parent: NFBaseScrap
+  id: NFBaseScrapRogueSilicon
+  abstract: true
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      RawScrap: 1500 # 15 sheets
+      RawScrapTech: 1000 # 10 sheets
+
+- type: entity
+  id: NFScrapDroneWreck
+  parent: NFBaseScrapRogueSilicon
+  name: wrecked drone
+  description: Utterly wrecked drone chassis. Salvageable parts remain.
+  components:
+  - type: Sprite
+    layers:
+    - sprite: _NF/Mobs/RogueSilicons/drones.rsi
+      state: destroyed
+    - sprite: _NF/Objects/Tools/goblin_tools/overlay_sparks.rsi
+      state: overlay-icon
+      shader: unshaded
+  - type: Item
+    sprite: _NF/Mobs/RogueSilicons/drones.rsi
+    state: destroyed
+    size: Large
+    shape:
+    - 0,0,2,2 # 3x3
