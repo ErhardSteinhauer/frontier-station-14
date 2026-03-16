@@ -129,6 +129,8 @@
       - NFPosterContrabandGoblinLeague
       - NFPosterContrabandEms
       - NFPosterContrabandSsfLogo
+      - NFPosterContrabandLlu
+      - NFPosterContrabandFuc
       # End Frontier
     chance: 1
 
@@ -205,5 +207,6 @@
       - NFPosterLegitMothPlease
       - NFPosterLegitHaveYouSeenThisEgg
       - NFPosterLegitGunTurnIn
+      - NFPosterLegitNfsdFleetCommand
         # End Frontier
     chance: 1

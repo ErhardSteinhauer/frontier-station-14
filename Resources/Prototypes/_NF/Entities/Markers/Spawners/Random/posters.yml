@@ -46,6 +46,8 @@
     - id: NFPosterContrabandGoblinate
     - id: NFPosterContrabandWyvernShipyards
     - id: NFPosterContrabandRatvarLives
+    - id: NFPosterContrabandLlu
+    - id: NFPosterContrabandFuc
 
 - type: entityTable
   id: TableRandomPosterGoblin
@@ -69,6 +71,7 @@
     - id: NFPosterLegitMothPlease
     - id: NFPosterLegitHaveYouSeenThisEgg
     - id: NFPosterLegitGunTurnIn
+    - id: NFPosterLegitNfsdFleetCommand
 # endregion tables
 
 #region spawners

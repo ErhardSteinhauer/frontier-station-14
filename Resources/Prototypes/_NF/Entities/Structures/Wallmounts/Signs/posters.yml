@@ -78,6 +78,17 @@
   - type: Sprite
     sprite: _NF/Structures/Wallmounts/posters.rsi
     state: nf_poster8_legit
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterLegitNfsdFleetCommand
+  name: "NFSD Fleet Command"
+  description: |-
+    The poster depicts two NFSD officers in hardsuits, with shuttles maneuvering in the background. The text reads: “Fighting to protect the freedom of contractors across the Frontier.”
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster9_legit
 #endregion
 
 #region Contraband posters
@@ -451,5 +462,27 @@
   - type: Sprite
     sprite: _NF/Structures/Wallmounts/posters.rsi
     state: nf_poster36_contraband
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterContrabandLlu
+  name: "Lamplighters Union"
+  description: |-
+    The poster depicts a brightly lit beacon. The text reads: "For those who keep the lights on."
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster37_contraband
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterContrabandFuc
+  name: "Crime always paysout"
+  description: |-
+    The poster depicts a paper unicorn standing on a reflective surface. There is somewhat cryptic text suggesting the existence of a criminal union operating in Frontier Space.
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster38_contraband
 
 #endregion
