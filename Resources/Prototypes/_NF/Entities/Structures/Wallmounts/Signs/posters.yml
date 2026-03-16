@@ -466,7 +466,7 @@
 - type: entity
   parent: PosterBase
   id: NFPosterContrabandLlu
-  name: "Lamplighters Union"
+  name: "The Lamplighters Union"
   description: |-
     The poster depicts a brightly lit beacon. The text reads: "For those who keep the lights on."
   components:
@@ -477,7 +477,7 @@
 - type: entity
   parent: PosterBase
   id: NFPosterContrabandFuc
-  name: "Crime always paysout"
+  name: "Crime always pays off"
   description: |-
     The poster depicts a paper unicorn standing on a reflective surface. There is somewhat cryptic text suggesting the existence of a criminal union operating in Frontier Space.
   components:
