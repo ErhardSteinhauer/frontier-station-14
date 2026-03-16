@@ -496,4 +496,15 @@
     sprite: _NF/Structures/Wallmounts/posters.rsi
     state: nf_poster39_contraband
 
+- type: entity
+  parent: PosterBase
+  id: NFPosterContrabandMindGoblin
+  name: "Mind Goblin"
+  description: |-
+    The poster portrays a disheveled goblin in a green suit whose mind is overwhelmed by a storm of emotions and impulses. He appears to struggle to keep these forces under control, as if barely holding back the chaos within. The text reads: "When ya jus' can't even... Sort o' 'old on dere, yah?"
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster40_contraband
+
 #endregion
