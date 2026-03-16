@@ -48,6 +48,7 @@
     - id: NFPosterContrabandRatvarLives
     - id: NFPosterContrabandLlu
     - id: NFPosterContrabandFuc
+    - id: NFPosterContrabandPirateLords
 
 - type: entityTable
   id: TableRandomPosterGoblin

@@ -485,4 +485,15 @@
     sprite: _NF/Structures/Wallmounts/posters.rsi
     state: nf_poster38_contraband
 
+- type: entity
+  parent: PosterBase
+  id: NFPosterContrabandPirateLords
+  name: "Pirate Lords of Frontier"
+  description: |-
+    The poster depicts a pirate in a hardsuit holding a rifle at low ready. It appears to be an old wanted poster repurposed to further a pirate agenda. The text reads: “Ruling the Outer Rings with a plastitanium hook.”
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster39_contraband
+
 #endregion
