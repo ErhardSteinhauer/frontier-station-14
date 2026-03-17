@@ -1739,3 +1739,16 @@
   recipeType:
   - Oven
   - Microwave
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinJellySpaceshroom
+  name: spaceshroom jelly recipe
+  result: FoodGoblinJellySpaceshroom
+  time: 10
+  group: Goblin
+  reagents:
+    Water: 10
+    Vodka: 10
+  solids:
+    FoodSpaceshroom: 1
+  recipeType: Microwave # Frontier

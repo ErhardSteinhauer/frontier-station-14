@@ -930,3 +930,30 @@
   - type: Tag
     tags:
     - Meat
+
+- type: entity
+  parent: FoodInjectableBase
+  id: FoodGoblinJellySpaceshroom
+  name: spaceshroom jelly
+  description: A galaxy in a bowl.
+  components:
+  - type: FlavorProfile
+    flavors:
+    - spaceshroom
+    - jelly
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/meals.rsi
+    state: goblin-spaceshroom-jelly
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 23
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Amatoxin
+          Quantity: 4
+        - ReagentId: SpaceDrugs
+          Quantity: 4
+        - ReagentId: Goblinol
+          Quantity: 5
