@@ -824,9 +824,8 @@
     layers:
     - state: sausagecooked
       color: "#6d382a"
-    - sprite: Objects/Misc/flies.rsi
+    - sprite: _NF/Effects/flies.rsi
       state: flies
-      scale: 1, 1
   - type: SolutionContainerManager
     solutions:
       food:
@@ -854,9 +853,8 @@
     sprite: _NF/Objects/Consumable/Food/meat.rsi
     layers:
     - state: hotdog
-    - sprite: Objects/Misc/flies.rsi
+    - sprite: _NF/Effects/flies.rsi
       state: flies
-      scale: 1, 1
   - type: SolutionContainerManager
     solutions:
       food:

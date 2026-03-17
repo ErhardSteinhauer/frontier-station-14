@@ -556,6 +556,13 @@
       - state: rotten-inhand-left
       right:
       - state: rotten-inhand-right
+  - type: SliceableFood # Frontier
+    count: 3 # Frontier
+    slice: NFFoodMeatCutletRotten # Frontier
+  - type: Construction # Frontier
+    graph: NFRottenMeatSteak # Frontier
+    node: start # Frontier
+    defaultTarget: NFFoodMeatRottenCooked # Frontier
 
 - type: entity
   name: raw spider meat
