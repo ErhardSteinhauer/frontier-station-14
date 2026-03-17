@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-4.0",
-    "copyright": "chickenParm made by Sen (Discord)",
+    "copyright": "chickenParm made by Sen (Discord), goblin-swamp-broth by erhardsteinhauer (github) ",
     "size": {
         "x": 32,
         "y": 32
@@ -9,6 +9,9 @@
     "states": [
         {
             "name": "chickenparm"
+        },
+        {
+            "name": "goblin-swamp-broth"
         }
     ]
 }

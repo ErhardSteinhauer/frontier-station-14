@@ -59,11 +59,11 @@
   - type: Butcherable
     spawned:
     - id: FoodMeatSlime
-      amount: 2    
+      amount: 2
     - id: MaterialHideRosyMothroach
       amount: 1
       prob: 0.3
-      
+
 - type: entity
   name: bee
   suffix: Angry, Timed
@@ -85,3 +85,56 @@
   components:
   - type: Inventory
     templateId: empty
+
+- type: entity
+  parent: MobMouse
+  id: NFMobRat
+  name: rat
+  components:
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: Mobs/Animals/rat.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: rat
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded"]
+      state: eyes
+      shader: unshaded
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: rat-moving
+    noMovementLayers:
+      movement:
+        state: rat
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: rat
+        BaseUnshaded: eyes
+      Critical:
+        Base: dead
+      Dead:
+        Base: splat
+  - type: Hunger
+    baseDecayRate: 10 # always hungry
+    starvingSlowdownModifier: 1
+  - type: Thirst
+    baseDecayRate: 10 # always thirsty
+  - type: Item
+    size: Tiny
+
+- type: entity
+  save: false
+  parent: NFMobRat
+  id: NFMobRatDead
+  name: rat
+  suffix: dead
+  components:
+  - type: Damageable
+    damage:
+      types:
+        Bloodloss: 7
+        Asphyxiation: 6
+        Slash: 7
+        Blunt: 5

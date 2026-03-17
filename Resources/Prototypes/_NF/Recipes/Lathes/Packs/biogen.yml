@@ -116,7 +116,7 @@
   id: NFBioGenSoil
   recipes:
   - NFBioGenHydroponicsSoilNutritionFlatpack
-  
+
 - type: latheRecipePack
   id: NFBioGenAnimalCubesStatic
   recipes:
@@ -138,3 +138,4 @@
   - NFBioGenPossumCube
   - NFBioGenRaccoonCube
   - NFBioGenFoxCube
+  - NFBioGenRatCube

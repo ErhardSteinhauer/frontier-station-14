@@ -1,4 +1,4 @@
-#Burgers
+#region Burgers
 
 - type: microwaveMealRecipe
   id: RecipeClurgerBurger
@@ -129,7 +129,7 @@
   recipeType:
   - Oven
 
-#Breads & Sandwiches
+#region Breads & Sandwiches
 
 - type: microwaveMealRecipe
   id: RecipeAvocadoToast
@@ -201,7 +201,7 @@
   - Oven
   - Microwave
 
-# Dough Alternative Recipes
+#region Dough Alternative Recipes
 
 - type: microwaveMealRecipe
   id: RecipeFoodRiceDough
@@ -216,7 +216,7 @@
   recipeType:
   - Assembler
 
-# Hot Dog Haven
+#region Hot Dog Haven
 
 - type: microwaveMealRecipe
   id: RecipeFoodBakedGarlicBreadBaguette
@@ -245,7 +245,7 @@
   recipeType:
   - Oven
 
- # Cured Meat - Future category for sausages/transformative meat and now consumption friendly.
+ #region Cured Meat - Future category for sausages/transformative meat and now consumption friendly.
 
 - type: microwaveMealRecipe
   id: RecipeCuredCarp
@@ -326,7 +326,7 @@
   recipeType:
   - Oven
 
-# Birb
+#region Birb
 
 - type: microwaveMealRecipe
   id: RecipeFoodBakedWholeChicken
@@ -375,7 +375,7 @@
   recipeType:
   - Assembler
 
-# Sushi
+#region Sushi
 
 - type: microwaveMealRecipe
   id: RecipeAvocadoSushi
@@ -425,7 +425,7 @@
   recipeType:
   - Assembler
 
-# Salad
+#region Salad
 
 - type: microwaveMealRecipe
   id: RecipeGreekSalad
@@ -476,7 +476,7 @@
   recipeType:
   - Assembler
 
-# Fryer Prep
+#region Fryer Prep
 
 - type: microwaveMealRecipe
   id: RecipeBatteredChicken
@@ -546,7 +546,7 @@
   recipeType:
   - Assembler
 
-# Donuts (uncooked as well as glazed) - frying handled by DeepFrySpawnComponent per-entity
+#region Donuts (uncooked as well as glazed) - frying handled by DeepFrySpawnComponent per-entity
 
 - type: microwaveMealRecipe
   id: RecipeDonutUncookedJelly
@@ -870,7 +870,7 @@
 #   recipeType:
 #   - Assembler
 
-# Other
+#region Other
 
 - type: microwaveMealRecipe
   id: RecipeCatCrispy
@@ -1077,7 +1077,7 @@
   recipeType:
   - Oven
 
-# Pasta and Noodles
+#region Pasta and Noodles
 
 - type: microwaveMealRecipe
   id: RecipeRiceNoodleSheet
@@ -1217,7 +1217,7 @@
   recipeType:
   - Oven
 
-# Frozen desserts
+#region Frozen desserts
 
 - type: microwaveMealRecipe
   id: RecipeIceCreamSandwich
@@ -1574,7 +1574,7 @@
   recipeType:
   - Assembler
 
-# NOT ACTUAL FOOD
+#region NOT ACTUAL FOOD
 
 - type: microwaveMealRecipe
   id: RecipeDriedShrooms
@@ -1590,7 +1590,7 @@
   - Oven
   - Microwave
 
-# Coffee
+#region Coffee
 
 - type: microwaveMealRecipe
   id: RoastedCoffee
@@ -1602,3 +1602,59 @@
     FoodCoffee: 1
   recipeType:
   - Oven
+
+#region Goblin
+- type: microwaveMealRecipe
+  id: RecipeGoblinSpaceTickGoulash
+  name: space tick goulash
+  result: FoodGoblinSpaceTickGoulash
+  time: 5
+  group: Goblin
+  reagents:
+    OilOlive: 15
+  solids:
+    FoodBowlBig: 1
+    NFMobTick: 1
+    FoodPotatoSlice: 1
+    FoodGarlic: 1
+    FoodOnion: 1
+  recipeType:
+  - Oven
+  - Microwave
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinSpiderShakshouka
+  name: spider shakshouka
+  result: FoodGoblinSpiderShakshouka
+  time: 5
+  group: Goblin
+  reagents:
+    OilOlive: 10
+  solids:
+    FoodBowlBig: 1
+    EggSpider: 1
+    FoodGarlic: 1
+    FoodFlyAmanita: 1
+    FoodChiliPepper: 1
+  recipeType:
+  - Oven
+  - Microwave
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinSwampBroth
+  name: swamp broth
+  result: FoodGoblinSwampBroth
+  time: 25
+  group: Goblin
+  reagents:
+    Water: 50
+  solids:
+    Bucket: 1
+    NFMobRat: 1
+    MobLizard: 1
+    MobFrog: 1
+    FoodMushroom: 2
+    FoodFlyAmanita: 1
+  recipeType:
+  - Oven
+  - Microwave

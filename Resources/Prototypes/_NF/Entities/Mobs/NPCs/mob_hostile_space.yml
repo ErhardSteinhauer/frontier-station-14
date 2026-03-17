@@ -66,3 +66,37 @@
     thresholds:
       0: Alive
       12: Dead
+  - type: Item
+    size: Tiny
+    #heldPrefix: 0
+  - type: Food
+  - type: BadFood
+  - type: FlavorProfile
+    flavors:
+    - spices
+  - type: Extractable
+    grindableSolutionName: food
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatXeno
+      amount: 1
+
+- type: entity
+  save: false
+  parent: NFMobTick
+  id: NFMobTickDead
+  suffix: Dead
+  components:
+  - type: Damageable
+    damage:
+      types:
+        Bloodloss: 3
+        Asphyxiation: 4
+        Slash: 3
+        Blunt: 3

@@ -702,3 +702,105 @@
   - type: Construction
     graph: NFHotdog
     node: hotteddog
+
+#region Goblin Meals
+- type: entity
+  parent: FoodBowlBase
+  id: FoodGoblinSpaceTickGoulash
+  name: space tick goulash
+  description: It glows at the input and output.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - oily
+      - meaty
+      - spices
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: goblin-tick-stew
+    - state: goblin-tick-stew-glow
+      shader: unshaded
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 20
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Vitamin
+          Quantity: 4
+        - ReagentId: Goblinol
+          Quantity: 5
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  parent: FoodBowlBase
+  id: FoodGoblinSpiderShakshouka
+  name: spider shakshouka
+  description: Crunchy.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - egg
+      - spices
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/bowl.rsi
+    layers:
+    - state: bowl
+    - state: goblin-shakshouka
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Goblinol
+          Quantity: 5
+  - type: PointLight
+    radius: 1.5
+    energy: 2
+    color: "#4faffb"
+  - type: Tag
+    tags:
+    - Meat
+
+- type: entity
+  parent: FoodMealOmelette
+  id: FoodGoblinSwampBroth
+  name: swamp broth
+  description: Tastes like home, smells like sewer.
+  components:
+  - type: Food
+    trash:
+    - Bucket
+    utensil: Spoon
+  - type: FlavorProfile
+    flavors:
+      - meaty
+      - sublime
+      - tangy
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/meals.rsi
+    layers:
+    - sprite: Objects/Tools/bucket.rsi
+      state: icon
+    - state: goblin-swamp-broth
+  - type: SolutionContainerManager # higher values due to how long it takes to print all the animals
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 15
+        - ReagentId: Vitamin
+          Quantity: 5
+        - ReagentId: Goblinol
+          Quantity: 15
+  - type: Tag
+    tags:
+    - Meat
