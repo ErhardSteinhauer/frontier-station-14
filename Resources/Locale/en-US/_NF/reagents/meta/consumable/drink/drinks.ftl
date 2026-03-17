@@ -42,3 +42,6 @@ reagent-desc-nanodepresso = Like an espresso if it just didn't really try and le
 
 reagent-name-coftea = coftea
 reagent-desc-coftea = Invented by someone who thought the tea button was the coffee button. Or the other way around.
+
+reagent-name-fungal-beer = fungal beer
+reagent-desc-fungal-beer = Fermented mushrooms. What could possibly go wrong?

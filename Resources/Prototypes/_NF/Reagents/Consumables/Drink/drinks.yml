@@ -1,4 +1,4 @@
-# Drinks
+#region Drinks
 
 - type: reagent
   id: CucumberWater
@@ -106,7 +106,7 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
 
-# Alcoholic Drinks
+#region Alcoholic Drinks
 - type: reagent
   id: GinAndSonic
   name: reagent-name-gin-and-sonic
@@ -260,7 +260,7 @@
   metamorphicFillBaseName: fill
   metamorphicChangeColor: false
 
-# Nanocaf drinks
+#region Nanocaf drinks
 
 - type: reagent
   parent: BaseDrink
@@ -316,7 +316,7 @@
   flavor: nanocoftea
   color: "#353E2E"
 
-  # Coffee drinks
+#region Coffee drinks
 
 - type: reagent
   id: PumpkinSpiceLatte
@@ -343,3 +343,21 @@
   metamorphicMaxFillLevels: 2
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+
+#region Goblin drinks
+- type: reagent
+  parent: NFBaseAlcoholGoblin
+  id: FungalBeer
+  name: reagent-name-fungal-beer
+  desc: reagent-desc-fungal-beer
+  physicalDesc: reagent-physical-desc-bubbly
+  flavor: earthy
+  color: "#7c602d"
+  recognizable: true
+  metamorphicSprite:
+    sprite: Objects/Consumable/Drinks/beerglass.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 6
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: true
+  fizziness: 0.6

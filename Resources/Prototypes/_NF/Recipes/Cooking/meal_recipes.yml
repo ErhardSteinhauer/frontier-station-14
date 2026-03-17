@@ -1647,14 +1647,30 @@
   time: 25
   group: Goblin
   reagents:
-    Water: 50
+    FungalBeer: 50
   solids:
     Bucket: 1
     NFMobRat: 1
     MobLizard: 1
     MobFrog: 1
+  recipeType:
+  - Oven
+  - Microwave
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinFungalBeer
+  name: fungal beer
+  result: DrinkGoblinFungalBeer
+  time: 20
+  group: Goblin
+  reagents:
+    Water: 90
+    Enzyme: 10
+  solids:
+    LargeBeaker: 1
     FoodMushroom: 2
     FoodFlyAmanita: 1
+    FuelPlasma1: 1
   recipeType:
   - Oven
   - Microwave
