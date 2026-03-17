@@ -804,3 +804,68 @@
   - type: Tag
     tags:
     - Meat
+
+- type: entity
+  parent: FoodMealBase
+  id: FoodGoblinMeatSausageFermented
+  name: cooked fermented sausage
+  description: A simple sausage. Who knows what's in this thing?
+  components:
+  - type: Tag
+    tags:
+    - Cooked
+    - NFHotdogFermentedSausage
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - tangy
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/meat.rsi
+    layers:
+    - state: sausagecooked
+      color: "#6d382a"
+    - sprite: Objects/Misc/flies.rsi
+      state: flies
+      scale: 1, 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 10
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 6
+        - ReagentId: Goblinol
+          Quantity: 2
+  - type: Construction
+    graph: NFSausageFermentedCooking
+    node: CookedFermentedSausage
+
+- type: entity
+  parent: FoodMealHotdog
+  id: FoodGoblinMealHotdog
+  name: hotdog with fermented sausage
+  components:
+  - type: FlavorProfile
+    flavors:
+    - meaty
+    - bread
+    - tangy
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/meat.rsi
+    layers:
+    - state: hotdog
+    - sprite: Objects/Misc/flies.rsi
+      state: flies
+      scale: 1, 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 18
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 8
+        - ReagentId: Goblinol
+          Quantity: 5
+  - type: Construction
+    graph: NFHotdog
+    node: HotdogWithFermentedSausage

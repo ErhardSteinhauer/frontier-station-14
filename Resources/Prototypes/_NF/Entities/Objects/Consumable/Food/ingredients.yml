@@ -330,3 +330,30 @@
   - type: Construction
     graph: Cutlet
     node: casing
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodGoblinSausageFermentedRaw
+  name: raw fermented sausage
+  description: A simple fermented sausage. Who knows what's in this thing?
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/ingredients.rsi
+    layers:
+    - state: sausageraw
+      color: "#6d382a"
+    - sprite: Objects/Misc/flies.rsi
+      state: flies
+      scale: 1, 1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 7
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: GastroToxin
+          Quantity: 2
+  - type: Construction
+    graph: NFSausageFermentedCooking
+    node: start
