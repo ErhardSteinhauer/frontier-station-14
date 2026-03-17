@@ -1702,3 +1702,40 @@
   recipeType:
   - Oven
   - Microwave
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinCornedRat
+  name: corned rat and cabbage
+  result: FoodGoblinMealCornedRat
+  time: 10
+  group: Goblin
+  reagents:
+    TableSalt: 10
+  solids:
+    FoodBowlBig: 1
+    FoodMeatRat: 1
+    FoodCorn: 1
+    FoodCarrot: 1
+    FoodCabbage: 1
+  recipeType:
+  - Oven
+  - Microwave
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinRatStew
+  name: rat stew
+  result: FoodGoblinRatStew
+  time: 10
+  group: Goblin
+  reagents:
+    FungalBeer: 10
+  solids:
+    FoodBowlBig: 1
+    FoodMeatRat: 1
+    FoodMushroom: 1
+    FoodCarrot: 1
+    FoodPotato: 1
+    FoodEggplant: 1
+  recipeType:
+  - Oven
+  - Microwave
