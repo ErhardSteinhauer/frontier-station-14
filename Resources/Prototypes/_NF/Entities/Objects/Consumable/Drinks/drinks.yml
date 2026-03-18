@@ -239,17 +239,17 @@
 
 #region goblin drinks
 - type: entity
-  parent: LargeBeaker
+  parent: DrinkGlass
   id: DrinkGoblinFungalBeer
   suffix: fungal beer
   components:
   - type: SolutionContainerManager
     solutions:
-      beaker:
-        maxVol: 100
+      drink:
+        maxVol: 30
         reagents:
         - ReagentId: FungalBeer
-          Quantity: 90
+          Quantity: 30
   - type: Tag
     tags:
     - Beer

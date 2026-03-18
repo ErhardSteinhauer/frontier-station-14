@@ -1686,22 +1686,33 @@
   - Microwave
 
 - type: microwaveMealRecipe
-  id: RecipeGoblinFungalBeer
-  name: fungal beer recipe
-  result: DrinkGoblinFungalBeer
+  id: RecipeGoblinFungalBeerSublimate
+  name: fungal beer sublimate recipe
+  result: FoodGoblinFungalBeerSublimate
   time: 20
   group: Goblin
   reagents:
-    Water: 90
     Enzyme: 10
   solids:
-    LargeBeaker: 1
     FoodMushroom: 2
     FoodFlyAmanita: 1
     FuelPlasma1: 1
   recipeType:
   - Oven
-  - Microwave
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinFungalBeer
+  name: fungal beer recipe
+  result: DrinkGoblinFungalBeerCarton # DrinkGoblinFungalBeer
+  time: 4
+  group: Goblin
+  reagents:
+    Water: 50
+  solids:
+    MaterialCardboard1: 1
+    FoodGoblinFungalBeerSublimate: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeGoblinCornedRat

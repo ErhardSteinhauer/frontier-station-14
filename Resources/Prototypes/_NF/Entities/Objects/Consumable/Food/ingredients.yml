@@ -366,8 +366,8 @@
   components:
   - type: FlavorProfile
     flavors:
-      - earthy
-      - salty
+    - earthy
+    - salty
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/ingredients.rsi
     layers:
@@ -384,3 +384,14 @@
           Quantity: 1
         - ReagentId: Goblinol
           Quantity: 1
+
+- type: entity
+  parent: FoodGoblinMushroomSauceSublimate
+  id: FoodGoblinFungalBeerSublimate
+  name: fungal beer sublimate
+  description: A sublimated fungal beer. Edible as is, but why?
+  components:
+  - type: Sprite
+    layers:
+    - state: sublimate
+      color: "#725828"

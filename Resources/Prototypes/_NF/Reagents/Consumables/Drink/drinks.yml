@@ -355,9 +355,9 @@
   color: "#7c602d"
   recognizable: true
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/beerglass.rsi
+    sprite: Objects/Consumable/Drinks/beerstein.rsi
     state: icon_empty
-  metamorphicMaxFillLevels: 6
+  metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   fizziness: 0.6

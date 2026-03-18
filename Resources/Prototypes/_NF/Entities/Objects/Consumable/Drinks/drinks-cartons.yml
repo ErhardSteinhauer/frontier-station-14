@@ -12,4 +12,19 @@
         - ReagentId: MushroomCreamSauce
           Quantity: 50
   - type: Sprite
-    sprite: _NF/Objects/Consumable/Drinks/mushroom_sauce.rsi
+    sprite: _NF/Objects/Consumable/Drinks/carton_mushroom_sauce.rsi
+
+- type: entity
+  parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
+  id: DrinkGoblinFungalBeerCarton
+  name: goblin fungal beer
+  description: A carton of fuzzy fungal beer. Keep the dwarves away from this one.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: FungalBeer
+          Quantity: 50
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Drinks/carton_fungal_beer.rsi
