@@ -659,3 +659,35 @@
   tags:
   - Cooked
   - Meat
+
+# Glowshroom
+
+- type: foodSequenceElement
+  id: Glowshroom
+  sprites:
+  - sprite: _NF/Objects/Misc/glowshroom.rsi
+    state: produce
+
+- type: foodSequenceElement
+  id: GlowshroomSkewer
+  sprites:
+  - sprite: _NF/Objects/Misc/glowshroom.rsi
+    state: skewer
+
+# Glowshroom Cooked
+
+- type: foodSequenceElement
+  id: GlowshroomCooked
+  sprites:
+  - sprite: _NF/Objects/Misc/glowshroom.rsi
+    state: produce-cooked
+  tags:
+  - Cooked
+
+- type: foodSequenceElement
+  id: GlowshroomCookedSkewer
+  sprites:
+  - sprite: _NF/Objects/Misc/glowshroom.rsi
+    state: skewer-cooked
+  tags:
+  - Cooked
