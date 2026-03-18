@@ -1790,3 +1790,20 @@
     FoodGoblinMushroomSauceSublimate: 1
   recipeType:
   - Assembler
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinGlowshroomSalad
+  name: glowshroom salad recipe
+  result: FoodGoblinGlowshroomSalad
+  time: 3
+  group: Goblin
+  reagents:
+    Cream: 10
+  solids:
+    FoodBowlBig: 1
+    NFFoodGlowshroom: 1
+    FoodCorn: 1
+    FoodCabbage: 1
+    FoodOnionRedSlice: 2
+  recipeType:
+  - Assembler
