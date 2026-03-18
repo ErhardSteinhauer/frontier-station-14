@@ -538,3 +538,21 @@
       right:
       - state: generic-pink-inhand-right
         color: "#5B3614"
+
+- type: entity
+  parent: FoodMeatCooked
+  id: FoodMeatRatCooked
+  name: grilled rat
+  description: A cooked rat.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/meat.rsi
+    layers:
+    - state: rat-meat-cooked
+  - type: Construction
+    graph: GrilledRat
+    node: FoodMeatRatCooked
+  - type: FoodSequenceElement
+    entries:
+      Burger: GrilledRat
+      Taco: GrilledRat

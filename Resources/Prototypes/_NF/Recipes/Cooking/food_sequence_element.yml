@@ -648,3 +648,14 @@
   tags:
   - Cooked
   - Meat
+
+# Grilled rat
+
+- type: foodSequenceElement
+  id: GrilledRat
+  sprites:
+  - sprite: _NF/Objects/Consumable/Food/meat.rsi
+    state: rat-meat-cooked
+  tags:
+  - Cooked
+  - Meat

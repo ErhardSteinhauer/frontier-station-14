@@ -30,3 +30,19 @@
       - minTemperature: 335
   - node: NFFoodMeatCutletCooked
     entity: NFFoodMeatCutletCooked
+
+#region rat
+- type: constructionGraph
+  id: GrilledRat
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: FoodMeatRatCooked
+      completed:
+      - !type:PlaySound
+        sound: /Audio/Effects/sizzle.ogg
+      steps:
+      - minTemperature: 335
+  - node: FoodMeatRatCooked
+    entity: FoodMeatRatCooked
