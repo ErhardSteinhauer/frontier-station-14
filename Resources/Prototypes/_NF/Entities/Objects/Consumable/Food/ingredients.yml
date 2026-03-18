@@ -357,3 +357,30 @@
   - type: Construction
     graph: NFSausageFermentedCooking
     node: start
+
+- type: entity
+  parent: FoodMeatBase
+  id: FoodGoblinMushroomSauceSublimate
+  name: mushroom sauce sublimate
+  description: A sublimated mushroom sauce. Edible as is, but why?
+  components:
+  - type: FlavorProfile
+    flavors:
+      - earthy
+      - salty
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Food/ingredients.rsi
+    layers:
+    - state: sublimate
+      color: "#9e6a1b"
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 4
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 2
+        - ReagentId: Amatoxin
+          Quantity: 1
+        - ReagentId: Goblinol
+          Quantity: 1

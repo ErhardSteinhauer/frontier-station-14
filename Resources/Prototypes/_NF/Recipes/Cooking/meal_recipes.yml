@@ -1606,7 +1606,7 @@
 #region Goblin
 - type: microwaveMealRecipe
   id: RecipeGoblinSpaceTickGoulash
-  name: space tick goulash
+  name: space tick goulash recipe
   result: FoodGoblinSpaceTickGoulash
   time: 5
   group: Goblin
@@ -1624,7 +1624,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeGoblinSpiderShakshouka
-  name: spider shakshouka
+  name: spider shakshouka recipe
   result: FoodGoblinSpiderShakshouka
   time: 5
   group: Goblin
@@ -1642,7 +1642,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeGoblinSwampBroth
-  name: swamp broth
+  name: swamp broth recipe
   result: FoodGoblinSwampBroth
   time: 25
   group: Goblin
@@ -1659,7 +1659,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeGoblinSausageRawTrashBag
-  name: raw fermented sausage
+  name: raw fermented sausage recipe
   result: FoodGoblinSausageFermentedRaw
   resultCount: 6
   time: 10
@@ -1675,7 +1675,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeGoblinSausageFermentedCooked
-  name: cooked fermented sausage
+  name: cooked fermented sausage recipe
   result: FoodGoblinMeatSausageFermented
   time: 10
   group: Goblin
@@ -1687,7 +1687,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeGoblinFungalBeer
-  name: fungal beer
+  name: fungal beer recipe
   result: DrinkGoblinFungalBeer
   time: 20
   group: Goblin
@@ -1705,7 +1705,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeGoblinCornedRat
-  name: corned rat and cabbage
+  name: corned rat and cabbage recipe
   result: FoodGoblinMealCornedRat
   time: 10
   group: Goblin
@@ -1723,7 +1723,7 @@
 
 - type: microwaveMealRecipe
   id: RecipeGoblinRatStew
-  name: rat stew
+  name: rat stew recipe
   result: FoodGoblinRatStew
   time: 10
   group: Goblin
@@ -1751,4 +1751,31 @@
     Vodka: 10
   solids:
     FoodSpaceshroom: 1
-  recipeType: Microwave # Frontier
+  recipeType: Microwave
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinMushroomSauceSublimate
+  name: mushroom cream sauce sublimate recipe
+  result: FoodGoblinMushroomSauceSublimate
+  time: 15
+  group: Goblin
+  solids:
+    FoodFlyAmanita: 1
+    FoodMushroom: 2
+    FoodOnionSlice: 2
+  recipeType:
+  - Oven
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinMushroomSauce
+  name: mushroom cream sauce recipe
+  result: DrinkGoblinMushroomSauceCarton
+  time: 3
+  group: Goblin
+  reagents:
+    Cream: 20
+  solids:
+    MaterialCardboard1: 1
+    FoodGoblinMushroomSauceSublimate: 1
+  recipeType:
+  - Assembler

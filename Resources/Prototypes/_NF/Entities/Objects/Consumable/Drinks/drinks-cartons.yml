@@ -1,0 +1,15 @@
+
+- type: entity
+  parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
+  id: DrinkGoblinMushroomSauceCarton
+  name: goblin mushroom cream sauce
+  description: A carton of exquisite mushroom cream sauce. The expiration date is painted over with a marker.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: MushroomCreamSauce
+          Quantity: 50
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Drinks/mushroom_sauce.rsi

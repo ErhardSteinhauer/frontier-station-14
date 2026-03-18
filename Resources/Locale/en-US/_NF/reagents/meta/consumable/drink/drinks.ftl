@@ -45,3 +45,6 @@ reagent-desc-coftea = Invented by someone who thought the tea button was the cof
 
 reagent-name-fungal-beer = fungal beer
 reagent-desc-fungal-beer = Fermented mushrooms. What could possibly go wrong?
+
+reagent-name-mushroom-cream-sauce = mushroom cream sauce
+reagent-desc-mushroom-cream-sauce = A creamy sauce made from fermented mushrooms.

@@ -361,3 +361,60 @@
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: true
   fizziness: 0.6
+
+- type: reagent
+  id: MushroomCreamSauce
+  name: reagent-name-mushroom-cream-sauce
+  group: Drinks
+  desc: reagent-desc-mushroom-cream-sauce
+  physicalDesc: reagent-physical-desc-creamy
+  flavor: mushroom
+  color: "#816e43"
+  metabolisms:
+    Drink:
+      effects: # combines effects from goblinol (partially) and amatoxin (nerfed): don't want to add amatoxin and goblinol as reagents to the cream carton
+      - !type:SatiateThirst
+        factor: 1
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Goblin
+          shouldHave: false
+        damage:
+          types:
+            Poison: 1
+      - !type:AdjustReagent
+        conditions:
+        - !type:OrganType
+          type: Goblin
+        reagent: THC
+        amount: 0.25
+      - !type:GenericStatusEffect
+        key: Stutter
+        component: GoblinAccent
+        probability: 0.005
+        type: Add
+        time: 30
+        refresh: true
+        conditions:
+        - !type:OrganType
+          type: Goblin
+          shouldHave: false
+      - !type:Emote
+        conditions:
+        - !type:OrganType
+          type: Goblin
+          shouldHave: false
+        emote: Cough
+        showInChat: true
+        probability: 0.025
+      - !type:HealthChange
+        conditions:
+        - !type:OrganType
+          type: Goblin
+          shouldHave: true
+        - !type:ReagentThreshold
+          min: 25
+        damage:
+          types:
+            Poison: -0.2
