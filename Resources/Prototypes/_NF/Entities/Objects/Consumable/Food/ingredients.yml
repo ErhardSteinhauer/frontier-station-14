@@ -335,8 +335,9 @@
   parent: FoodMeatBase
   id: FoodGoblinSausageFermentedRaw
   name: raw fermented sausage
-  description: A simple fermented sausage. Who knows what's in this thing?
+  description: "A simple 'fermented' sausage. Who knows what's in this thing?"
   components:
+  - type: GoblinMade
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/ingredients.rsi
     layers:
@@ -364,6 +365,7 @@
   name: mushroom sauce sublimate
   description: A sublimated mushroom sauce. Edible as is, but why?
   components:
+  - type: GoblinMade
   - type: FlavorProfile
     flavors:
     - earthy
@@ -391,6 +393,7 @@
   name: fungal beer sublimate
   description: A sublimated fungal beer. Edible as is, but why?
   components:
+  - type: GoblinMade
   - type: Sprite
     layers:
     - state: sublimate

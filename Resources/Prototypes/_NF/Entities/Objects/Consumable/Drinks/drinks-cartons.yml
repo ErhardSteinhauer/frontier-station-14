@@ -5,6 +5,7 @@
   name: goblin mushroom cream sauce
   description: A carton of exquisite mushroom cream sauce. The expiration date is painted over with a marker.
   components:
+  - type: GoblinMade
   - type: SolutionContainerManager
     solutions:
       drink:
@@ -20,6 +21,7 @@
   name: goblin fungal beer
   description: A carton of fuzzy fungal beer. Keep the dwarves away from this one.
   components:
+  - type: GoblinMade
   - type: SolutionContainerManager
     solutions:
       drink:

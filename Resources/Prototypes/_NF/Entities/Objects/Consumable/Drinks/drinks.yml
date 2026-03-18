@@ -243,6 +243,7 @@
   id: DrinkGoblinFungalBeer
   suffix: fungal beer
   components:
+  - type: GoblinMade
   - type: SolutionContainerManager
     solutions:
       drink:

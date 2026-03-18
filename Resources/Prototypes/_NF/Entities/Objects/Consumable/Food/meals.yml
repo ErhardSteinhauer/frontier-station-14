@@ -710,6 +710,7 @@
   name: space tick goulash
   description: It glows at the input and output.
   components:
+  - type: GoblinMade
   - type: FlavorProfile
     flavors:
       - oily
@@ -743,6 +744,7 @@
   name: spider shakshouka
   description: Crunchy.
   components:
+  - type: GoblinMade
   - type: FlavorProfile
     flavors:
       - egg
@@ -775,6 +777,7 @@
   name: swamp broth
   description: Tastes like home, smells like sewer.
   components:
+  - type: GoblinMade
   - type: Food
     trash:
     - Bucket
@@ -810,9 +813,10 @@
 - type: entity
   parent: FoodMealBase
   id: FoodGoblinMeatSausageFermented
-  name: cooked fermented sausage
-  description: A simple sausage. Who knows what's in this thing?
+  name: cooked 'fermented' sausage
+  description: "The rotten meat or as we chefs call it 'the fermentation process' has made it smell worse, but taste better! Probably."
   components:
+  - type: GoblinMade
   - type: Tag
     tags:
     - Cooked
@@ -844,8 +848,9 @@
 - type: entity
   parent: FoodMealHotdog
   id: FoodGoblinMealHotdog
-  name: hotdog with fermented sausage
+  name: hotdog with 'fermented'sausage
   components:
+  - type: GoblinMade
   - type: FlavorProfile
     flavors:
     - meaty
@@ -874,8 +879,9 @@
   parent: FoodMealBase
   id: FoodGoblinMealCornedRat
   name: corned rat and cabbage
-  description: Now you can feel like a real tourist vacationing in Ireland.
+  description: This is what you do when you find a fat rat in your corn and cabbage barn.
   components:
+  - type: GoblinMade
   - type: FlavorProfile
     flavors:
       - meaty
@@ -904,6 +910,7 @@
   name: rat stew
   description: If rat doesn't sink, you've cooked it right.
   components:
+  - type: GoblinMade
   - type: FlavorProfile
     flavors:
       - meaty
@@ -937,6 +944,7 @@
   name: spaceshroom jelly
   description: A galaxy in a bowl.
   components:
+  - type: GoblinMade
   - type: FlavorProfile
     flavors:
     - spaceshroom
