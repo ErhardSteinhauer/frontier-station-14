@@ -549,6 +549,16 @@
     sprite: _NF/Objects/Consumable/Food/meat.rsi
     layers:
     - state: rat-meat-cooked
+  - type: SolutionContainerManager # steak values but traded 1u of nutriment and 1u of protein for 2u of goblinol
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 9
+        - ReagentId: Protein
+          Quantity: 4
+        - ReagentId: Goblinol
+          Quantity: 2
   - type: Construction
     graph: GrilledRat
     node: FoodMeatRatCooked
