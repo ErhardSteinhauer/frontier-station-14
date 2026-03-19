@@ -437,7 +437,7 @@
     slice: NFFoodMeatCutletCooked
   - type: Construction
     graph: NFRottenMeatSteak
-    node: NFRottenMeatSteak
+    node: NFFoodMeatRottenCooked
   - type: FoodSequenceElement
     entries:
       Burger: NFMeatRottenSteak
