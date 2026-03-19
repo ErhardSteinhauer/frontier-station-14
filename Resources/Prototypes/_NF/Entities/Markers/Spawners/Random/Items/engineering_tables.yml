@@ -31,6 +31,41 @@
       tableId: TableDungeonLootGeneralMaterialValuableSingle
       weight: 0.1
 
+- type: entityTable
+  id: TableDungeonLootEngineeringClutterWithMines
+  table: !type:GroupSelector
+    children:
+    - !type:NestedSelector
+      tableId: TableDungeonLootEngineeringTools
+      weight: 0.3
+    - !type:NestedSelector
+      tableId: TableDungeonLootEngineeringParts
+      weight: 0.1
+    - !type:NestedSelector
+      tableId: TableDungeonLootEngineeringClothes
+      weight: 0.2
+    - !type:NestedSelector
+      tableId: TableDungeonLootEngineeringCircuitBoards
+      weight: 0.025
+    - !type:NestedSelector
+      tableId: TableDungeonLootEngineeringToolboxes
+      weight: 0.05
+    - !type:NestedSelector
+      tableId: TableDungeonLootEngineeringToolboxesMines
+      weight: 0.05
+    - !type:NestedSelector
+      tableId: TableDungeonLootEngineeringFlatpacks
+      weight: 0.025
+    - !type:NestedSelector
+      tableId: TableDungeonLootGeneralRestocks
+      weight: 0.05
+    - !type:NestedSelector
+      tableId: TableDungeonLootGeneralMaterialBasicSingle
+      weight: 0.1
+    - !type:NestedSelector
+      tableId: TableDungeonLootGeneralMaterialValuableSingle
+      weight: 0.1
+
 #region Tools
 - type: entityTable
   id: TableDungeonLootEngineeringTools
@@ -209,6 +244,11 @@
         weight: 15
       - id: ToolboxMechanical
         weight: 70
+
+- type: entityTable
+  id: TableDungeonLootEngineeringToolboxesMines
+  table: !type:GroupSelector
+    children:
     # Trap
     - !type:GroupSelector
       weight: 4
