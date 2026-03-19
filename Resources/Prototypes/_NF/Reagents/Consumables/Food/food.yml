@@ -110,7 +110,7 @@
           type: Goblin
           shouldHave: true
         amount: .5
-      # Effects for non-goblins: makes them thirstier, adds temporary stutter and goblin accent, makes them cough and adds tiny anount of asphyxiation damage
+      # Effects for non-goblins: makes them thirstier, adds temporary stutter and goblin accent, makes them cough and displays some messages
       - !type:SatiateThirst
         factor: -0.5
         conditions:
@@ -136,16 +136,17 @@
         emote: Cough
         showInChat: true
         probability: 0.1
-      - !type:HealthChange
+      - !type:PopupMessage
         conditions:
         - !type:OrganType
           type: Goblin
           shouldHave: false
-        - !type:ReagentThreshold
-          min: 10
-        damage:
-          types:
-            Asphyxiation: .5
+        type: Local
+        messages:
+        - generic-reagent-effect-parched
+        - generic-reagent-effect-tearing-up
+        - generic-reagent-effect-nauseous
+        probability: 0.025
   plantMetabolism:
   - !type:PlantAdjustNutrition
     amount: -1
