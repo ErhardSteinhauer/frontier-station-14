@@ -480,13 +480,12 @@
   name: rotten cutlet
   description: Slightly more than halfway to becoming fertilizer for your garden.
   components:
+  - type: GoblinMade
   - type: Tag
     tags:
     - Raw
     - Cutlet
     - Meat
-    - Trash
-    - Recyclable
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/meat.rsi
     layers:
@@ -520,16 +519,15 @@
 - type: entity
   parent: FoodMeatBase
   id: NFFoodMeatCutletCooked
-  name: rotten cutlet
+  name: cooked rotten cutlet
   description: A cooked rotten meat cutlet. Needs some seasoning.
   components:
+  - type: GoblinMade
   - type: Tag
     tags:
     - Cooked
     - Cutlet
     - Meat
-    - Trash
-    - Recyclable
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/meat.rsi
     layers:
@@ -569,6 +567,7 @@
   name: grilled rat
   description: A cooked rat.
   components:
+  - type: GoblinMade
   - type: Sprite
     sprite: _NF/Objects/Consumable/Food/meat.rsi
     layers:
