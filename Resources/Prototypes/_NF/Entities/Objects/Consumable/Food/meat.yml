@@ -1,13 +1,37 @@
 # Raw
 - type: entity
-  parent: FoodMeatRotten
+  parent: FoodMeatBase
   id: FoodMeatGoblin
   name: raw goblin meat
   description: Just look at that marbling! Wait, is that microplastic?
   components:
+  - type: Tag
+    tags:
+    - Raw
+    - Meat
+    - Trash
+    - Recyclable
   - type: Sprite
     state: rotten
     color: lime
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 5
+        - ReagentId: GastroToxin
+          Quantity: 4
+        - ReagentId: Fat
+          Quantity: 4
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: rotten-inhand-left
+        color: lime
+      right:
+      - state: rotten-inhand-right
+        color: lime
 
 - type: entity
   parent: FoodFrozenBase
