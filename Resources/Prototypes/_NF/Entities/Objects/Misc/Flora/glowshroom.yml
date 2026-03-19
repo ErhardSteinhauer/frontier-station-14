@@ -156,10 +156,6 @@
   - type: BadFood
   - type: Produce
     seedId: nfglowshroom
-  - type: Construction
-    graph: GrilledGlowshroom
-    node: start
-    defaultTarget: NFFoodGoblinGlowshroomCooked
   - type: FoodSequenceElement
     entries:
       Skewer: GlowshroomSkewer
@@ -206,9 +202,6 @@
         color: "#a8703c"
       - state: inhand-right-unshaded
         shader: unshaded
-  - type: Construction
-    graph: GrilledGlowshroom
-    node: NFFoodGoblinGlowshroomCooked
   - type: FoodSequenceElement
     entries:
       Skewer: GlowshroomCookedSkewer

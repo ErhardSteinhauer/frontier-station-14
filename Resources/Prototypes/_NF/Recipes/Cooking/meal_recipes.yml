@@ -1836,3 +1836,17 @@
     FoodGoblinMushroomTeaSublimate: 1
   recipeType:
   - Assembler
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinGlowshroom
+  name: grilled glowshroom recipe
+  result: NFFoodGoblinGlowshroomCooked
+  time: 5
+  group: Goblin
+  reagents:
+    TableSalt: 5
+  solids:
+    NFFoodGlowshroom: 1
+  recipeType:
+  - Oven
+  - Microwave

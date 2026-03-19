@@ -45,19 +45,3 @@
       - minTemperature: 335
   - node: FoodMeatRatCooked
     entity: FoodMeatRatCooked
-
-#region glowshroom
-- type: constructionGraph
-  id: GrilledGlowshroom
-  start: start
-  graph:
-  - node: start
-    edges:
-    - to: NFFoodGoblinGlowshroomCooked
-      completed:
-      - !type:PlaySound
-        sound: /Audio/Effects/sizzle.ogg
-      steps:
-      - minTemperature: 335
-  - node: NFFoodGoblinGlowshroomCooked
-    entity: NFFoodGoblinGlowshroomCooked
