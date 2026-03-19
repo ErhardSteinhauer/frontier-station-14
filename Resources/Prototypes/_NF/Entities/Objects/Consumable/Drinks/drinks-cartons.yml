@@ -30,3 +30,19 @@
           Quantity: 50
   - type: Sprite
     sprite: _NF/Objects/Consumable/Drinks/carton_fungal_beer.rsi
+
+- type: entity
+  parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
+  id: DrinkGoblinMushroomTeaCarton
+  name: goblin mushroom tea
+  description: A carton of mushroom tea. Soothing and earthy, with a hint of bitterness.
+  components:
+  - type: GoblinMade
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: MushroomTea
+          Quantity: 50
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Drinks/carton_mushroom_tea.rsi

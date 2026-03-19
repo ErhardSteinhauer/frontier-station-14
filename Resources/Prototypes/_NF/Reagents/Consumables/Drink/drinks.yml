@@ -382,7 +382,7 @@
           shouldHave: false
         damage:
           types:
-            Poison: 1
+            Poison: 0.5
       - !type:AdjustReagent
         conditions:
         - !type:OrganType
@@ -418,3 +418,64 @@
         damage:
           types:
             Poison: -0.2
+
+- type: reagent
+  parent: BaseDrink
+  id: MushroomTea
+  name: reagent-name-mushroom-tea
+  desc: reagent-desc-mushroom-tea
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: mushroom
+  color: "#d3a774"
+  metabolisms:
+    Drink:
+      effects:
+      # common effects
+      - !type:SatiateThirst
+        factor: 0.6
+      # goblin effects
+      - !type:AdjustReagent
+        conditions:
+        - !type:OrganType
+          type: Goblin
+        reagent: THC
+        amount: 0.15
+      - !type:Emote
+        conditions:
+        - !type:OrganType
+          type: Goblin
+        emote: Laugh
+        showInChat: true
+        probability: 0.05
+      - !type:PopupMessage
+        conditions:
+        - !type:OrganType
+          type: Goblin
+        type: Local
+        messages:
+        - shroom-mix-effect-nf-procrastination-visions-01
+        - shroom-mix-effect-nf-procrastination-visions-02
+        - shroom-mix-effect-nf-procrastination-visions-03
+        - shroom-mix-effect-nf-procrastination-visions-04
+        - shroom-mix-effect-nf-procrastination-visions-05
+        - shroom-mix-effect-nf-procrastination-visions-06
+        - shroom-mix-effect-nf-procrastination-visions-07
+        - shroom-mix-effect-nf-procrastination-visions-08
+        probability: 0.025
+      # non-goblin effects
+      - !type:PopupMessage
+        conditions:
+        - !type:OrganType
+          type: Goblin
+          shouldHave: false
+        type: Local
+        messages:
+        - generic-reagent-effect-tingling-fingers
+        - generic-reagent-effect-tingling-face
+        probability: 0.05
+  metamorphicSprite:
+    sprite: _NF/Objects/Consumable/Drinks/mushroom-tea.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false

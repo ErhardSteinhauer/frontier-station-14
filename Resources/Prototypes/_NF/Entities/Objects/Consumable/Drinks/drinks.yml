@@ -254,3 +254,20 @@
   - type: Tag
     tags:
     - Beer
+
+- type: entity
+  parent: DrinkGlass
+  id: DrinkGoblinMushroomTea
+  suffix: mushroom tea
+  components:
+  - type: GoblinMade
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 30
+        reagents:
+        - ReagentId: MushroomTea
+          Quantity: 30
+  - type: Icon
+    sprite: _NF/Objects/Consumable/Drinks/mushroom-tea.rsi
+    state: icon

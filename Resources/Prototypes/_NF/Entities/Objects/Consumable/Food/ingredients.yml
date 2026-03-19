@@ -398,3 +398,15 @@
     layers:
     - state: sublimate
       color: "#725828"
+
+- type: entity
+  parent: FoodGoblinMushroomSauceSublimate
+  id: FoodGoblinMushroomTeaSublimate
+  name: mushroom tea sublimate
+  description: A sublimated mushroom tea. Edible as is, but why?
+  components:
+  - type: GoblinMade
+  - type: Sprite
+    layers:
+    - state: sublimate
+      color: "#d3a774"

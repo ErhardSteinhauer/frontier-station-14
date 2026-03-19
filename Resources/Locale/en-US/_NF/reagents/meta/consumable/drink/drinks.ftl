@@ -48,3 +48,6 @@ reagent-desc-fungal-beer = Fermented mushrooms. What could possibly go wrong?
 
 reagent-name-mushroom-cream-sauce = mushroom cream sauce
 reagent-desc-mushroom-cream-sauce = A creamy sauce made from fermented mushrooms.
+
+reagent-name-mushroom-tea = mushroom tea
+reagent-desc-mushroom-tea = A warm, earthy, murky spore-laced concoction.
