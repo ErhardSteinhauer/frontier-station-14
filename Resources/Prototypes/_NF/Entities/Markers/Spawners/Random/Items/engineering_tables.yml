@@ -244,6 +244,14 @@
         weight: 15
       - id: ToolboxMechanical
         weight: 70
+# Commented out: buy it from your local SyndiVend
+#    # Syndicate
+#    - !type:GroupSelector
+#      children:
+#      - id: ToolboxSyndicateFilled
+#        weight: 20
+#      - id: ToolboxSyndicate
+#        weight: 80
 
 - type: entityTable
   id: TableDungeonLootEngineeringToolboxesMines
@@ -256,15 +264,6 @@
       - id: NFToolboxMineCryo
       - id: NFToolboxMineExplosive
       - id: NFToolboxMineFire
-# Commented out: buy it from your local SyndiVend
-#    # Syndicate
-#    - !type:GroupSelector
-#      children:
-#      - id: ToolboxSyndicateFilled
-#        weight: 20
-#      - id: ToolboxSyndicate
-#        weight: 80
-
 # region Parts
 - type: entityTable
   id: TableDungeonLootEngineeringParts
