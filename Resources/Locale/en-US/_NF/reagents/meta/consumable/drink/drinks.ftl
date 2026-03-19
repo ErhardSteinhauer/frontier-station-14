@@ -51,3 +51,6 @@ reagent-desc-mushroom-cream-sauce = A creamy sauce made from fermented mushrooms
 
 reagent-name-mushroom-tea = mushroom tea
 reagent-desc-mushroom-tea = A warm, earthy, murky spore-laced concoction.
+
+reagent-name-glowskey = glowskey
+reagent-desc-glowskey = Softly glowing strong liquor made from glowshrooms. To complete the drinking experience put a geiger counter next to it.

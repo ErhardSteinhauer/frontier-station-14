@@ -1692,6 +1692,7 @@
   group: Goblin
   reagents:
     Enzyme: 10
+    Sugar: 5
   solids:
     FoodMushroom: 2
     FoodFlyAmanita: 1
@@ -1850,3 +1851,32 @@
   recipeType:
   - Oven
   - Microwave
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinGlowskeySublimate
+  name: glowskey sublimate recipe
+  result: FoodGoblinGlowskeySublimate
+  time: 15
+  group: Goblin
+  reagents:
+    Enzyme: 10
+    Sugar: 5
+    Water: 50
+  solids:
+    NFFoodGlowshroom: 2
+  recipeType:
+  - Oven
+
+- type: microwaveMealRecipe
+  id: RecipeGoblinGlowskey
+  name: glowskey recipe
+  result: DrinkGoblinGlowskeyCarton
+  time: 3
+  group: Goblin
+  reagents:
+    Water: 50
+  solids:
+    MaterialCardboard1: 1
+    FoodGoblinGlowskeySublimate: 1
+  recipeType:
+  - Assembler

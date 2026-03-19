@@ -35,7 +35,7 @@
   parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
   id: DrinkGoblinMushroomTeaCarton
   name: goblin mushroom tea
-  description: A carton of mushroom tea. Soothing and earthy, with a hint of bitterness.
+  description: A carton of mushroom tea. Soothing and earthy, with a hint of bitterness. The drink inside is also tastes nice I guess.
   components:
   - type: GoblinMade
   - type: SolutionContainerManager
@@ -46,3 +46,19 @@
           Quantity: 50
   - type: Sprite
     sprite: _NF/Objects/Consumable/Drinks/carton_mushroom_tea.rsi
+
+- type: entity
+  parent: [DrinkCartonVisualsOpenable, DrinkCartonBaseFull]
+  id: DrinkGoblinGlowskeyCarton
+  name: goblin glowskey
+  description: A carton of glowskey. The lead-lined interior of the carton prevents you from confirming through use of Geiger counter whether it contains glowskey.
+  components:
+  - type: GoblinMade
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Glowskey
+          Quantity: 50
+  - type: Sprite
+    sprite: _NF/Objects/Consumable/Drinks/carton_glowskey.rsi

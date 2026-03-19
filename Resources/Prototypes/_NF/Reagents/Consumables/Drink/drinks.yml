@@ -479,3 +479,19 @@
   metamorphicMaxFillLevels: 5
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
+
+- type: reagent
+  parent: NFBaseAlcoholGoblinStrong
+  id: Glowskey
+  name: reagent-name-glowskey
+  desc: reagent-desc-glowskey
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: whiskey
+  color: "#afddaf"
+  recognizable: true
+  metamorphicSprite:
+    sprite: _NF/Objects/Consumable/Drinks/glowskey.rsi
+    state: icon_empty
+  metamorphicMaxFillLevels: 5
+  metamorphicFillBaseName: fill-
+  metamorphicChangeColor: false
