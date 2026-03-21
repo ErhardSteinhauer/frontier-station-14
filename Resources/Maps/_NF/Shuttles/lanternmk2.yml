@@ -4,7 +4,7 @@ meta:
   engineVersion: 267.3.0
   forkId: ""
   forkVersion: ""
-  time: 03/14/2026 06:29:43
+  time: 03/21/2026 17:56:37
   entityCount: 591
 maps: []
 grids:
@@ -2945,15 +2945,21 @@ entities:
   - uid: 364
     components:
     - type: Transform
+      anchored: True
       pos: -1.5,-9.5
       parent: 1
+    - type: Physics
+      bodyType: Static
 - proto: OxygenCanister
   entities:
   - uid: 363
     components:
     - type: Transform
+      anchored: True
       pos: -2.5,-8.5
       parent: 1
+    - type: Physics
+      bodyType: Static
 - proto: PaperBin20
   entities:
   - uid: 159
