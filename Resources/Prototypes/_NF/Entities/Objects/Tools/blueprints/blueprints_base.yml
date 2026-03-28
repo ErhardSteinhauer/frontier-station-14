@@ -438,7 +438,7 @@
 # region Expedition
 - type: entity
   abstract: true
-  parent: [ BaseC3Contraband, NFBaseBlueprint ]
+  parent: [ BaseC3Contraband, NFBlueprintGeneral ]
   id: NFBaseBlueprintExpedition
   components:
   - type: Paper
