@@ -133,6 +133,8 @@
       - NFPosterContrabandLlu
       - NFPosterContrabandFuc
       - NFPosterContrabandPirateLords
+      - NFPosterContrabandRDCollective
+      - NFPosterContrabandArcadiaInd
       # End Frontier
     chance: 1
 
@@ -210,5 +212,7 @@
       - NFPosterLegitHaveYouSeenThisEgg
       - NFPosterLegitGunTurnIn
       - NFPosterLegitNfsdFleetCommand
+      - NFPosterLegitPaperPushers
+      - NFPosterLegitRipleyAplu
         # End Frontier
     chance: 1

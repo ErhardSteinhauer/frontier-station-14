@@ -89,6 +89,28 @@
   - type: Sprite
     sprite: _NF/Structures/Wallmounts/posters.rsi
     state: nf_poster9_legit
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterLegitPaperPushers
+  name: "Frontier Paper Pushers"
+  description: |-
+    The poster depicts pile of stamped papers. The text reads: “Paperwork is what keeps the galaxy spinning.”
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster10_legit
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterLegitRipleyAplu
+  name: "Ripley"
+  description: |-
+    The poster depicts colorized image of Ripley Autonomous Power Loading Unit. The text promotes the use of Ripley Exosuits for salvage operations.
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster11_legit
 #endregion
 
 #region Contraband posters
@@ -507,4 +529,25 @@
     sprite: _NF/Structures/Wallmounts/posters.rsi
     state: nf_poster40_contraband
 
+- type: entity
+  parent: PosterBase
+  id: NFPosterContrabandRDCollective
+  name: "The Collective"
+  description: |-
+    The poster illustrates the propagation of a physical field through a medium. The text reads: “The Research & Development Collective - mastering the unknown.”
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster41_contraband
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterContrabandArcadiaInd
+  name: "Arcadia Industries"
+  description: |-
+    The text reads: "For a better tomorrow forget today."
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster42_contraband
 #endregion

@@ -50,6 +50,8 @@
     - id: NFPosterContrabandLlu
     - id: NFPosterContrabandFuc
     - id: NFPosterContrabandPirateLords
+    - id: NFPosterContrabandRDCollective
+    - id: NFPosterContrabandArcadiaInd
 
 - type: entityTable
   id: TableRandomPosterGoblin
@@ -75,6 +77,8 @@
     - id: NFPosterLegitHaveYouSeenThisEgg
     - id: NFPosterLegitGunTurnIn
     - id: NFPosterLegitNfsdFleetCommand
+    - id: NFPosterLegitPaperPushers
+    - id: NFPosterLegitRipleyAplu
 # endregion tables
 
 #region spawners
