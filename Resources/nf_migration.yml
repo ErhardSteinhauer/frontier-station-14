@@ -646,3 +646,13 @@ SpawnMobWizFedWizardRedHardsuit: SpawnNFMobWizardRedAdept
 SpawnMobWizFedWizardVioletHardsuit: SpawnNFMobWizardPurpleAdept
 SpawnMobWizFedWizardBrickHardsuit: SpawnNFMobWizardBrickMaster
 SpawnMobWizFedWizardSoapHardsuit: SpawnNFMobWizardPurpleMaster
+
+# 2026-04-01 Wizard Staves Projectiles Rework
+BulletIceGlobe: NFBulletMagicIceBoltMob
+BulletFireBolt: NFBulletMagicFireBoltMob
+BulletMagicBolt: NFBulletMagicBoltMob
+BulletBloodCultDarkBolt: NFBulletMagicBloodCultDarkBoltMob
+BulletBloodCultHand: NFBulletMagicBloodCultHandMob
+WizardHitscanLightning: NFHitscanMagicLightningMob
+CausticBeam: NFHitscanMagicCausticBeamMob
+BloodCultLaser: NFHitscanMagicBloodCultLightningMob
