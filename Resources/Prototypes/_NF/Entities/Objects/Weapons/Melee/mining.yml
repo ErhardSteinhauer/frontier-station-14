@@ -1,0 +1,336 @@
+# region nanotracen crushers
+# compared to the base game version: less damage, no leech, flashlight requires power cell, dagger can be used as screwdriver
+- type: entity
+  abstract: true
+  parent: [ BaseItem, BaseC1Contraband ]
+  id: NFBaseWeaponCrusher
+  suffix: Frontier
+  components:
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: radiating
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      startValue: 0.1
+      endValue: 2.0
+      isLooped: true
+  - type: Sprite
+    layers:
+    - state: icon
+    - state: icon-light
+      shader: unshaded
+      visible: false
+      map: [ "light" ]
+  - type: Appearance
+  - type: ToggleableVisuals
+    spriteLayer: light
+    #inhandVisuals: # sadly breacks on wielding, keeping this as a TODO: figure out something for wielded state
+      #left:
+      #- state: inhand-left-light
+        #shader: unshaded
+      #right:
+      #- state: inhand-right-light
+        #shader: unshaded
+    clothingVisuals:
+      back:
+      - state: equipped-BACKPACK-light
+        shader: unshaded
+      suitstorage:
+      - state: equipped-SUITSTORAGE-light
+        shader: unshaded
+  - type: ItemTogglePointLight
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#ffeead"
+    radius: 4
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMedium
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot {}
+  - type: DisarmMalus
+
+- type: entity
+  parent: NFBaseWeaponCrusher
+  id: NFWeaponCrusherAxe
+  name: crusher axe
+  description: A strong and durable mining tool with built-in light. Can be used as a crowbar in a pinch.
+  components:
+  - type: Tag
+    tags:
+    - Pickaxe
+    - Flashlight
+    - Crowbar
+  - type: Prying
+  - type: Tool
+    qualities:
+    - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/crusher.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+    sprite: Objects/Weapons/Melee/crusher-inhands.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/crusher.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: UseDelay
+    delay: 0.9
+  - type: MeleeWeapon
+    attackRate: 1
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 5
+        Slash: 3
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 5
+        Slash: 2
+        Structural: 30
+
+- type: entity
+  parent: NFWeaponCrusherAxe
+  id: NFWeaponCrusherGlaive
+  name: crusher glaive
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/crusher_glaive.rsi
+  - type: Item
+    sprite: _NF/Objects/Weapons/Melee/crusher_glaive_inhands.rsi
+    size: Ginormous
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/crusher_glaive.rsi
+  - type: MeleeWeapon
+    attackRate: 1
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 3
+        Slash: 5
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+        Slash: 5
+        Structural: 20
+
+- type: entity
+  parent: [ BaseKnife, NFBaseWeaponCrusher, BaseC1Contraband ]
+  id: NFWeaponCrusherDagger
+  name: crusher dagger
+  description: A strong and durable salvager tool with built-in light. Can be used as a screwdriver in a pinch.
+  suffix: Frontier
+  components:
+  - type: Tag
+    tags:
+    - Flashlight
+    - Screwdriver
+    - CombatKnife
+    - Knife
+  - type: Utensil
+    types:
+    - Knife
+  - type: Tool
+    qualities:
+    - Screwing
+    - Slicing
+    useSound:
+      collection: Screwdriver
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/crusher_dagger.rsi
+  - type: Item
+    sprite: _NF/Objects/Weapons/Melee/crusher_dagger.rsi
+    storedSprite:
+      state: storage
+      sprite: _NF/Objects/Weapons/Melee/crusher_dagger.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/crusher_dagger.rsi
+    quickEquip: false
+    slots:
+    - belt
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 2
+    damage:
+      types:
+        Slash: 10
+  - type: EmbeddableProjectile
+    sound: /Audio/Weapons/star_hit.ogg
+    offset: -0.15,0.0
+  - type: LandAtCursor
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Slash: 10
+  - type: ThrowingAngle
+    angle: 225
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          radius: 0.01
+          vertices:
+          - -0.4,-0.2
+          - -0.2,-0.4
+          - 0.4,0.2
+          - 0.2,0.4
+        density: 20 # derived from base_item
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: ToggleableVisuals
+    spriteLayer: light
+    inhandVisuals:
+      left:
+      - state: inhand-left-light
+        shader: unshaded
+      right:
+      - state: inhand-right-light
+        shader: unshaded
+    clothingVisuals:
+      belt:
+      - state: equipped-BELT-light
+        shader: unshaded
+
+# region blood cult crushers
+# compared to the NF version: more damage, leech, flashlight doesn't need powercell
+- type: entity
+  abstract: true
+  parent: [ BaseItem, BaseC3CultContraband ]
+  id: NFBaseWeaponCrusherBloodCult
+  description: Once a reliable mining tool, now accursed vile weapon with a will of itsown.
+  components:
+  - type: Tag
+    tags:
+    - Pickaxe
+    - Flashlight
+    - Crowbar
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 4.0
+  - type: PointLight
+    castShadows: true
+    netsync: false
+    color: "#ff0000"
+    radius: 4
+  - type: NFOniFriendlyGun
+  - type: AmmoCounter
+  - type: UseDelayOnShoot
+  - type: UseDelay
+    delay: 1.9
+  - type: LeechOnMarker
+    leech:
+      groups:
+        Brute: -21
+  - type: Gun
+    soundGunshot: /Audio/Weapons/plasma_cutter.ogg
+    fireRate: 1
+    useKey: false
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.5
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+  - type: BasicEntityAmmoProvider
+    proto: NFBulletChargeGlaiveBloodCult
+    capacity: 1
+    count: 1
+  - type: GunRequiresWield
+  - type: DisarmMalus
+  - type: Prying
+  - type: Tool
+    qualities:
+    - Prying
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+
+- type: entity
+  parent: NFBaseWeaponCrusherBloodCult
+  id: NFWeaponCrusherAxeBloodCult
+  name: blood cult crusher axe
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/crusher.rsi
+    state: icon
+  - type: Item
+    size: Ginormous
+    sprite: Objects/Weapons/Melee/crusher-inhands.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/crusher.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: MeleeWeapon
+    attackRate: 1
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 5
+        Slash: 3
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 5
+        Slash: 2
+        Structural: 30
+
+- type: entity
+  parent: NFWeaponCrusherAxeBloodCult
+  id: NFWeaponCrusherGlaiveBloodCult
+  name: blood cult crusher glaive
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/crusher_glaive.rsi
+  - type: Item
+    size: Ginormous
+    sprite: Objects/Weapons/Melee/crusher_glaive-inhands.rsi
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/crusher_glaive.rsi
+  - type: MeleeWeapon
+    attackRate: 1
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 3
+        Slash: 5
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+        Slash: 5
+        Structural: 20
