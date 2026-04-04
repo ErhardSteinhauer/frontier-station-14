@@ -1,4 +1,4 @@
-# region nanotracen crushers
+# region base nanotracen crushers
 # compared to the base game version: less damage, no leech, flashlight requires power cell, dagger can be used as screwdriver
 - type: entity
   abstract: true
@@ -9,26 +9,6 @@
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
-  - type: HandheldLight
-    addPrefix: false
-    blinkingBehaviourId: blinking
-    radiatingBehaviourId: radiating
-  - type: LightBehaviour
-    behaviours:
-    - !type:FadeBehaviour
-      id: radiating
-      maxDuration: 2.0
-      startValue: 3.0
-      endValue: 2.0
-      isLooped: true
-      reverseWhenFinished: true
-    - !type:PulseBehaviour
-      id: blinking
-      interpolate: Nearest
-      maxDuration: 1.0
-      startValue: 0.1
-      endValue: 2.0
-      isLooped: true
   - type: Sprite
     layers:
     - state: icon
@@ -37,6 +17,12 @@
       visible: false
       map: [ "light" ]
   - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableVisuals.Enabled:
+        light:
+          True: { visible: true }
+          False: { visible: false }
   - type: ToggleableVisuals
     spriteLayer: light
     #inhandVisuals: # sadly breacks on wielding, keeping this as a TODO: figure out something for wielded state
@@ -54,23 +40,43 @@
       - state: equipped-SUITSTORAGE-light
         shader: unshaded
   - type: ItemTogglePointLight
+  - type: HandheldLight
+    addPrefix: false
+    blinkingBehaviourId: blinking
+    radiatingBehaviourId: radiating
+  - type: LightBehaviour
+    behaviours:
+    - !type:FadeBehaviour
+      id: radiating
+      interpolate: Linear
+      maxDuration: 2.0
+      startValue: 3.0
+      endValue: 2.0
+      isLooped: true
+      reverseWhenFinished: true
+    - !type:PulseBehaviour
+      id: blinking
+      interpolate: Nearest
+      maxDuration: 1.0
+      startValue: 0.1
+      endValue: 2.0
+      isLooped: true
+  # A dirty workaround that allows to have both toggleble light visuals and an action button
+  # As lame as it is, this gives the glaive a selfrecharging battery
+  - type: Battery # Apparently visualizers for lights don't work without batteries. Bummer.
+    maxCharge: 10 #lights drain 3/s but recharge of 2 makes this 1/s. Therefore 600 is 10 minutes of light.
+    startingCharge: 10
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 3 #recharge of 2 makes total drain 1w / s so max charge is 1:1 with time. Time to fully charge should be 5 minutes. Having recharge gives light an extended flicker period which gives you some warning to return to light area.
   - type: PointLight
     enabled: false
     netsync: false
     color: "#ffeead"
     radius: 4
-  - type: PowerCellSlot
-    cellSlotId: cell_slot
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellMedium
-  - type: ContainerContainer
-    containers:
-      cell_slot: !type:ContainerSlot {}
   - type: DisarmMalus
 
+# region basic crushers
 - type: entity
   parent: NFBaseWeaponCrusher
   id: NFWeaponCrusherAxe
@@ -89,13 +95,13 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: Sprite
-    sprite: Objects/Weapons/Melee/crusher.rsi
+    sprite: _NF/Objects/Weapons/Melee/crusher_axe.rsi
     state: icon
   - type: Item
     size: Ginormous
     sprite: Objects/Weapons/Melee/crusher-inhands.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Melee/crusher.rsi
+    sprite: _NF/Objects/Weapons/Melee/crusher_axe.rsi
     quickEquip: false
     slots:
     - Back
@@ -127,7 +133,7 @@
   - type: Sprite
     sprite: _NF/Objects/Weapons/Melee/crusher_glaive.rsi
   - type: Item
-    sprite: _NF/Objects/Weapons/Melee/crusher_glaive_inhands.rsi
+    sprite: Objects/Weapons/Melee/crusher_glaive-inhands.rsi
     size: Ginormous
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/crusher_glaive.rsi
@@ -224,11 +230,50 @@
       - state: equipped-BELT-light
         shader: unshaded
 
+# region advanced crushers
+- type: entity
+  parent: NFWeaponCrusherAxe
+  id: NFWeaponCrusherGlaiveAdvanced
+  name: advanced crusher glaive
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/crusher_glaive_advanced.rsi
+  - type: Item
+    sprite: _NF/Objects/Weapons/Melee/crusher_glaive_advanced_inhands.rsi
+    size: Huge
+    storedSprite:
+      sprite: _NF/Objects/Weapons/Melee/crusher_glaive_advanced.rsi
+      state: storage
+      rotation: -45
+    shape:
+    - 0,0,1,4
+  - type: MiningGatheringHard
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#B4FCF0"
+    radius: 6
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/crusher_glaive_advanced.rsi
+  - type: MeleeWeapon
+    attackRate: 1
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 3
+        Slash: 5
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 2
+        Slash: 5
+        Structural: 20
+
 # region blood cult crushers
 # compared to the NF version: more damage, leech, flashlight doesn't need powercell
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseC3CultContraband ]
+  parent: NFBaseWeaponCrusher
   id: NFBaseWeaponCrusherBloodCult
   description: Once a reliable mining tool, now accursed vile weapon with a will of itsown.
   components:
@@ -237,14 +282,13 @@
     - Pickaxe
     - Flashlight
     - Crowbar
-  - type: Sharp
-  - type: Execution
-    doAfterDuration: 4.0
+  - type: MiningGatheringHard
   - type: PointLight
     castShadows: true
     netsync: false
     color: "#ff0000"
-    radius: 4
+    energy: 3
+    radius: 5
   - type: NFOniFriendlyGun
   - type: AmmoCounter
   - type: UseDelayOnShoot
@@ -253,7 +297,7 @@
   - type: LeechOnMarker
     leech:
       groups:
-        Brute: -21
+        Brute: -30
   - type: Gun
     soundGunshot: /Audio/Weapons/plasma_cutter.ogg
     fireRate: 1
@@ -267,7 +311,7 @@
     capacity: 1
     count: 1
   - type: GunRequiresWield
-  - type: DisarmMalus
+  - type: Wieldable
   - type: Prying
   - type: Tool
     qualities:
@@ -276,22 +320,16 @@
       path: /Audio/Items/crowbar.ogg
 
 - type: entity
-  parent: NFBaseWeaponCrusherBloodCult
+  parent: [ NFBaseWeaponCrusherBloodCult, NFWeaponCrusherAxe ]
   id: NFWeaponCrusherAxeBloodCult
   name: blood cult crusher axe
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Melee/crusher.rsi
-    state: icon
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive.rsi
   - type: Item
-    size: Ginormous
-    sprite: Objects/Weapons/Melee/crusher-inhands.rsi
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive_inhands.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Melee/crusher.rsi
-    quickEquip: false
-    slots:
-    - Back
-    - suitStorage
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive.rsi
   - type: MeleeWeapon
     attackRate: 1
     wideAnimationRotation: -135
@@ -301,7 +339,6 @@
         Slash: 3
     soundHit:
       collection: MetalThud
-  - type: Wieldable
   - type: IncreaseDamageOnWield
     damage:
       types:
@@ -315,12 +352,11 @@
   name: blood cult crusher glaive
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Melee/crusher_glaive.rsi
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive.rsi
   - type: Item
-    size: Ginormous
-    sprite: Objects/Weapons/Melee/crusher_glaive-inhands.rsi
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive_inhands.rsi
   - type: Clothing
-    sprite: Objects/Weapons/Melee/crusher_glaive.rsi
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive.rsi
   - type: MeleeWeapon
     attackRate: 1
     wideAnimationRotation: -135
