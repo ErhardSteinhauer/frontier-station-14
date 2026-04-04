@@ -1,8 +1,5 @@
 - type: loadout
   id: JanitorNFClothingHeadHatPurplesoft
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   equipment:
     head: ClothingHeadHatPurplesoft
   groupBy: "HeadHatSoft"
@@ -12,9 +9,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT2
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 0
   equipment:
     head: Plunger
@@ -25,9 +19,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 0
   equipment:
     head: ClothingHeadHatCone
@@ -38,9 +29,6 @@
   effects:
   - !type:GroupLoadoutEffect
     proto: ContractorT3
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 5000
   equipment:
     head: GoldenPlunger

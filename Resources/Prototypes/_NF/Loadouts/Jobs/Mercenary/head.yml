@@ -1,8 +1,5 @@
 - type: loadout
   id: MercenaryClothingHeadHelmetMercenary
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 0
   equipment:
     head: ClothingHeadHelmetMercenary
@@ -10,9 +7,6 @@
 
 - type: loadout
   id: MercenaryClothingHeadHelmetMercenaryBlack
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 0
   equipment:
     head: ClothingHeadHelmetMercenaryBlack
@@ -20,9 +14,6 @@
 
 - type: loadout
   id: MercenaryClothingHeadBandMercenary
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 0
   equipment:
     head: ClothingHeadBandMercenary
@@ -30,9 +21,6 @@
 
 - type: loadout
   id: MercenaryClothingHeadHatBeretMercenary
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 0
   equipment:
     head: ClothingHeadHatBeretMercenary
@@ -40,9 +28,6 @@
 
 - type: loadout
   id: MercenaryClothingHeadHatBeretCommander
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 500
   equipment:
     head: ClothingHeadHatBeretCommander

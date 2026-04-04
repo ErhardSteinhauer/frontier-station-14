@@ -1,8 +1,5 @@
 - type: loadout
   id: StationRepClothingHeadHatSrCap
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 0
   equipment:
     head: ClothingHeadHatSrCap
@@ -10,9 +7,6 @@
 
 - type: loadout
   id: StationRepClothingHeadHatSrBeret
-  hideEffects:
-  - !type:GroupLoadoutEffect
-    proto: NFHeadwearCapable
   price: 0
   equipment:
     head: ClothingHeadHatSrBeret
