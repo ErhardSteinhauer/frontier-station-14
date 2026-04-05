@@ -85,7 +85,6 @@
         weight: 0.35
       - id: NFWeaponCrusherGlaive
         weight: 0.25
-    children:
     - !type:GroupSelector
       weight: 0.3
       children:
