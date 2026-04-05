@@ -273,6 +273,19 @@
     sprite: _NF/Mobs/RogueSilicons/robots.rsi
     layers:
     - state: wreck01
+  - type: RequireProjectileTarget
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 200
+        restitution: 0.0
+        mask:
+        - SmallMobMask # To enshure that it'll go under flaps
+        layer:
+        - MobLayer
   - type: PhysicalComposition
     materialComposition:
       Steel: 1000 # 10 sheets
