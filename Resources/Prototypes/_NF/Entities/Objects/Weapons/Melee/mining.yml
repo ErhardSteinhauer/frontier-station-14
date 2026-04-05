@@ -124,6 +124,10 @@
         Blunt: 5
         Slash: 2
         Structural: 30
+  - type: Construction
+    graph: NFWeaponCrusherAxeCorrupted
+    node: start
+    deconstructionTarget: null
 
 - type: entity
   parent: NFWeaponCrusherAxe
@@ -175,6 +179,10 @@
         Blunt: 3
         Slash: 7
         Structural: 10
+  - type: Construction
+    graph: NFWeaponCrusherGlaiveCorrupted
+    node: start
+    deconstructionTarget: null
 
 - type: entity
   parent: [ BaseKnife, NFBaseWeaponCrusher, BaseC1Contraband ]
@@ -258,6 +266,10 @@
       suitstorage:
       - state: equipped-BELT-light
         shader: unshaded
+  - type: Construction
+    graph: NFWeaponCrusherDaggerCorrupted
+    node: start
+    deconstructionTarget: null
 
 # region advanced crushers
 - type: entity
@@ -342,6 +354,10 @@
     color: "#B4FCF0"
     radius: 6
   - type: MiningGatheringHard
+  - type: Construction
+    graph: NFWeaponCrusherGlaiveCorrupted
+    node: start
+    deconstructionTarget: null
 
 - type: entity
   parent: NFWeaponCrusherDagger
@@ -376,6 +392,10 @@
     netsync: false
     color: "#B4FCF0"
     radius: 6
+  - type: Construction
+    graph: NFWeaponCrusherDaggerCorrupted
+    node: start
+    deconstructionTarget: null
 
 # region blood cult crushers
 # compared to the NF version: more damage, leech, flashlight doesn't need powercell
@@ -455,6 +475,10 @@
         Blunt: 5
         Slash: 5
         Structural: 30
+  - type: Construction
+    graph: NFWeaponCrusherAxeCorrupted
+    node: NFWeaponCrusherAxeBloodCult
+    deconstructionTarget: null
 
 - type: entity
   parent: NFWeaponCrusherAxeBloodCult
@@ -467,6 +491,10 @@
     sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive_inhands.rsi
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive.rsi
+  - type: Construction
+    graph: NFWeaponCrusherGlaiveCorrupted
+    node: NFWeaponCrusherGlaiveBloodCult
+    deconstructionTarget: null
 
 - type: entity
   parent: NFWeaponCrusherDaggerAdvanced
@@ -506,3 +534,7 @@
     proto: NFBulletChargeGlaiveBloodCult
     capacity: 1
     count: 1
+  - type: Construction
+    graph: NFWeaponCrusherDaggerCorrupted
+    node: NFWeaponCrusherDaggerBloodCult
+    deconstructionTarget: null

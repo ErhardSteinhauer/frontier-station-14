@@ -116,6 +116,8 @@
       children:
       - id: ScrollRolledCultStaffRechargerAltar
       - id: ScrollRolledCultForge
+      - id: ScrollRolledCultShade
+      - id: BookBloodCultRituals
 
 - type: entity
   parent: SpawnRandomSpellScrollWizard
