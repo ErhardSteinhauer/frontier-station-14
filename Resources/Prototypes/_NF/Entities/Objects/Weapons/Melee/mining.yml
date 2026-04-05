@@ -85,9 +85,9 @@
   components:
   - type: Tag
     tags:
-    - Pickaxe
-    - Flashlight
     - Crowbar
+    - Flashlight
+    - Pickaxe
   - type: Prying
   - type: Tool
     qualities:
@@ -150,6 +150,31 @@
         Blunt: 2
         Slash: 5
         Structural: 20
+  - type: EmbeddableProjectile
+    offset: -0.15,0.0
+  - type: ThrowingAngle
+    angle: 225
+  - type: LandAtCursor
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PolygonShape
+          vertices:
+            - -0.40,-0.30
+            - -0.30,-0.40
+            - 0.40,0.30
+            - 0.30,0.40
+        density: 20
+        mask:
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 3
+        Slash: 7
+        Structural: 10
 
 - type: entity
   parent: [ BaseKnife, NFBaseWeaponCrusher, BaseC1Contraband ]
@@ -160,37 +185,35 @@
   components:
   - type: Tag
     tags:
-    - Flashlight
-    - Screwdriver
     - CombatKnife
+    - Flashlight
     - Knife
-  - type: Utensil
-    types:
-    - Knife
-  - type: Tool
-    qualities:
-    - Screwing
-    - Slicing
-    useSound:
-      collection: Screwdriver
   - type: Sprite
     sprite: _NF/Objects/Weapons/Melee/crusher_dagger.rsi
   - type: Item
     sprite: _NF/Objects/Weapons/Melee/crusher_dagger.rsi
-    storedSprite:
-      state: storage
-      sprite: _NF/Objects/Weapons/Melee/crusher_dagger.rsi
+    storedRotation: -45
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/crusher_dagger.rsi
     quickEquip: false
     slots:
     - belt
+    - Back
+    - suitStorage
+    clothingVisuals:
+      back:
+      - state: equipped-BELT
+      belt:
+      - state: equipped-BELT
+      suitstorage:
+      - state: equipped-BELT
   - type: MeleeWeapon
+    autoAttack: true
     wideAnimationRotation: -135
     attackRate: 2
     damage:
       types:
-        Slash: 10
+        Slash: 12
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
     offset: -0.15,0.0
@@ -226,13 +249,57 @@
       - state: inhand-right-light
         shader: unshaded
     clothingVisuals:
+      back:
+      - state: equipped-BELT-light
+        shader: unshaded
       belt:
+      - state: equipped-BELT-light
+        shader: unshaded
+      suitstorage:
       - state: equipped-BELT-light
         shader: unshaded
 
 # region advanced crushers
 - type: entity
   parent: NFWeaponCrusherAxe
+  id: NFWeaponCrusherAxeAdvanced
+  name: advanced crusher axe
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/crusher_axe_advanced.rsi
+  - type: Item
+    sprite: _NF/Objects/Weapons/Melee/crusher_axe_advanced_inhands.rsi
+    size: Huge
+    #storedRotation: -45
+    storedSprite:
+      sprite: _NF/Objects/Weapons/Melee/crusher_axe_advanced.rsi
+      state: storage
+    shape:
+    - 0,0,1,3
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/crusher_axe_advanced.rsi
+  - type: MeleeWeapon
+    attackRate: 1
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 6
+        Slash: 4
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 6
+        Slash: 4
+        Structural: 30
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#B4FCF0"
+    radius: 6
+  - type: MiningGatheringHard
+
+- type: entity
+  parent: NFWeaponCrusherGlaive
   id: NFWeaponCrusherGlaiveAdvanced
   name: advanced crusher glaive
   components:
@@ -241,18 +308,12 @@
   - type: Item
     sprite: _NF/Objects/Weapons/Melee/crusher_glaive_advanced_inhands.rsi
     size: Huge
+    #storedRotation: -45
     storedSprite:
       sprite: _NF/Objects/Weapons/Melee/crusher_glaive_advanced.rsi
       state: storage
-      rotation: -45
     shape:
-    - 0,0,1,4
-  - type: MiningGatheringHard
-  - type: PointLight
-    enabled: false
-    netsync: false
-    color: "#B4FCF0"
-    radius: 6
+    - 0,0,1,3
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/crusher_glaive_advanced.rsi
   - type: MeleeWeapon
@@ -261,13 +322,60 @@
     damage:
       types:
         Blunt: 3
-        Slash: 5
+        Slash: 7
   - type: IncreaseDamageOnWield
     damage:
       types:
-        Blunt: 2
-        Slash: 5
+        Blunt: 3
+        Slash: 7
+        Structural: 30
+  # Don't want this to be better than straight up melee attack given that one can store multiple glaive in a backpack
+  - type: DamageOtherOnHit
+    damage:
+      types:
+        Blunt: 4
+        Slash: 10
         Structural: 20
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#B4FCF0"
+    radius: 6
+  - type: MiningGatheringHard
+
+- type: entity
+  parent: NFWeaponCrusherDagger
+  id: NFWeaponCrusherDaggerAdvanced
+  name: advanced crusher dagger
+  components:
+  - type: Tag
+    tags:
+    - CombatKnife
+    - Flashlight
+    - Knife
+    - Pickaxe
+    - Screwdriver
+  - type: Tool
+    qualities:
+    - Screwing
+    - Slicing
+    useSound:
+      collection: Screwdriver
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/crusher_dagger_advanced.rsi
+  - type: Item
+    sprite: _NF/Objects/Weapons/Melee/crusher_dagger_advanced.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/crusher_dagger_advanced.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 14
+  - type: PointLight
+    enabled: false
+    netsync: false
+    color: "#B4FCF0"
+    radius: 6
 
 # region blood cult crushers
 # compared to the NF version: more damage, leech, flashlight doesn't need powercell
@@ -279,21 +387,22 @@
   components:
   - type: Tag
     tags:
-    - Pickaxe
-    - Flashlight
     - Crowbar
+    - FireAxe
+    - Flashlight
+    - Pickaxe
   - type: MiningGatheringHard
   - type: PointLight
     castShadows: true
     netsync: false
     color: "#ff0000"
     energy: 3
-    radius: 5
+    radius: 6
   - type: NFOniFriendlyGun
   - type: AmmoCounter
   - type: UseDelayOnShoot
   - type: UseDelay
-    delay: 1.9
+    delay: 1
   - type: LeechOnMarker
     leech:
       groups:
@@ -325,25 +434,26 @@
   name: blood cult crusher axe
   components:
   - type: Sprite
-    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive.rsi
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_axe.rsi
   - type: Item
-    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive_inhands.rsi
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_axe_inhands.rsi
   - type: Clothing
-    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive.rsi
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_axe.rsi
   - type: MeleeWeapon
     attackRate: 1
     wideAnimationRotation: -135
     damage:
       types:
         Blunt: 5
-        Slash: 3
+        Slash: 10
+        Structural: 10
     soundHit:
       collection: MetalThud
   - type: IncreaseDamageOnWield
     damage:
       types:
         Blunt: 5
-        Slash: 2
+        Slash: 5
         Structural: 30
 
 - type: entity
@@ -357,16 +467,42 @@
     sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive_inhands.rsi
   - type: Clothing
     sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_glaive.rsi
-  - type: MeleeWeapon
-    attackRate: 1
-    wideAnimationRotation: -135
-    damage:
-      types:
-        Blunt: 3
-        Slash: 5
-  - type: IncreaseDamageOnWield
-    damage:
-      types:
-        Blunt: 2
-        Slash: 5
-        Structural: 20
+
+- type: entity
+  parent: NFWeaponCrusherDaggerAdvanced
+  id: NFWeaponCrusherDaggerBloodCult
+  name: blood cult crusher dagger
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_dagger.rsi
+  - type: Item
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_dagger.rsi
+  - type: Clothing
+    sprite: _NF/Objects/Weapons/Melee/bloodcult_crusher_dagger.rsi
+  - type: PointLight
+    castShadows: true
+    netsync: false
+    color: "#ff0000"
+    energy: 3
+    radius: 6
+  - type: NFOniFriendlyGun
+  - type: AmmoCounter
+  - type: UseDelayOnShoot
+  - type: UseDelay
+    delay: 1.5
+  - type: LeechOnMarker
+    leech:
+      groups:
+        Brute: -10
+  - type: Gun
+    soundGunshot: /Audio/Weapons/plasma_cutter.ogg
+    fireRate: 1
+    useKey: false
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 0.5
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/kinetic_reload.ogg
+  - type: BasicEntityAmmoProvider
+    proto: NFBulletChargeGlaiveBloodCult
+    capacity: 1
+    count: 1
