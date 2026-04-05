@@ -1603,8 +1603,6 @@
   cost: 2500
   recipeUnlocks:
   - NFWeaponPka
-  - WeaponCrusher
-  - WeaponCrusherDagger
   prerequisiteLineType: Diagonal
   technologyPrerequisites:
   - NFSalvageGrapplingEquipment
@@ -1632,7 +1630,9 @@
   tier: 1
   cost: 5000
   recipeUnlocks:
-  - WeaponCrusherGlaive
+  - NFWeaponCrusherAxe
+  - NFWeaponCrusherGlaive
+  - NFWeaponCrusherDagger
   technologyPrerequisites:
   - NFSalvageWeapons
   position: 2, 39
@@ -1659,6 +1659,9 @@
   cost: 7500
   recipeUnlocks:
   - NFWeaponPkaCannon
+  - NFWeaponCrusherAxeAdvanced
+  - NFWeaponCrusherDaggerAdvanced
+  - NFWeaponCrusherGlaiveAdvanced
   technologyPrerequisites:
   - NFAdvancedSalvageWeapons
   position: 3, 39

@@ -252,9 +252,9 @@
   - NFWeaponPkaCannon
   # NFSalvageWeapons
   - NFWeaponPka
-  - WeaponCrusher
-  - WeaponCrusherDagger
-  - WeaponCrusherGlaive
+  - NFWeaponCrusherAxeAdvanced
+  - NFWeaponCrusherGlaiveAdvanced
+  - NFWeaponCrusherDaggerAdvanced
   # MiscellaneousItemsOrganization
   - NFPouchSalvage
   - NFPouchCargo # in lieu of a proper cargo fab
