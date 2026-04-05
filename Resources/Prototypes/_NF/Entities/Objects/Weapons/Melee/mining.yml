@@ -123,7 +123,7 @@
       types:
         Blunt: 5
         Slash: 2
-        Structural: 30
+        Structural: 35
   - type: Construction
     graph: NFWeaponCrusherAxeCorrupted
     node: start
@@ -153,7 +153,7 @@
       types:
         Blunt: 2
         Slash: 5
-        Structural: 20
+        Structural: 25
   - type: EmbeddableProjectile
     offset: -0.15,0.0
   - type: ThrowingAngle
@@ -221,7 +221,7 @@
     attackRate: 2
     damage:
       types:
-        Slash: 12
+        Slash: 10
   - type: EmbeddableProjectile
     sound: /Audio/Weapons/star_hit.ogg
     offset: -0.15,0.0
@@ -302,7 +302,7 @@
       types:
         Blunt: 6
         Slash: 4
-        Structural: 30
+        Structural: 35
   - type: PointLight
     enabled: false
     netsync: false
@@ -340,7 +340,7 @@
       types:
         Blunt: 3
         Slash: 7
-        Structural: 30
+        Structural: 35
   # Don't want this to be better than straight up melee attack given that one can store multiple glaive in a backpack
   - type: DamageOtherOnHit
     damage:
@@ -386,7 +386,7 @@
   - type: MeleeWeapon
     damage:
       types:
-        Slash: 14
+        Slash: 12
   - type: PointLight
     enabled: false
     netsync: false
