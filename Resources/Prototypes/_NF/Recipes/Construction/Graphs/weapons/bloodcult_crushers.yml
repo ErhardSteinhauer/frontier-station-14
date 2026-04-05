@@ -20,7 +20,7 @@
           state: bloodpack
         doAfter: 5
       - tag: ScrollCultShadeBinding
-        name: construction-graph-tag-nf-bloodpack
+        name: construction-graph-tag-nf-blood-cult-scroll-shade-binding
         icon:
           sprite: _NF/Objects/Specific/Wizard/crystal_paper.rsi
           state: crystalpaper
@@ -49,7 +49,7 @@
           state: bloodpack
         doAfter: 5
       - tag: ScrollCultShadeBinding
-        name: construction-graph-tag-nf-bloodpack
+        name: construction-graph-tag-nf-blood-cult-scroll-shade-binding
         icon:
           sprite: _NF/Objects/Specific/Wizard/crystal_paper.rsi
           state: crystalpaper
@@ -78,7 +78,7 @@
           state: bloodpack
         doAfter: 5
       - tag: ScrollCultShadeBinding
-        name: construction-graph-tag-nf-bloodpack
+        name: construction-graph-tag-nf-blood-cult-scroll-shade-binding
         icon:
           sprite: _NF/Objects/Specific/Wizard/crystal_paper.rsi
           state: crystalpaper

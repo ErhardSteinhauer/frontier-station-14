@@ -89,7 +89,7 @@
 - type: entity
   parent: [ BaseItem, RecyclableItemPaper ]
   id: ScrollCultShadeBinding
-  name: cult shade binding scroll
+  name: blood cult shade binding scroll
   components:
   - type: Tag
     tags:

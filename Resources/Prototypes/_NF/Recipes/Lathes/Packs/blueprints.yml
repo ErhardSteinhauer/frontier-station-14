@@ -250,11 +250,14 @@
   ## Frontier
   # ImprovedSalvageWeapons
   - NFWeaponPkaCannon
-  # NFSalvageWeapons
-  - NFWeaponPka
   - NFWeaponCrusherAxeAdvanced
   - NFWeaponCrusherGlaiveAdvanced
   - NFWeaponCrusherDaggerAdvanced
+  # NFSalvageWeapons
+  - NFWeaponPka
+  - NFWeaponCrusherAxe
+  - NFWeaponCrusherGlaive
+  - NFWeaponCrusherDagger
   # MiscellaneousItemsOrganization
   - NFPouchSalvage
   - NFPouchCargo # in lieu of a proper cargo fab

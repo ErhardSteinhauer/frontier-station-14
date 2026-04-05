@@ -1,0 +1,6 @@
+# Guidebook entries that aren’t meant to be accessible through the guidebook itself but are available to be viewed through other in-game means.
+- type: guideEntry
+  id: BloodCultCrushersGuide
+  name: guide-blood-cult-crushers
+  text: "/ServerInfo/_NF/Guidebook/Unlisted/BloodCultCrushers.xml"
+  priority: 0
