@@ -1,0 +1,116 @@
+# region random solution
+- type: weightedRandomFillSolution
+  id: NFRandomFillPuddleBloodSmall
+  fills:
+  # weighted according to old player survey, see https://discord.com/channels/1123826877245694004/1307161809291051068/1307162864796307548
+  - quantity: 5
+    weight: 76
+    reagents:
+    - Blood
+  - quantity: 5
+    weight: 14
+    reagents:
+    - InsectBlood
+  - quantity: 5
+    weight: 4
+    reagents:
+    - GoblinBlood
+  - quantity: 5
+    weight: 3
+    reagents:
+    - Slime
+  - quantity: 5
+    weight: 2
+    reagents:
+    - CopperBlood
+  - quantity: 5
+    weight: 1
+    reagents:
+    - Sap
+
+- type: weightedRandomFillSolution
+  id: NFRandomFillPuddleBlood
+  fills:
+  # weighted according to old player survey, see https://discord.com/channels/1123826877245694004/1307161809291051068/1307162864796307548
+  - quantity: 30
+    weight: 76
+    reagents:
+    - Blood
+  - quantity: 30
+    weight: 14
+    reagents:
+    - InsectBlood
+  - quantity: 30
+    weight: 4
+    reagents:
+    - GoblinBlood
+  - quantity: 30
+    weight: 3
+    reagents:
+    - Slime
+  - quantity: 30
+    weight: 2
+    reagents:
+    - CopperBlood
+  - quantity: 30
+    weight: 1
+    reagents:
+    - Sap
+
+- type: weightedRandomFillSolution
+  id: NFRandomFillPuddleBloodBig
+  fills:
+  # weighted according to old player survey, see https://discord.com/channels/1123826877245694004/1307161809291051068/1307162864796307548
+  - quantity: 90
+    weight: 76
+    reagents:
+    - Blood
+  - quantity: 90
+    weight: 14
+    reagents:
+    - InsectBlood
+  - quantity: 90
+    weight: 4
+    reagents:
+    - GoblinBlood
+  - quantity: 90
+    weight: 3
+    reagents:
+    - Slime
+  - quantity: 90
+    weight: 2
+    reagents:
+    - CopperBlood
+  - quantity: 90
+    weight: 1
+    reagents:
+    - Sap
+
+# region blood
+
+- type: entity
+  parent: PuddleTemporary
+  id: NFPuddleBloodRandomSmall
+  suffix: Blood (5u), Random
+  components:
+  - type: RandomFillSolution
+    solution: puddle
+    weightedRandomId: NFRandomFillPuddleBloodSmall
+
+- type: entity
+  parent: PuddleTemporary
+  id: NFPuddleBloodRandom
+  suffix: Blood (30u), Random
+  components:
+  - type: RandomFillSolution
+    solution: puddle
+    weightedRandomId: NFRandomFillPuddleBlood
+
+- type: entity
+  parent: PuddleTemporary
+  id: NFPuddleBloodRandomBig
+  suffix: Blood (90u), Random
+  components:
+  - type: RandomFillSolution
+    solution: puddle
+    weightedRandomId: NFRandomFillPuddleBloodBig

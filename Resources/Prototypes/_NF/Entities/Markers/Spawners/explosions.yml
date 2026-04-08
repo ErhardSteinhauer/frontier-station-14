@@ -1,0 +1,128 @@
+# region random
+- type: entity
+  parent: MarkerBasePlaceFree
+  id: NFSpawnShuttleWreckExplosionRandom
+  name: shuttle explosion spawner
+  suffix: Random
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Weapons/Bombs/seismic.rsi
+      state: icon
+    - sprite: _NF/Markers/general.rsi
+      state: questionmark
+      color: red
+  - type: EntityTableSpawner
+    offset: 0.0
+    table: !type:NestedSelector
+      tableId: NFTableShuttleWreckExplosion
+      prob: 1.00
+
+# region specific
+- type: entity
+  parent: MarkerBasePlaceFree
+  id: NFSpawnShuttleWreckExplosionVeryStrong
+  name: shuttle explosion spawner
+  suffix: Very Strong
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Weapons/Bombs/seismic.rsi
+      state: icon
+    - sprite: _NF/Decals/stencil.rsi
+      state: stencil5
+      scale: 0.7,0.7
+      color: red
+  - type: ConditionalSpawner
+    prototypes:
+    - NFShuttleWreckExplosionVeryStrong
+
+- type: entity
+  parent: MarkerBasePlaceFree
+  id: NFSpawnShuttleWreckExplosionStrong
+  name: shuttle explosion spawner
+  suffix: Strong
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Weapons/Bombs/seismic.rsi
+      state: icon
+    - sprite: _NF/Decals/stencil.rsi
+      state: stencil4
+      scale: 0.7,0.7
+      color: red
+  - type: ConditionalSpawner
+    prototypes:
+    - NFShuttleWreckExplosionStrong
+
+- type: entity
+  parent: MarkerBasePlaceFree
+  id: NFSpawnShuttleWreckExplosionMedium
+  name: shuttle explosion spawner
+  suffix: Medium
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Weapons/Bombs/seismic.rsi
+      state: icon
+    - sprite: _NF/Decals/stencil.rsi
+      state: stencil3
+      scale: 0.7,0.7
+      color: red
+  - type: ConditionalSpawner
+    prototypes:
+    - NFShuttleWreckExplosionMedium
+
+- type: entity
+  parent: MarkerBasePlaceFree
+  id: NFSpawnShuttleWreckExplosionWeak
+  name: shuttle explosion spawner
+  suffix: Weak
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Weapons/Bombs/seismic.rsi
+      state: icon
+    - sprite: _NF/Decals/stencil.rsi
+      state: stencil2
+      scale: 0.7,0.7
+      color: red
+  - type: ConditionalSpawner
+    prototypes:
+    - NFShuttleWreckExplosionWeak
+
+- type: entity
+  parent: MarkerBasePlaceFree
+  id: NFSpawnShuttleWreckExplosionVeryWeak
+  name: shuttle explosion spawner
+  suffix: Very Weak
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Weapons/Bombs/seismic.rsi
+      state: icon
+    - sprite: _NF/Decals/stencil.rsi
+      state: stencil1
+      scale: 0.7,0.7
+      color: red
+  - type: ConditionalSpawner
+    prototypes:
+    - NFShuttleWreckExplosionVeryWeak
+
+- type: entity
+  parent: MarkerBasePlaceFree
+  id: NFSpawnShuttleWreckExplosionMetalFoam
+  name: shuttle explosion spawner
+  suffix: Metal Foam
+  components:
+  - type: Sprite
+    layers:
+    - sprite: Objects/Weapons/Bombs/seismic.rsi
+      state: icon
+    - sprite: _NF/Decals/stencil.rsi
+      state: stencilF
+      scale: 0.7,0.7
+      color: red
+  - type: ConditionalSpawner
+    prototypes:
+    - NFShuttleWreckExplosionMetalFoam

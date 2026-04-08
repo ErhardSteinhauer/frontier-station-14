@@ -187,3 +187,14 @@
   - type: BasicStationEventScheduler
     scheduledGameRules: !type:NestedSelector
       tableId: NFGameRulesTable
+
+- type: entity
+  id: NFDerelictVariation
+  parent: BaseGameRule
+  components:
+  - type: RoundstartStationVariationRule
+    rules:
+    - id: NFBasicExplosionVariationPass
+    - id: NFBasicPoweredLightVariationPass
+    - id: NFBasicTrashVariationPass
+    - id: NFBasicPuddleMessVariationPass

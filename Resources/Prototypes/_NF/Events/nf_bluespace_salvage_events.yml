@@ -33,19 +33,28 @@
         - type: PreventPilot
         paths:
 #        - /Maps/_NF/Shuttles/Scrap/canister.yml # Too small
-        - /Maps/_NF/Shuttles/Scrap/disciple.yml
-        - /Maps/_NF/Shuttles/Scrap/nugget.yml
-        - /Maps/_NF/Shuttles/Scrap/orange.yml
-        - /Maps/_NF/Shuttles/Scrap/point.yml
-        - /Maps/_NF/Shuttles/Scrap/tide.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-investigator.yml # Please replace all this maps ones we finish some automated system
-        - /Maps/_NF/Shuttles/Scrap/scrap-hauler.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-crescent.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-barge.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-courserx.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-comet.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-sprinter.yml
-        - /Maps/_NF/Shuttles/Scrap/scrap-sparrow.yml
+        #- /Maps/_NF/Shuttles/Scrap/disciple.yml
+        #- /Maps/_NF/Shuttles/Scrap/nugget.yml
+        #- /Maps/_NF/Shuttles/Scrap/orange.yml
+        #- /Maps/_NF/Shuttles/Scrap/point.yml
+        #- /Maps/_NF/Shuttles/Scrap/tide.yml
+        #- /Maps/_NF/Shuttles/Scrap/scrap-investigator.yml # Please replace all this maps ones we finish some automated system
+        #- /Maps/_NF/Shuttles/Scrap/scrap-hauler.yml
+        #- /Maps/_NF/Shuttles/Scrap/scrap-crescent.yml
+        #- /Maps/_NF/Shuttles/Scrap/scrap-barge.yml
+        #- /Maps/_NF/Shuttles/Scrap/scrap-courserx.yml
+        #- /Maps/_NF/Shuttles/Scrap/scrap-comet.yml
+        #- /Maps/_NF/Shuttles/Scrap/scrap-sprinter.yml
+        #- /Maps/_NF/Shuttles/Scrap/scrap-sparrow.yml
+        # Unmaintained retired shuttles
+        - /Maps/_NF/Shuttles/Retired/bazaar.yml
+        - /Maps/_NF/Shuttles/Retired/beaker.yml
+        - /Maps/_NF/Shuttles/Retired/bison.yml
+        - /Maps/_NF/Shuttles/Retired/gourd.yml
+        - /Maps/_NF/Shuttles/Retired/lantern.yml
+        - /Maps/_NF/Shuttles/Retired/pioneer.yml
+        - /Maps/_NF/Shuttles/Retired/sparrow.yml
+        - /Maps/_NF/Shuttles/Retired/courserx.yml
   - type: ActiveRadio
     channels:
     - Engineering

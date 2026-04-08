@@ -1,0 +1,93 @@
+# region explosions
+- type: entity
+  parent: NFBaseGoblinMadeToolsMalfunction
+  id: NFShuttleWreckExplosionVeryStrong
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 3500
+    maxIntensity: 70
+    intensitySlope: 15
+    canCreateVacuum: true
+
+- type: entity
+  parent: NFBaseGoblinMadeToolsMalfunction
+  id: NFShuttleWreckExplosionStrong
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 490
+    maxIntensity: 90
+    intensitySlope: 10
+    canCreateVacuum: true
+
+- type: entity
+  parent: NFBaseGoblinMadeToolsMalfunction
+  id: NFShuttleWreckExplosionMedium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 420
+    maxIntensity: 70
+    intensitySlope: 10
+    canCreateVacuum: true
+
+- type: entity
+  parent: NFBaseGoblinMadeToolsMalfunction
+  id: NFShuttleWreckExplosionWeak
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 350
+    maxIntensity: 70
+    intensitySlope: 15
+    canCreateVacuum: true
+
+- type: entity
+  parent: NFBaseGoblinMadeToolsMalfunction
+  id: NFShuttleWreckExplosionVeryWeak
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 240
+    maxIntensity: 60
+    intensitySlope: 30
+    canCreateVacuum: true
+
+- type: entity
+  parent: NFBaseGoblinMadeToolsMalfunction
+  id: NFShuttleWreckExplosionMetalFoam
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SmokeOnTrigger
+    duration: 5
+    spreadAmount: 5
+    smokePrototype: AluminiumMetalFoam
+
+# region table
+- type: entityTable
+  id: NFTableShuttleWreckExplosion
+  table: !type:GroupSelector
+    children:
+    - id: NFShuttleWreckExplosionVeryStrong
+      weight: 5
+    - id: NFShuttleWreckExplosionStrong
+      weight: 30
+    - id: NFShuttleWreckExplosionMedium
+      weight: 40
+    - id: NFShuttleWreckExplosionWeak
+      weight: 15
+    - id: NFShuttleWreckExplosionVeryWeak
+      weight: 5
+    - id: NFShuttleWreckExplosionMetalFoam
+      weight: 5

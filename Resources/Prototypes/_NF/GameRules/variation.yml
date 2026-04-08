@@ -86,3 +86,13 @@
     - Silver
     - Sodium
     - JuiceThatMakesYouWeh
+
+- type: entity # TODO: mob spawn variation pass, loot variation pass, holograffiti variation pass
+  id: NFBasicExplosionVariationPass
+  parent: BaseVariationPass
+  components:
+  - type: EntitySpawnVariationPass
+    tilesPerEntityAverage: 35
+    tilesPerEntityStdDev: 4
+    entities:
+    - id: NFSpawnShuttleWreckExplosionRandom
