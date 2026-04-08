@@ -41,7 +41,7 @@
   - type: Projectile
     damage:
       types:
-        Cold: 16
+        Cold: 18
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -86,7 +86,7 @@
   - type: Projectile
     damage:
       types:
-        Heat: 16
+        Heat: 18
   - type: IgniteOnCollide
     fireStacks: 1
 
@@ -128,8 +128,8 @@
   - type: Projectile
     damage:
       types:
-        Bloodloss: 6
-        Asphyxiation: 6
+        Bloodloss: 7.5
+        Asphyxiation: 7.5
 
 - type: entity
   parent: BaseBulletTrigger
@@ -159,8 +159,8 @@
   - type: Projectile
     damage:
       types:
-        Bloodloss: 2
-        Slash: 10
+        Bloodloss: 4
+        Slash: 12
 
 - type: entity
   parent: NFBulletMagicBloodCultDarkBoltMob
@@ -170,8 +170,8 @@
   - type: Projectile
     damage:
       types:
-        Bloodloss: 4
-        Slash: 12
+        Bloodloss: 6
+        Slash: 18
 
 - type: entity
   parent: BaseBulletTrigger
@@ -200,8 +200,8 @@
   - type: Projectile
     damage:
       types:
-        Asphyxiation: 3
-        Blunt: 9
+        Asphyxiation: 4
+        Blunt: 13
 
 - type: entity
   parent: NFBulletMagicBloodCultHandMob
@@ -211,8 +211,8 @@
   - type: Projectile
     damage:
       types:
-        Asphyxiation: 4
-        Blunt: 12
+        Asphyxiation: 6
+        Blunt: 18
 
 - type: entity # For t-rex
   parent: BaseBullet
@@ -306,7 +306,7 @@
   id: NFHitscanMagicLightningStaffMaster
   damage:
     types:
-      Shock: 16
+      Shock: 18
   muzzleFlash:
     sprite: _NF/Effects/wizardbeams.rsi
     state: lightning-muzzle-01
@@ -351,7 +351,7 @@
   id: NFHitscanMagicCausticBeamStaffMaster
   damage:
     types:
-      Caustic: 16
+      Caustic: 18
   muzzleFlash:
     sprite: _NF/Effects/wizardbeams.rsi
     state: green-beam-01
@@ -381,7 +381,7 @@
   id: NFHitscanMagicBloodCultLightningStaffAdept
   damage:
     types:
-      Slash: 12
+      Slash: 16
   muzzleFlash:
     sprite: _NF/Effects/bloodcultbeams.rsi
     state: red_lightning
@@ -396,7 +396,7 @@
   id: NFHitscanMagicBloodCultLightningStaffMaster
   damage:
     types:
-      Slash: 16
+      Slash: 18
   muzzleFlash:
     sprite: _NF/Effects/bloodcultbeams.rsi
     state: red_lightning
