@@ -16,7 +16,7 @@ public sealed class EntitySpawnVariationPassSystem : VariationPassSystem<EntityS
             return;
         // End Frontier
 
-        var totalTiles = Stations.GetTileCount(args.Station.AsNullable());
+        var totalTiles = Stations.GetTileCount(args.Station);
 
         var dirtyMod = Random.NextGaussian(ent.Comp.TilesPerEntityAverage, ent.Comp.TilesPerEntityStdDev);
         var trashTiles = Math.Max((int) (totalTiles * (1 / dirtyMod)), 0);
