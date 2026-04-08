@@ -94,5 +94,8 @@
   - type: EntitySpawnVariationPass
     tilesPerEntityAverage: 35
     tilesPerEntityStdDev: 4
+    whitelist:
+      components:
+      - ShuttleDerelictVariationPass
     entities:
     - id: NFSpawnShuttleWreckExplosionRandom

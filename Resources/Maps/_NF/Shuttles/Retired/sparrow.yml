@@ -27,6 +27,7 @@ entities:
   entities:
   - uid: 174
     components:
+    - type: ShuttleDerelictVariationPass
     - type: MetaData
       name: Sparrow
     - type: Transform

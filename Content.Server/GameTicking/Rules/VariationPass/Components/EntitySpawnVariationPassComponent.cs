@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Random;
 using Content.Shared.Storage;
+using Content.Shared.Whitelist; // Frontier
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.GameTicking.Rules.VariationPass.Components;
@@ -24,4 +25,12 @@ public sealed partial class EntitySpawnVariationPassComponent : Component
     /// </summary>
     [DataField(required: true)]
     public List<EntitySpawnEntry> Entities = default!;
+
+    // Frontier: whitelisting which stations this runs on.
+    /// <summary>
+    ///     Spawn entries for each chosen location.
+    /// </summary>
+    [DataField(required: true)]
+    public EntityWhitelist? Whitelist;
+    // End Frontier: whitelisting which stations this runs on.
 }

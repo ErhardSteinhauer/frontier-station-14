@@ -165,6 +165,7 @@
   components:
   - type: RoundstartStationVariationRule
     rules:
+    - id: NFBasicExplosionVariationPass # Applied only to grids with ShuttleDerelictVariationPass component
     - id: NFBasicPoweredLightVariationPass
     - id: NFBasicTrashVariationPass
     - id: NFBasicPuddleMessVariationPass

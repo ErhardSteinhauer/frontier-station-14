@@ -17,6 +17,7 @@ entities:
   entities:
   - uid: 1
     components:
+    - type: ShuttleDerelictVariationPass
     - type: MetaData
       name: CourserX
     - type: Transform

@@ -1,5 +1,6 @@
 ﻿using Content.Server.GameTicking.Rules.VariationPass.Components;
 using Content.Shared.Storage;
+using Content.Shared.Whitelist; // Frontier
 using Robust.Shared.Random;
 
 namespace Content.Server.GameTicking.Rules.VariationPass;
@@ -7,9 +8,15 @@ namespace Content.Server.GameTicking.Rules.VariationPass;
 /// <inheritdoc cref="EntitySpawnVariationPassComponent"/>
 public sealed class EntitySpawnVariationPassSystem : VariationPassSystem<EntitySpawnVariationPassComponent>
 {
+    [Dependency] EntityWhitelistSystem _whitelist = default!; // Frontier: whitelisting
     protected override void ApplyVariation(Entity<EntitySpawnVariationPassComponent> ent, ref StationVariationPassEvent args)
     {
-        var totalTiles = Stations.GetTileCount(args.Station);
+        // Frontier: check whitelist
+        if (_whitelist.IsWhitelistFail(ent.Comp.Whitelist, args.Station))
+            return;
+        // End Frontier
+
+        var totalTiles = Stations.GetTileCount(args.Station.AsNullable());
 
         var dirtyMod = Random.NextGaussian(ent.Comp.TilesPerEntityAverage, ent.Comp.TilesPerEntityStdDev);
         var trashTiles = Math.Max((int) (totalTiles * (1 / dirtyMod)), 0);
