@@ -136,7 +136,7 @@
     onlyCollideWhenShot: false
     damage:
       types:
-        Blunt: 12
+        Blunt: 14
   - type: StaminaDamageOnCollide
     damage: 10
 
@@ -150,7 +150,7 @@
     onlyCollideWhenShot: false
     damage:
       types:
-        Blunt: 16
+        Blunt: 22
   - type: StaminaDamageOnCollide
     damage: 16
 
@@ -316,10 +316,10 @@
     deleteOnCollide: false
     damage:
       types:
-        Blunt: 12
+        Blunt: 16
         Structural: 15
   - type: StaminaDamageOnCollide
-    damage: 10
+    damage: 12
 
 - type: entity
   parent: BrickConjured
@@ -330,7 +330,7 @@
     deleteOnCollide: false
     damage:
       types:
-        Blunt: 16
+        Blunt: 25
         Structural: 20
   - type: StaminaDamageOnCollide
     damage: 16

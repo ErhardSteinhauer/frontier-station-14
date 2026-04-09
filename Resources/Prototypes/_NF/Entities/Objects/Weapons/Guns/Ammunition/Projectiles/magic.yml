@@ -28,7 +28,7 @@
   - type: Projectile
     damage:
       types:
-        Cold: 12
+        Cold: 16
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -41,7 +41,7 @@
   - type: Projectile
     damage:
       types:
-        Cold: 18
+        Cold: 24
     soundHit:
       collection: WeakHit
     forceSound: true
@@ -74,7 +74,7 @@
   - type: Projectile
     damage:
       types:
-        Heat: 12
+        Heat: 16
   - type: IgniteOnCollide
     fireStacks: 0.5
 
@@ -86,7 +86,7 @@
   - type: Projectile
     damage:
       types:
-        Heat: 18
+        Heat: 22
   - type: IgniteOnCollide
     fireStacks: 1
 
@@ -201,7 +201,7 @@
     damage:
       types:
         Asphyxiation: 4
-        Blunt: 13
+        Blunt: 12
 
 - type: entity
   parent: NFBulletMagicBloodCultHandMob
@@ -291,7 +291,7 @@
   id: NFHitscanMagicLightningStaffAdept
   damage:
     types:
-      Shock: 12
+      Shock: 16
   muzzleFlash:
     sprite: _NF/Effects/wizardbeams.rsi
     state: lightning-muzzle-01
@@ -306,7 +306,7 @@
   id: NFHitscanMagicLightningStaffMaster
   damage:
     types:
-      Shock: 18
+      Shock: 22
   muzzleFlash:
     sprite: _NF/Effects/wizardbeams.rsi
     state: lightning-muzzle-01
@@ -336,7 +336,7 @@
   id: NFHitscanMagicCausticBeamStaffAdept
   damage:
     types:
-      Caustic: 12
+      Caustic: 14
   muzzleFlash:
     sprite: _NF/Effects/wizardbeams.rsi
     state: green-beam-01
@@ -351,7 +351,7 @@
   id: NFHitscanMagicCausticBeamStaffMaster
   damage:
     types:
-      Caustic: 18
+      Caustic: 20
   muzzleFlash:
     sprite: _NF/Effects/wizardbeams.rsi
     state: green-beam-01
@@ -396,7 +396,7 @@
   id: NFHitscanMagicBloodCultLightningStaffMaster
   damage:
     types:
-      Slash: 18
+      Slash: 24
   muzzleFlash:
     sprite: _NF/Effects/bloodcultbeams.rsi
     state: red_lightning
