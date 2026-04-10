@@ -29,6 +29,26 @@
   groupBy: "OuterCoats"
 
 - type: loadout
+  id: NFPirateClothingLongcoatBlack
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 0
+  equipment:
+    outerClothing: ClothingLongcoatBlack
+  groupBy: "OuterCoats"
+
+- type: loadout
+  id: NFPirateClothingLongcoatBrown
+  hideEffects:
+  - !type:GroupLoadoutEffect
+    proto: NFCoatCapable
+  price: 0
+  equipment:
+    outerClothing: ClothingLongcoatBrown
+  groupBy: "OuterCoats"
+
+- type: loadout
   id: NFPirateClothingOuterCoatVictorian
   hideEffects:
   - !type:GroupLoadoutEffect
