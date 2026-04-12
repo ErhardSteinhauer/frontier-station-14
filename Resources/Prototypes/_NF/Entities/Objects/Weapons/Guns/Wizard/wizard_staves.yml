@@ -54,6 +54,7 @@
   id: WeaponChargedStaffBase
   components:
   - type: AmmoCounter
+  - type: NFOniFriendlyGun
   - type: Gun
     fireRate: 1
     selectedMode: FullAuto
