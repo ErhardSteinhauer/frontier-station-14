@@ -47,6 +47,51 @@
         weight: 18
       - id: NFScrapMineFire
         weight: 25
+    # EMP
+    - !type:GroupSelector
+      children:
+      - id: NFToolboxMineEmp
+        weight: 1
+      - id: NFWetFloorSignMineEmp
+        weight: 1
+      - id: NFPlushieMineEmp
+        weight: 36
+      - id: NFBoxMineEmp
+        weight: 19
+      - id: NFTrashMineEmp
+        weight: 18
+      - id: NFScrapMineEmp
+        weight: 25
+    # Flash
+    - !type:GroupSelector
+      children:
+      - id: NFToolboxMineFlash
+        weight: 1
+      - id: NFWetFloorSignMineFlash
+        weight: 1
+      - id: NFPlushieMineFlash
+        weight: 36
+      - id: NFBoxMineFlash
+        weight: 19
+      - id: NFTrashMineFlash
+        weight: 18
+      - id: NFScrapMineFlash
+        weight: 25
+    # Smoke
+    - !type:GroupSelector
+      children:
+      - id: NFToolboxMineSmoke
+        weight: 1
+      - id: NFWetFloorSignMineSmoke
+        weight: 1
+      - id: NFPlushieMineSmoke
+        weight: 36
+      - id: NFBoxMineSmoke
+        weight: 19
+      - id: NFTrashMineSmoke
+        weight: 18
+      - id: NFScrapMineSmoke
+        weight: 25
 
 - type: entity
   name: random mine spawner
