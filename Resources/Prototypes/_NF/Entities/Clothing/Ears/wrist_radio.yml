@@ -537,18 +537,25 @@
     clothingVisuals:
       ears:
       - state: equipped-EARS
-        map: [ "wristsetBase" ]
+        map: [ "wristsetClothingBase" ]
       - state: equipped-EARS-unshaded
         shader: unshaded
-        map: [ "wristsetScreen" ]
+        map: [ "wristsetClothingScreen" ]
   - type: RandomSprite
     available:
       - wristsetBase:
-          icon: Cyberpunk
+          icon: Base
+        wristsetClothingBase:
+          equipped-EARS: Base
         wristsetDecal:
-          icon-decal-01: CyberpunkNeon
-          icon-decal-02: CyberpunkNeon
+          icon-decal-01: Decor
+          icon-decal-02: Decor
         wristsetButtons:
-          icon-buttons: CyberpunkNeon
+          icon-buttons: Decor
         wristsetScreen:
-          icon-unshaded: CyberpunkNeon
+          icon-unshaded: Decor
+        wristsetClothingScreen:
+          equipped-EARS-unshaded: CyberpunkNeon
+    mappedColors:
+      Base: Cyberpunk
+      Decor: CyberpunkNeon
