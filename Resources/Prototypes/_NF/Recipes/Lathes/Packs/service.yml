@@ -54,6 +54,7 @@
   - ButchCleaver
   - ServiceRollingPin
   - ServiceSpoon
+  - ServiceDrinkShaker
   - ServiceFork
   - ServicePairedChopsticks
   - FoodBowlBig
@@ -69,6 +70,7 @@
   - FoodPlateSmallPlastic
   - NapkinDrum
   - Napkin
+  - NFCookingBag
   - CondimentCupDispenser
   - CondimentCup
   - FoodCondimentSqueezeBottleClear
@@ -89,6 +91,7 @@
   - Mousetrap
   - PillCanister
   - ChemistryEmptyBottle01
+  - NFClothingNeckCardReporter
 
 - type: latheRecipePack
   id: NFPaperAndPaperAccessories
@@ -135,6 +138,8 @@
   - ServiceSelectiveDropper
   - PlantAnalyzer
   - HotplateMachineCircuitboard
+  - Gavel
+  - GavelBlock
 
 - type: latheRecipePack
   id: NFServiceTechfabEmagStatic
@@ -178,6 +183,7 @@
   - PlantAnalyzer # Frontier
   - JanicartFlatpack # Frontier
   - PlantBagOfHolding # Delta-V
+  - NFCookingBag
 
 - type: latheRecipePack
   id: NFPietyStatic
