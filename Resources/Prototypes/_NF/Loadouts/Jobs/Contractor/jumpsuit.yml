@@ -1438,16 +1438,6 @@
   groupBy: "UniformJumpsuits"
 
 - type: loadout
-  id: ContractorClothingUniformJumpsuitChiefEngineer
-  effects:
-  - !type:GroupLoadoutEffect
-    proto: ContractorT2
-  price: 1000
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitChiefEngineer
-  groupBy: "UniformJumpsuits"
-
-- type: loadout
   id: ContractorClothingUniformJumpskirtChiefEngineer
   effects:
   - !type:GroupLoadoutEffect
