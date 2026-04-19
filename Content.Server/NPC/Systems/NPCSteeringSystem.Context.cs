@@ -348,6 +348,7 @@ public sealed partial class NPCSteeringSystem
             return false;
         }
 
+        // Wizden#38846
         var moveType = MovementType.MovingToTarget;
 
         var realAccel = acceleration * moveSpeed;
