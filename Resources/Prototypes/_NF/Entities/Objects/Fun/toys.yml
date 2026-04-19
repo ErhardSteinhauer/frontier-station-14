@@ -82,6 +82,17 @@
       CottonBurger: NFPlushieConstruction
 
 - type: entity
+  parent: [PlushieLizard, BaseHandheldInstrument]
+  id: NFPlushieLizardMusician #Weh!
+  name: squeaky lizard plushie
+  components:
+  - type: Instrument
+    program: 1
+    bank: 101
+  - type: StaticPrice
+    price: 400
+
+- type: entity
   parent: PlushieLizard
   id: NFPlushieCmo #Weh!
   name: chief medical officer plushie
