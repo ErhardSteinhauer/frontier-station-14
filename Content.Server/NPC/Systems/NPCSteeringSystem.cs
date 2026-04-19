@@ -347,7 +347,7 @@ public sealed partial class NPCSteeringSystem : SharedNPCSteeringSystem
         _modifierQuery.TryGetComponent(uid, out var modifier);
         var body = _physicsQuery.GetComponent(uid);
 
-        var weightless = _gravity.IsWeightless(uid, body, xform);
+        var weightless = _gravity.IsWeightless(uid);
         var moveSpeed = GetSprintSpeed(uid, modifier);
         var acceleration = GetAcceleration((uid, modifier), weightless);
         var friction = GetFriction((uid, modifier), weightless);
