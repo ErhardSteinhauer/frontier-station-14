@@ -422,6 +422,7 @@ public sealed partial class NPCSteeringSystem
         BrakingTangential,
         Coasting
     }
+    // End Wizden#38846
 
     private void ResetStuck(NPCSteeringComponent component, EntityCoordinates ourCoordinates)
     {
