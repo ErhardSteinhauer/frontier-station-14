@@ -61,6 +61,7 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
     [DataField("stopOnLineOfSight")]
     public bool StopOnLineOfSight;
 
+    // Wizden#38846
     /// <summary>
     /// Velocity below which we count as successfully braked.
     /// Don't care about velocity if null.
@@ -73,6 +74,7 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
     /// </summary>
     [DataField]
     public string DirectMoveTargetKey = "DirectMoveTarget";
+    // End Wizden#38846
 
     private const string MovementCancelToken = "MovementCancelToken";
 
@@ -98,10 +100,11 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
             !_entManager.TryGetComponent<PhysicsComponent>(owner, out var body))
             return (false, null);
 
-        // check if we or target are offgrid or on different grids
+        // check if we or target are offgrid or on different grids // Wizden#38846
         var doDirectMove = !_entManager.TryGetComponent<MapGridComponent>(xform.GridUid, out var ownerGrid) ||
                       !_entManager.TryGetComponent<MapGridComponent>(_transform.GetGrid(targetCoordinates), out var targetGrid) ||
                       ownerGrid != targetGrid;
+                  // End Wizden#38846
 
         var range = blackboard.GetValueOrDefault<float>(RangeKey, _entManager);
 
