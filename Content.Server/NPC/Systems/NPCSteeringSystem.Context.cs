@@ -93,18 +93,18 @@ public sealed partial class NPCSteeringSystem
         TransformComponent xform,
         Angle offsetRot,
         float moveSpeed,
-        float acceleration,
-        float friction,
+        float acceleration, // Wizden#38846
+        float friction, // Wizden#38846
         Span<float> interest,
         float frameTime,
-        ref bool forceSteer,
-        ref float moveMultiplier)
+        ref bool forceSteer, // Wizden#38846
+        ref float moveMultiplier) // Wizden#38846
     {
         var ourCoordinates = xform.Coordinates;
         var destinationCoordinates = steering.Coordinates;
         var inLos = true;
 
-        // check if we should ignore all pathing logic and go straight to the target coordinates
+        // check if we should ignore all pathing logic and go straight to the target coordinates // Wizden#38846
         var directMove = steering.DirectMove;
 
         // Check if we're in LOS if that's required.
@@ -136,6 +136,7 @@ public sealed partial class NPCSteeringSystem
             steering.ForceMove = false;
         }
 
+        // Wizden#38846
         var velLen = body.LinearVelocity.Length();
 
         var careAboutSpeed = steering.InRangeMaxSpeed != null;
@@ -155,6 +156,7 @@ public sealed partial class NPCSteeringSystem
 
         // Grab the target position, either the next path node or our end goal..
         var targetCoordinates = steering.DirectMove ? steering.Coordinates : GetTargetCoordinates(steering);
+        // End Wizden#38846
 
         if (!targetCoordinates.IsValid(EntityManager))
         {
@@ -167,7 +169,7 @@ public sealed partial class NPCSteeringSystem
         // If the next node is invalid then get new ones
         if (!targetCoordinates.IsValid(EntityManager))
         {
-            if (!directMove && steering.CurrentPath.TryPeek(out var poly) &&
+            if (!directMove && steering.CurrentPath.TryPeek(out var poly) && // Wizden#38846
                 (poly.Data.Flags & PathfindingBreadcrumbFlag.Invalid) != 0x0)
             {
                 steering.CurrentPath.Dequeue();
@@ -216,7 +218,7 @@ public sealed partial class NPCSteeringSystem
         if (arrived)
         {
             // Node needs some kind of special handling like access or smashing.
-            if (!directMove && steering.CurrentPath.TryPeek(out var node) && !IsFreeSpace(uid, steering, node))
+            if (!directMove && steering.CurrentPath.TryPeek(out var node) && !IsFreeSpace(uid, steering, node)) // Wizden#38846
             {
                 // Ignore stuck while handling obstacles.
                 ResetStuck(steering, ourCoordinates);
@@ -255,7 +257,7 @@ public sealed partial class NPCSteeringSystem
 
             // Distance should already be handled above.
             // It was just a node, not the target, so grab the next destination (either the target or next node).
-            if (!directMove && steering.CurrentPath.Count > 0)
+            if (!directMove && steering.CurrentPath.Count > 0) // Wizden#38846
             {
                 forceSteer = true;
                 steering.CurrentPath.Dequeue();
@@ -323,7 +325,7 @@ public sealed partial class NPCSteeringSystem
         }
 
         // If not in LOS and no path then get a new one fam.
-        if (!directMove &&
+        if (!directMove && // Wizden#38846
             ((!inLos && steering.ArriveOnLineOfSight && steering.CurrentPath.Count == 0) ||
              (!steering.ArriveOnLineOfSight && steering.CurrentPath.Count == 0)))
         {
@@ -331,14 +333,14 @@ public sealed partial class NPCSteeringSystem
         }
 
         // TODO: Probably need partial planning support i.e. patch from the last node to where the target moved to.
-        if (!directMove)
+        if (!directMove) // Wizden#38846
             CheckPath(uid, steering, xform, needsPath, targetDistance);
 
         // whether we should want to brake right now
-        var haveToBrake = finalInRange && velocityHigh;
+        var haveToBrake = finalInRange && velocityHigh; // Wizden#38846
 
         // If we don't have a path yet then do nothing; this is to avoid stutter-stepping if it turns out there's no path
-        // available but we assume there was. Brake if we have to, though.
+        // available but we assume there was. Brake if we have to, though. // Wizden#38846
         if (!directMove && steering is { Pathfind: true, CurrentPath.Count: 0 } && !haveToBrake)
             return true;
 

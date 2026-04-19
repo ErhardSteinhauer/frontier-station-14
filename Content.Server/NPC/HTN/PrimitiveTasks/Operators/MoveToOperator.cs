@@ -122,6 +122,7 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
             });
         }
 
+        // Wizden#38846
         if (!doDirectMove)
         {
             var path = await _pathfind.GetPath(
@@ -151,7 +152,7 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
                 {NPCBlackboard.OwnerCoordinates, targetCoordinates},
                 {DirectMoveTargetKey, true}
             });
-        }
+        } // End Wizden#38846
     }
 
     // Given steering is complicated we'll hand it off to a dedicated system rather than this singleton operator.
@@ -174,6 +175,7 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
             comp.Range = range;
         }
 
+        // Wizden#38846
         // see if we want to just move directly first
         if (blackboard.TryGetValue<bool>(DirectMoveTargetKey, out var doDirectMove, _entManager) && doDirectMove)
         {
@@ -183,7 +185,7 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
         else if (blackboard.TryGetValue<PathResultEvent>(PathfindKey, out var result, _entManager))
         {
             comp.DirectMove = false; // i'm not sure whether this being needed is a good sign - if you know a better solution, tell
-
+            // End Wizden#38846
             if (blackboard.TryGetValue<EntityCoordinates>(NPCBlackboard.OwnerCoordinates, out var coordinates, _entManager))
             {
                 var mapCoords = _transform.ToMapCoordinates(coordinates);
@@ -192,7 +194,7 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
 
             comp.CurrentPath = new Queue<PathPoly>(result.Path);
         }
-        comp.InRangeMaxSpeed = BrakeMaxVelocity;
+        comp.InRangeMaxSpeed = BrakeMaxVelocity; // Wizden#38846
     }
 
     public override HTNOperatorStatus Update(NPCBlackboard blackboard, float frameTime)
@@ -228,7 +230,7 @@ public sealed partial class MoveToOperator : HTNOperator, IHtnConditionalShutdow
 
         // OwnerCoordinates is only used in planning so dump it.
         blackboard.Remove<PathResultEvent>(PathfindKey);
-        // also clear DirectMove
+        // also clear DirectMove // Wizden#38846
         blackboard.Remove<bool>(DirectMoveTargetKey);
 
         if (RemoveKeyOnFinish)
