@@ -1,74 +1,58 @@
 ﻿- type: inventoryTemplate
   id: hostilewizard
   slots:
-# region "not strippable", "hidden"
-# stripTime seems to have a hardcoded maximum value, preventing items in a slot from being completely unlootable via setting a long time
-# By placing the wallet slot above the slots we want to protect, items in those covered slots become non-interactable
-    - name: head
-      stripTime: 999999
-      stripHidden: true
-      slotTexture: head
-      slotFlags: HEAD
-      uiWindowPos: 1,1
-      strippingWindowPos: 2,2
-      displayName: Head
-
+# region "hidden", "not strippable"
+# The following slots are not intended to be lootable
     - name: shoes
-      stripTime: 999999
-      stripHidden: true
       slotTexture: shoes
       slotFlags: FEET
+      stripTime: 999999
       uiWindowPos: 1,1
       strippingWindowPos: 2,2
       displayName: Shoes
 
     - name: jumpsuit
-      stripTime: 999999
-      stripHidden: true
       slotTexture: uniform
       slotFlags: INNERCLOTHING
+      stripTime: 999999
       uiWindowPos: 1,1
       strippingWindowPos: 2,2
       displayName: Jumpsuit
 
     - name: gloves
       stripTime: 999999
-      stripHidden: true
       slotTexture: gloves
       slotFlags: GLOVES
       uiWindowPos: 1,1
       strippingWindowPos: 2,2
       displayName: Gloves
 
-    - name: eyes
+    - name: head
       stripTime: 999999
-      stripHidden: true
+      slotTexture: head
+      slotFlags: HEAD
+      uiWindowPos: 1,1
+      strippingWindowPos: 2,2
+      displayName: Head
+
+    - name: eyes
       slotTexture: glasses
       slotFlags: EYES
+      stripTime: 999999
       uiWindowPos: 1,1
       strippingWindowPos: 2,2
       displayName: Eyes
 
     - name: ears
-      stripTime: 999999
-      stripHidden: true
       slotTexture: ears
       slotFlags: EARS
+      stripTime: 999999
       uiWindowPos: 1,1
       strippingWindowPos: 2,2
       displayName: Ears
 
-    - name: id
-      stripTime: 999999
-      slotTexture: id
-      fullTextureName: template_small
-      slotFlags: IDCARD
-      slotGroup: SecondHotbar
-      uiWindowPos: 2,1
-      strippingWindowPos: 2,0
-      displayName: ID
-
-  # region lootable, visible
+# region "strippable"
+# Slots that are intended to be lootable
     - name: pocket1
       stripTime: 3
       stripHidden: false
@@ -142,12 +126,3 @@
       uiWindowPos: 1,1
       strippingWindowPos: 2,2
       displayName: Suit
-
-    - name: wallet
-      stripTime: 1.5
-      stripHidden: false
-      strippingWindowPos: 2,2
-      slotTexture: wallet
-      slotFlags: WALLET
-      uiWindowPos: 1,1
-      displayName: Wallet
