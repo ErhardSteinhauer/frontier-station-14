@@ -4,7 +4,7 @@
   parent: ClothingHeadset
   id: NFBaseClothingWristset
   name: wristset
-  description: An updated, modular intercom that fits over the wrist. Takes encryption keys.
+  description: An updated, modular intercom worn on the wrist. It accepts encryption keys.
   components:
   - type: Sprite
     sprite: _NF/Clothing/Ears/Headsets/wrist_color.rsi
@@ -222,6 +222,12 @@
       - EncryptionKeyNfsd
 
 - type: entity
+  parent: [NFBaseClothingWristset, NFClothingWristsetNfsdBrown]
+  id: NFClothingWristsetNfsdBrownCommon
+  name: NFSD wristset
+  suffix: Common
+
+- type: entity
   parent: NFClothingWristsetNfsdBrown
   id: NFClothingWristsetNfsdGreen
   components:
@@ -243,6 +249,12 @@
         shader: unshaded
 
 - type: entity
+  parent: [NFBaseClothingWristset, NFClothingWristsetNfsdGreen]
+  id: NFClothingWristsetNfsdGreenCommon
+  name: NFSD wristset
+  suffix: Common
+
+- type: entity
   parent: NFClothingWristsetNfsdBrown
   id: NFClothingWristsetNfsdCream
   components:
@@ -262,6 +274,12 @@
       - state: equipped-EARS-unshaded
         color: "#52843f"
         shader: unshaded
+
+- type: entity
+  parent: [NFBaseClothingWristset, NFClothingWristsetNfsdCream]
+  id: NFClothingWristsetNfsdCreamCommon
+  name: NFSD wristset
+  suffix: Common
 
 # region contractor
 - type: entity
@@ -719,6 +737,8 @@
       color: "#00ff00"
     - state: icon-decal-01
       color: "#006097"
+    - state: icon-decal-02
+      color: "#00ff00"
     - state: icon-unshaded
       color: "#cc3300"
       shader: unshaded
