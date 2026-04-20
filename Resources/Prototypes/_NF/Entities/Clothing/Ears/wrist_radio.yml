@@ -476,6 +476,16 @@
         shader: unshaded
 
 - type: entity
+  parent: NFClothingWristsetEngineeringCommon
+  id: NFClothingWristsetEngineering
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyEngineering
+
+- type: entity
   parent: [NFBaseClothingWristset, ClothingHeadsetEngineering]
   id: NFClothingWristsetAtmosphericsCommon
   name: atmospherics wristset
@@ -498,6 +508,16 @@
       - state: equipped-EARS-unshaded
         color: "#f1ef8b"
         shader: unshaded
+
+- type: entity
+  parent: NFClothingWristsetAtmosphericsCommon
+  id: NFClothingWristsetAtmospherics
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCommon
+      - EncryptionKeyEngineering
 
 # region medical
 - type: entity
@@ -664,6 +684,78 @@
         color: "#87c0c1"
         shader: unshaded
 
+- type: entity
+  parent: [NFBaseClothingWristset, ClothingHeadsetService]
+  id: NFClothingWristsetServiceJanitorCommon
+  name: janitor wristset
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#9fed58"
+    - state: icon-decal-01
+      color: "#891eb8"
+    - state: icon-unshaded
+      color: "#87c0c1"
+      shader: unshaded
+    - state: icon-buttons
+  - type: Clothing
+    clothingVisuals:
+      ears:
+      - state: equipped-EARS
+        color: "#891eb8"
+      - state: equipped-EARS-unshaded
+        color: "#87c0c1"
+        shader: unshaded
+
+- type: entity
+  parent: [NFBaseClothingWristset, ClothingHeadsetService]
+  id: NFClothingWristsetServiceClownCommon
+  name: clown wristset
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#00ff00"
+    - state: icon-decal-01
+      color: "#006097"
+    - state: icon-unshaded
+      color: "#cc3300"
+      shader: unshaded
+    - state: icon-buttons
+  - type: Clothing
+    clothingVisuals:
+      ears:
+      - state: equipped-EARS
+        color: "#00ff00"
+      - state: equipped-EARS-unshaded
+        color: "#cc3300"
+        shader: unshaded
+
+- type: entity
+  parent: [NFBaseClothingWristset, ClothingHeadsetService]
+  id: NFClothingWristsetServiceMimeCommon
+  name: mime wristset
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#1d1d1d"
+    - state: icon-decal-02
+      color: "#dbe1e5"
+    - state: icon-unshaded
+      color: "#87c0c1"
+      shader: unshaded
+    - state: icon-buttons
+  - type: Clothing
+    clothingVisuals:
+      ears:
+      - state: equipped-EARS
+        color: "#1d1d1d"
+      - state: equipped-EARS-unshaded
+        color: "#87c0c1"
+        shader: unshaded
+
 # region punk
 - type: entity
   parent: [NFBaseClothingWristset, ClothingHeadsetService]
@@ -707,6 +799,35 @@
     mappedColors:
       Base: Cyberpunk
       Decor: CyberpunkNeon
+
+# region antags
+- type: entity
+  parent: [NFBaseClothingWristset, ClothingHeadsetGrey]
+  id: NFClothingWristsetPirateFreelancer
+  name: pirate wristset
+  components:
+  - type: Sprite
+    layers:
+    - state: icon
+      color: "#784f1e"
+    - state: icon-decal-02
+      color: "#4b0e10"
+    - state: icon-unshaded
+      color: "#d4a365"
+      shader: unshaded
+    - state: icon-buttons
+  - type: Clothing
+    clothingVisuals:
+      ears:
+      - state: equipped-EARS
+        color: "#784f1e"
+      - state: equipped-EARS-unshaded
+        color: "#d4a365"
+        shader: unshaded
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyFreelance
 
 # region player factions
 - type: entity

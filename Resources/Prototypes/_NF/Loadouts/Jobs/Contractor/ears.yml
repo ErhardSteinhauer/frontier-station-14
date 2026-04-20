@@ -190,6 +190,27 @@
   groupBy: "EarWristset"
 
 - type: loadout
+  id: ContractorNFClothingWristsetServiceJanitorCommon
+  price: 300
+  equipment:
+    ears: NFClothingWristsetServiceJanitorCommon
+  groupBy: "EarWristset"
+
+- type: loadout
+  id: ContractorNFClothingWristsetServiceClownCommon
+  price: 350
+  equipment:
+    ears: NFClothingWristsetServiceClownCommon
+  groupBy: "EarWristset"
+
+- type: loadout
+  id: ContractorNFClothingWristsetServiceMimeCommon
+  price: 350
+  equipment:
+    ears: NFClothingWristsetServiceMimeCommon
+  groupBy: "EarWristset"
+
+- type: loadout
   id: ContractorNFClothingWristsetPunkCommon
   name: punk wristset (random)
   price: 350
