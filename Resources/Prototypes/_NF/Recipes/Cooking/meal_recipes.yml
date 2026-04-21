@@ -1880,3 +1880,19 @@
     FoodGoblinGlowskeySublimate: 1
   recipeType:
   - Assembler
+# Fries
+
+- type: microwaveMealRecipe
+  id: Poutine
+  name: poutine recipe
+  result: FoodMealPoutine
+  time: 5
+  group: Savory
+  solids:
+    FoodMealFries: 1
+    FoodCheeseCurds: 1
+  reagents:
+    Gravy: 10
+  recipeType:
+  - Assembler
+  
