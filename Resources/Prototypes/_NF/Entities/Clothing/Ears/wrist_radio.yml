@@ -133,66 +133,6 @@
       key_slots:
       - EncryptionKeyDoc
 
-# region mail carrier
-- type: entity
-  parent: [NFBaseClothingWristset, BaseCommandContraband]
-  id: NFClothingWristsetMailCarrier
-  name: mail carrier wristset
-  components:
-  - type: Sprite
-    layers:
-    - state: icon
-      color: "#4d65b4"
-    - state: icon-decal-01
-      color: "#b33831"
-    - state: icon-unshaded
-      color: "#8fd3ff"
-      shader: unshaded
-    - state: icon-buttons
-  - type: Clothing
-    clothingVisuals:
-      ears:
-      - state: equipped-EARS
-        color: "#b33831"
-      - state: equipped-EARS-unshaded
-        color: "#8fd3ff"
-        shader: unshaded
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyCommon
-      - EncryptionKeyService
-      - EncryptionKeyTraffic
-
-# region STC
-- type: entity
-  parent: [NFBaseClothingWristset, BaseCommandContraband]
-  id: NFClothingWristsetStc
-  name: station traffic controller wristset
-  components:
-  - type: Sprite
-    layers:
-    - state: icon
-      color: "#1560bd"
-    - state: icon-decal-02
-      color: "#fe5c00"
-    - state: icon-unshaded
-      color: "#fe5c00"
-      shader: unshaded
-    - state: icon-buttons
-  - type: Clothing
-    clothingVisuals:
-      ears:
-      - state: equipped-EARS
-        color: "#1560bd"
-      - state: equipped-EARS-unshaded
-        color: "#fe5c00"
-        shader: unshaded
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyStationMaster
-
 # region NFSD (full)
 - type: entity
   parent: [NFBaseClothingWristset, ClothingHeadsetNfsdBrown]
@@ -496,6 +436,7 @@
 - type: entity
   parent: NFClothingWristsetEngineeringCommon
   id: NFClothingWristsetEngineering
+  suffix: Engineering
   components:
   - type: ContainerFill
     containers:
@@ -530,6 +471,7 @@
 - type: entity
   parent: NFClothingWristsetAtmosphericsCommon
   id: NFClothingWristsetAtmospherics
+  suffix: Engineering
   components:
   - type: ContainerFill
     containers:
@@ -787,7 +729,9 @@
     - state: icon
       map: [ "wristsetBase" ]
     - state: icon-decal-01
-      map: [ "wristsetDecal" ]
+      map: [ "wristsetDecal01" ]
+    - state: icon-decal-02
+      map: [ "wristsetDecal02" ]
     - state: icon-unshaded
       shader: unshaded
       map: [ "wristsetScreen" ]
@@ -807,18 +751,24 @@
           icon: Base
         wristsetClothingBase:
           equipped-EARS: Base
-        wristsetDecal:
-          icon-decal-01: Decor
-          icon-decal-02: Decor
+        wristsetDecal01:
+          icon-decal-01: Decor01
+          icon-decal-02: Decor01
+          mask_null: ""
+        wristsetDecal02:
+          icon-decal-01: Decor02
+          icon-decal-02: Decor02
+          mask_null: ""
         wristsetButtons:
-          icon-buttons: Decor
+          icon-buttons: Decor01
         wristsetScreen:
-          icon-unshaded: Decor
+          icon-unshaded: Decor02
         wristsetClothingScreen:
           equipped-EARS-unshaded: CyberpunkNeon
     mappedColors:
       Base: Cyberpunk
-      Decor: CyberpunkNeon
+      Decor01: CyberpunkNeon
+      Decor02: CyberpunkNeon
 
 # region antags
 - type: entity

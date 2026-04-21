@@ -11,19 +11,6 @@
             "name": "icon"
         },
         {
-            "name": "icon-animation",
-            "delays": [
-                [
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1,
-                    0.1
-                ]
-            ]
-        },
-        {
             "name": "icon-buttons"
         },
         {
@@ -42,6 +29,9 @@
         {
             "name": "equipped-EARS-unshaded",
             "directions": 4
+        },
+        {
+            "name": "mask_null"
         }
     ]
 }
