@@ -37,10 +37,10 @@
     children:
     - !type:NestedSelector
       tableId: TableDungeonLootEngineeringClutter
-      weight: 0.97
+      weight: 0.98
     - !type:NestedSelector
       tableId: TableDungeonLootEngineeringConcealedLandmines
-      weight: 0.03
+      weight: 0.02
 
 #region Tools
 - type: entityTable

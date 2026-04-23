@@ -31,10 +31,10 @@
     children:
     - !type:NestedSelector
       tableId: TableDungeonLootSupplyClutter
-      weight: 0.97
+      weight: 0.98
     - !type:NestedSelector
       tableId: NFTableRandomConcealedMine
-      weight: 0.03
+      weight: 0.02
 
 # region Tools
 - type: entityTable

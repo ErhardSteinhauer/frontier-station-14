@@ -44,7 +44,8 @@
       params:
         volume: 5
     initialBeepDelay: 0
-    beepInterval: 1 # 2 beeps total (at 0 and 2)
+    beepInterval: 1
+    examinable: false
   - type: DeleteOnTrigger
     keysIn:
     - timer
