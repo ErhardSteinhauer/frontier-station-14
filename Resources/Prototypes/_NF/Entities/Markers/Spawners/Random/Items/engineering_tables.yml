@@ -40,7 +40,7 @@
       weight: 0.98
     - !type:NestedSelector
       tableId: TableDungeonLootEngineeringConcealedLandmines
-      weight: 0.02
+      weight: 0.01
 
 #region Tools
 - type: entityTable
