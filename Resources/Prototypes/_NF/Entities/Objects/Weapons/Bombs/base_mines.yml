@@ -3,6 +3,9 @@
   abstract: true
   id: NFBaseProximityMine
   components:
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
   - type: Clickable
   - type: InteractionOutline
   - type: Physics
@@ -27,6 +30,7 @@
         damage: 50
       behaviors:
       - !type:TriggerBehavior
+        keyOut: timer # explode immediately
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: RequireProjectileTarget
@@ -36,7 +40,17 @@
     enabled: true
     sound:
       path: /Audio/Items/newton_cradle.ogg
+  - type: TimerTrigger
+    delay: 2
+    beepSound:
+      path: "/Audio/Effects/beep1.ogg"
+      params:
+        volume: 5
+    initialBeepDelay: 0
+    beepInterval: 1 # 2 beeps total (at 0 and 2)
   - type: DeleteOnTrigger
+    keysIn:
+    - timer
   - type: TriggerOnProximity
     triggerSpeed: 0
     shape:
@@ -56,6 +70,8 @@
   suffix: Frontier, Mine, Explosive
   components:
   - type: ExplodeOnTrigger
+    keysIn:
+      - timer
   - type: Explosive
     explosionType: Default
     maxIntensity: 20
@@ -69,6 +85,8 @@
   suffix: Frontier, Mine, Cryo
   components:
   - type: ExplodeOnTrigger
+    keysIn:
+      - timer
   - type: Explosive
     explosionType: Cryo
     maxIntensity: 10
@@ -82,6 +100,8 @@
   suffix: Frontier, Mine, Fire
   components:
   - type: ExplodeOnTrigger
+    keysIn:
+      - timer
   - type: Explosive
     explosionType: FireBomb
     maxIntensity: 10
@@ -95,6 +115,8 @@
   suffix: Frontier, Mine, EMP
   components:
   - type: EmpOnTrigger
+    keysIn:
+      - timer
     range: 6
     energyConsumption: 10000
 
@@ -105,9 +127,14 @@
   suffix: Frontier, Mine, Flash
   components:
   - type: FlashOnTrigger
-    range: 6
+    keysIn:
+      - timer
+    range: 7
   - type: SpawnOnTrigger
+    keysIn:
+    - timer
     proto: GrenadeFlashEffect
+    predicted: true
 
 - type: entity
   abstract: true
@@ -116,9 +143,13 @@
   suffix: Frontier, Mine, Smoke
   components:
   - type: SmokeOnTrigger
+    keysIn:
+      - timer
     duration: 5
     spreadAmount: 5
   - type: EmitSoundOnTrigger
+    keysIn:
+      - timer
     sound:
       path: /Audio/Effects/smoke.ogg
     positional: true
@@ -128,28 +159,22 @@
   abstract: true
   id: NFConcealedMineToolbox
   name: mechanical toolbox
-  description: A blue box, stocked with mechanical tools.
+  description: A toolbox box, stocked with various tools.
   components:
   - type: Sprite
-    drawdepth: SmallObjects
     layers:
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring1
       map: [ "ied_wiring1" ]
-      state: ied_wiring1
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring2
       map: [ "ied_wiring2" ]
-      state: ied_wiring2
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring3
       map: [ "ied_wiring3" ]
-      state: ied_wiring3
     - sprite: Objects/Tools/Toolboxes/toolbox_blue.rsi
       state: icon
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      state: ied_display
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      color: "#990000"
+    - state: ied_display
+    - state: ied_light
+      map: [ "ied_light" ]
       shader: unshaded
-      state: ied_light
   - type: RandomSprite
     available:
       - ied_wiring1:
@@ -174,6 +199,8 @@
           ied_wiring5: Rainbow
           ied_wiring6: Rainbow
           mask_null: ""
+        ied_light:
+          ied_light: Rainbow
 
 - type: entity
   abstract: true
@@ -182,25 +209,19 @@
   description: Caution! Wet Floor!
   components:
   - type: Sprite
-    drawdepth: SmallObjects
     layers:
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring1
       map: [ "ied_wiring1" ]
-      state: ied_wiring1
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring2
       map: [ "ied_wiring2" ]
-      state: ied_wiring2
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring3
       map: [ "ied_wiring3" ]
-      state: ied_wiring3
     - sprite: Objects/Specific/Janitorial/wet_floor_sign.rsi
       state: icon
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      state: ied_display
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      color: "#990000"
+    - state: ied_display
+    - state: ied_light
+      map: [ "ied_light" ]
       shader: unshaded
-      state: ied_light
   - type: RandomSprite
     available:
       - ied_wiring1:
@@ -225,6 +246,8 @@
           ied_wiring5: Rainbow
           ied_wiring6: Rainbow
           mask_null: ""
+        ied_light:
+          ied_light: Rainbow
 
 - type: entity
   abstract: true
@@ -233,26 +256,20 @@
   description: A stuffed toy to remind adults of what they can no longer have - youth.
   components:
   - type: Sprite
-    drawdepth: SmallObjects
     layers:
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring1
       map: [ "ied_wiring1" ]
-      state: ied_wiring1
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring2
       map: [ "ied_wiring2" ]
-      state: ied_wiring2
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring3
       map: [ "ied_wiring3" ]
-      state: ied_wiring3
     - sprite: Objects/Fun/Plushies/nukie.rsi
       state: icon
       map: [ "ied_sprite_toy" ]
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      state: ied_display
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      color: "#990000"
+    - state: ied_display
+    - state: ied_light
+      map: [ "ied_light" ]
       shader: unshaded
-      state: ied_light
   - type: RandomSprite
     available:
       # TODO: Restore this after you add every individual plushie RSI to the layers above and figure out layering
@@ -300,6 +317,8 @@
           ied_wiring5: Rainbow
           ied_wiring6: Rainbow
           mask_null: ""
+        ied_light:
+          ied_light: Rainbow
 
 - type: entity
   abstract: true
@@ -308,26 +327,20 @@
   description: What's inside the box?
   components:
   - type: Sprite
-    drawdepth: SmallObjects
     layers:
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring1
       map: [ "ied_wiring1" ]
-      state: ied_wiring1
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring2
       map: [ "ied_wiring2" ]
-      state: ied_wiring2
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring3
       map: [ "ied_wiring3" ]
-      state: ied_wiring3
     - sprite: Objects/Storage/boxicons.rsi
       state: bodybags
       map: [ "ied_sprite_box" ]
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      state: ied_display
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      color: "#990000"
+    - state: ied_display
+    - state: ied_light
+      map: [ "ied_light" ]
       shader: unshaded
-      state: ied_light
   - type: RandomSprite
     available:
       - ied_sprite_box:
@@ -364,6 +377,8 @@
           ied_wiring5: Rainbow
           ied_wiring6: Rainbow
           mask_null: ""
+        ied_light:
+          ied_light: Rainbow
 
 - type: entity
   abstract: true
@@ -372,26 +387,20 @@
   description: A discarded packaging from an item that a generous person could describe as a food item.
   components:
   - type: Sprite
-    drawdepth: SmallObjects
     layers:
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring1
       map: [ "ied_wiring1" ]
-      state: ied_wiring1
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring2
       map: [ "ied_wiring2" ]
-      state: ied_wiring2
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring3
       map: [ "ied_wiring3" ]
-      state: ied_wiring3
     - sprite: Objects/Consumable/Food/snacks.rsi
       state: cheesiehonkers-trash
       map: [ "ied_sprite_trash" ]
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      state: ied_display
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      color: "#990000"
+    - state: ied_display
+    - state: ied_light
+      map: [ "ied_light" ]
       shader: unshaded
-      state: ied_light
   - type: RandomSprite
     available:
       - ied_sprite_trash:
@@ -428,6 +437,8 @@
           ied_wiring5: Rainbow
           ied_wiring6: Rainbow
           mask_null: ""
+        ied_light:
+          ied_light: Rainbow
 
 - type: entity
   abstract: true
@@ -436,26 +447,20 @@
   description: Worthless junk. You could probably get some materials out of it though.
   components:
   - type: Sprite
-    drawdepth: SmallObjects
     layers:
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring1
       map: [ "ied_wiring1" ]
-      state: ied_wiring1
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring2
       map: [ "ied_wiring2" ]
-      state: ied_wiring2
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+    - state: ied_wiring3
       map: [ "ied_wiring3" ]
-      state: ied_wiring3
     - sprite: Objects/Materials/Scrap/generic.rsi
       state: glass-1
       map: [ "ied_sprite_scrap" ]
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      state: ied_display
-    - sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
-      color: "#990000"
+    - state: ied_display
+    - state: ied_light
+      map: [ "ied_light" ]
       shader: unshaded
-      state: ied_light
   - type: RandomSprite
     available:
       - ied_sprite_scrap:
@@ -496,3 +501,5 @@
           ied_wiring5: Rainbow
           ied_wiring6: Rainbow
           mask_null: ""
+        ied_light:
+          ied_light: Rainbow
