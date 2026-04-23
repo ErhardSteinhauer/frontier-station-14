@@ -243,6 +243,9 @@
       - id: NFToolboxMineEmp
       - id: NFToolboxMineFlash
       - id: NFToolboxMineSmoke
+      - id: NFToolboxMineStinger
+      - id: NFToolboxMineShrapnel
+      - id: NFToolboxMineShrapnelIncendiary
     # Traped box
     - !type:GroupSelector
       weight: 0.1
@@ -253,6 +256,9 @@
       - id: NFBoxMineEmp
       - id: NFBoxMineFlash
       - id: NFBoxMineSmoke
+      - id: NFBoxMineStinger
+      - id: NFBoxMineShrapnel
+      - id: NFBoxMineShrapnelIncendiary
     # Traped scrap
     - !type:GroupSelector
       weight: 0.05
@@ -263,6 +269,9 @@
       - id: NFScrapMineEmp
       - id: NFScrapMineFlash
       - id: NFScrapMineSmoke
+      - id: NFScrapMineStinger
+      - id: NFScrapMineShrapnel
+      - id: NFScrapMineShrapnelIncendiary
 
 # region Parts
 - type: entityTable

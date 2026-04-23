@@ -3,9 +3,6 @@
   abstract: true
   id: NFBaseProximityMine
   components:
-  - type: Sprite
-    drawdepth: SmallObjects
-    sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
   - type: Clickable
   - type: InteractionOutline
   - type: Physics
@@ -14,13 +11,13 @@
   - type: Fixtures
     fixtures:
       fix1:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.2,-0.16,0.2,0.16"
+        shape: !type:PhysShapeCircle
+          radius: 0.3
+        density: 20 # derived from base_item
         mask:
-        - TabletopMachineMask
-        layer:
-        - TabletopMachineLayer
+        - ItemMask
+        restitution: 0.3
+        friction: 0.2
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible
@@ -67,7 +64,7 @@
   abstract: true
   parent: NFBaseProximityMine
   id: NFBaseMineExplosive
-  suffix: Frontier, Mine, Explosive
+  suffix: Mine, Explosive
   components:
   - type: ExplodeOnTrigger
     keysIn:
@@ -82,7 +79,7 @@
   abstract: true
   parent: NFBaseProximityMine
   id: NFBaseMineCryo
-  suffix: Frontier, Mine, Cryo
+  suffix: Mine, Cryo
   components:
   - type: ExplodeOnTrigger
     keysIn:
@@ -97,7 +94,7 @@
   abstract: true
   parent: NFBaseProximityMine
   id: NFBaseMineFire
-  suffix: Frontier, Mine, Fire
+  suffix: Mine, Fire
   components:
   - type: ExplodeOnTrigger
     keysIn:
@@ -112,7 +109,7 @@
   abstract: true
   parent: NFBaseProximityMine
   id: NFBaseMineEmp
-  suffix: Frontier, Mine, EMP
+  suffix: Mine, EMP
   components:
   - type: EmpOnTrigger
     keysIn:
@@ -124,7 +121,7 @@
   abstract: true
   parent: NFBaseProximityMine
   id: NFBaseMineFlash
-  suffix: Frontier, Mine, Flash
+  suffix: Mine, Flash
   components:
   - type: FlashOnTrigger
     keysIn:
@@ -140,7 +137,7 @@
   abstract: true
   parent: NFBaseProximityMine
   id: NFBaseMineSmoke
-  suffix: Frontier, Mine, Smoke
+  suffix: Mine, Smoke
   components:
   - type: SmokeOnTrigger
     keysIn:
@@ -154,9 +151,94 @@
       path: /Audio/Effects/smoke.ogg
     positional: true
 
+- type: entity
+  abstract: true
+  parent: NFBaseProximityMine
+  id: NFBaseMineCluster
+  components:
+  - type: SpawnOnTrigger
+    keysIn:
+    - timer
+    proto: GrenadeFlashEffect
+    predicted: true
+  - type: EmitSoundOnTrigger
+    keysIn:
+      - timer
+    sound:
+      collection: ExplosionSmall
+    positional: true
+  - type: ContainerContainer
+    containers:
+      cluster-payload: !type:Container
+
+- type: entity
+  abstract: true
+  parent: NFBaseMineCluster
+  id: NFBaseMineClusterStinger
+  suffix: Mine, Stinger
+  components:
+  - type: ProjectileGrenade
+    fillPrototype: NFPelletClusterRubber
+    capacity: 30
+
+- type: entity
+  abstract: true
+  parent: NFBaseMineCluster
+  id: NFBaseMineClusterShrapnel
+  suffix: Mine, Shrapnel
+  components:
+  - type: ProjectileGrenade
+    fillPrototype: NFPelletClusterLethal
+    capacity: 30
+
+- type: entity
+  abstract: true
+  parent: NFBaseMineCluster
+  id: NFBaseMineClusterShrapnelIncendiary
+  suffix: Mine, Shrapnel (Incendiary)
+  components:
+  - type: ProjectileGrenade
+    fillPrototype: NFPelletClusterIncendiary
+    capacity: 30
+
 # region base visuals
 - type: entity
   abstract: true
+  id: NFConcealedMineVisualsRandomized
+  components:
+  - type: Sprite
+    drawdepth: SmallObjects
+    sprite: _NF/Objects/Weapons/Bombs/ied_overlay.rsi
+  - type: RandomSprite
+    available:
+      - ied_wiring1:
+          ied_wiring1: Rainbow
+          ied_wiring2: Rainbow
+          ied_wiring3: Rainbow
+          ied_wiring4: Rainbow
+          ied_wiring5: Rainbow
+          ied_wiring6: Rainbow
+        ied_wiring2:
+          ied_wiring1: Rainbow
+          ied_wiring2: Rainbow
+          ied_wiring3: Rainbow
+          ied_wiring4: Rainbow
+          ied_wiring5: Rainbow
+          ied_wiring6: Rainbow
+        ied_wiring3:
+          ied_wiring1: Rainbow
+          ied_wiring2: Rainbow
+          ied_wiring3: Rainbow
+          ied_wiring4: Rainbow
+          ied_wiring5: Rainbow
+          ied_wiring6: Rainbow
+          mask_null: ""
+        ied_light:
+          ied_light: Rainbow
+
+- type: entity
+  abstract: true
+  parent: NFConcealedMineVisualsRandomized
   id: NFConcealedMineToolbox
   name: mechanical toolbox
   description: A toolbox box, stocked with various tools.
@@ -175,35 +257,10 @@
     - state: ied_light
       map: [ "ied_light" ]
       shader: unshaded
-  - type: RandomSprite
-    available:
-      - ied_wiring1:
-          ied_wiring1: Rainbow
-          ied_wiring2: Rainbow
-          ied_wiring3: Rainbow
-          ied_wiring4: Rainbow
-          ied_wiring5: Rainbow
-          ied_wiring6: Rainbow
-        ied_wiring2:
-          ied_wiring1: Rainbow
-          ied_wiring2: Rainbow
-          ied_wiring3: Rainbow
-          ied_wiring4: Rainbow
-          ied_wiring5: Rainbow
-          ied_wiring6: Rainbow
-        ied_wiring3:
-          ied_wiring1: Rainbow
-          ied_wiring2: Rainbow
-          ied_wiring3: Rainbow
-          ied_wiring4: Rainbow
-          ied_wiring5: Rainbow
-          ied_wiring6: Rainbow
-          mask_null: ""
-        ied_light:
-          ied_light: Rainbow
 
 - type: entity
   abstract: true
+  parent: NFConcealedMineVisualsRandomized
   id: NFConcealedMineWetFloorSign
   name: wet floor sign
   description: Caution! Wet Floor!
@@ -222,35 +279,10 @@
     - state: ied_light
       map: [ "ied_light" ]
       shader: unshaded
-  - type: RandomSprite
-    available:
-      - ied_wiring1:
-          ied_wiring1: Rainbow
-          ied_wiring2: Rainbow
-          ied_wiring3: Rainbow
-          ied_wiring4: Rainbow
-          ied_wiring5: Rainbow
-          ied_wiring6: Rainbow
-        ied_wiring2:
-          ied_wiring1: Rainbow
-          ied_wiring2: Rainbow
-          ied_wiring3: Rainbow
-          ied_wiring4: Rainbow
-          ied_wiring5: Rainbow
-          ied_wiring6: Rainbow
-        ied_wiring3:
-          ied_wiring1: Rainbow
-          ied_wiring2: Rainbow
-          ied_wiring3: Rainbow
-          ied_wiring4: Rainbow
-          ied_wiring5: Rainbow
-          ied_wiring6: Rainbow
-          mask_null: ""
-        ied_light:
-          ied_light: Rainbow
 
 - type: entity
   abstract: true
+  parent: NFConcealedMineVisualsRandomized
   id: NFConcealedMinePlushie
   name: plushie
   description: A stuffed toy to remind adults of what they can no longer have - youth.
@@ -322,6 +354,7 @@
 
 - type: entity
   abstract: true
+  parent: NFConcealedMineVisualsRandomized
   id: NFConcealedMineBox
   name: box
   description: What's inside the box?
@@ -382,6 +415,7 @@
 
 - type: entity
   abstract: true
+  parent: NFConcealedMineVisualsRandomized
   id: NFConcealedMineTrash
   name: discarded wrapper
   description: A discarded packaging from an item that a generous person could describe as a food item.
@@ -442,6 +476,7 @@
 
 - type: entity
   abstract: true
+  parent: NFConcealedMineVisualsRandomized
   id: NFConcealedMineScrap
   name: scrap
   description: Worthless junk. You could probably get some materials out of it though.

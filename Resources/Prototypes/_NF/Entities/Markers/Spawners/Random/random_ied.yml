@@ -92,6 +92,51 @@
         weight: 30
       - id: NFScrapMineSmoke
         weight: 20
+    # Stinger
+    - !type:GroupSelector
+      children:
+      - id: NFToolboxMineStinger
+        weight: 20
+      - id: NFWetFloorSignMineStinger
+        weight: 5
+      - id: NFPlushieMineStinger
+        weight: 10
+      - id: NFBoxMineStinger
+        weight: 15
+      - id: NFTrashMineStinger
+        weight: 30
+      - id: NFScrapMineStinger
+        weight: 20
+    # Shrapnel
+    - !type:GroupSelector
+      children:
+      - id: NFToolboxMineShrapnel
+        weight: 20
+      - id: NFWetFloorSignMineShrapnel
+        weight: 5
+      - id: NFPlushieMineShrapnel
+        weight: 10
+      - id: NFBoxMineShrapnel
+        weight: 15
+      - id: NFTrashMineShrapnel
+        weight: 30
+      - id: NFScrapMineShrapnel
+        weight: 20
+    # Incendiary
+    - !type:GroupSelector
+      children:
+      - id: NFToolboxMineShrapnelIncendiary
+        weight: 20
+      - id: NFWetFloorSignMineShrapnelIncendiary
+        weight: 5
+      - id: NFPlushieMineShrapnelIncendiary
+        weight: 10
+      - id: NFBoxMineShrapnelIncendiary
+        weight: 15
+      - id: NFTrashMineShrapnelIncendiary
+        weight: 30
+      - id: NFScrapMineShrapnelIncendiary
+        weight: 20
 
 - type: entity
   name: random mine spawner

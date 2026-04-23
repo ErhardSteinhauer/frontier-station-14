@@ -147,3 +147,78 @@
 - type: entity
   parent: [ NFBaseMineSmoke, NFConcealedMineScrap ]
   id: NFScrapMineSmoke
+
+# region Stinger
+- type: entity
+  parent: [ NFBaseMineClusterStinger, NFConcealedMineToolbox ]
+  id: NFToolboxMineStinger
+
+- type: entity
+  parent: [ NFBaseMineClusterStinger, NFConcealedMineWetFloorSign ]
+  id: NFWetFloorSignMineStinger
+
+- type: entity
+  parent: [ NFBaseMineClusterStinger, NFConcealedMinePlushie ]
+  id: NFPlushieMineStinger
+
+- type: entity
+  parent: [ NFBaseMineClusterStinger, NFConcealedMineBox ]
+  id: NFBoxMineStinger
+
+- type: entity
+  parent: [ NFBaseMineClusterStinger, NFConcealedMineTrash ]
+  id: NFTrashMineStinger
+
+- type: entity
+  parent: [ NFBaseMineClusterStinger, NFConcealedMineScrap ]
+  id: NFScrapMineStinger
+
+# region Shrapnel
+- type: entity
+  parent: [ NFBaseMineClusterShrapnel, NFConcealedMineToolbox ]
+  id: NFToolboxMineShrapnel
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnel, NFConcealedMineWetFloorSign ]
+  id: NFWetFloorSignMineShrapnel
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnel, NFConcealedMinePlushie ]
+  id: NFPlushieMineShrapnel
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnel, NFConcealedMineBox ]
+  id: NFBoxMineShrapnel
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnel, NFConcealedMineTrash ]
+  id: NFTrashMineShrapnel
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnel, NFConcealedMineScrap ]
+  id: NFScrapMineShrapnel
+
+# region Incendiary
+- type: entity
+  parent: [ NFBaseMineClusterShrapnelIncendiary, NFConcealedMineToolbox ]
+  id: NFToolboxMineShrapnelIncendiary
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnelIncendiary, NFConcealedMineWetFloorSign ]
+  id: NFWetFloorSignMineShrapnelIncendiary
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnelIncendiary, NFConcealedMinePlushie ]
+  id: NFPlushieMineShrapnelIncendiary
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnelIncendiary, NFConcealedMineBox ]
+  id: NFBoxMineShrapnelIncendiary
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnelIncendiary, NFConcealedMineTrash ]
+  id: NFTrashMineShrapnelIncendiary
+
+- type: entity
+  parent: [ NFBaseMineClusterShrapnelIncendiary, NFConcealedMineScrap ]
+  id: NFScrapMineShrapnelIncendiary
