@@ -134,3 +134,14 @@
     proto: DartAberrantFleshHorrorSpike
     count: 3
     spread: 25
+
+# hairbola
+- type: entity
+  parent: Bola
+  id: Hairbola
+  name: hairbola
+  description: A tangled mess of half-digested hair.
+  components:
+  - type: Sprite
+    sprite: _NF/Objects/Weapons/Throwable/hairbola.rsi
+    state: icon
