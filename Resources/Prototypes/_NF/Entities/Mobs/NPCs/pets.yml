@@ -538,7 +538,7 @@
   - type: StaminaDamageOnHit
     damage: 0
   - type: Inventory
-    templateId: inventoryTemplate
+    templateId: empty
   - type: NpcFactionMember
     factions:
     - Cat
@@ -570,7 +570,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 5
+    rechargeCooldown: 290
     rechargeSound:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_hiss1.ogg
   - type: BasicEntityAmmoProvider
@@ -580,7 +580,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_hiss2.ogg
-    #soundEmpty: null
+    soundEmpty: null
     projectileSpeed: 20
 
 - type: entity
