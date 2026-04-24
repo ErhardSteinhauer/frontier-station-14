@@ -510,6 +510,7 @@
   categories: [ HideSpawnMenu ]
   name: cardboard box
   description: Just a cardboard box.
+  suffix: Harold
   components:
   - type: Sprite
     drawdepth: Mobs
@@ -528,15 +529,39 @@
     channels:
     - Common
   - type: MeleeWeapon
+    soundHit:
+      path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
+    animation: WeaponArcClaw # Can't bite, so claws
     damage:
       types:
         Piercing: 0
   - type: StaminaDamageOnHit
-    damage: 18
+    damage: 0
+  - type: Inventory
+    templateId: inventoryTemplate
   - type: NpcFactionMember
     factions:
     - Cat
     - PetsNT
+    - NanoTrasen
+    # NPCs from hostile factions become friendly, as they're "fooled" by the camouflage
+    - NFSyndicate
+    - WizFedFaction
+    - BloodCultNF
+    - NFPirate
+    - ExplorersExpeditionNF
+    - ArtifactConstruct
+    - StreetGangNF
+    - DinosaursNF
+    - MercenariesExpeditionNF
+    - SiliconsExpeditionNF
+    - AberrantFleshExpeditionNF
+    - ContrabandDetection
+    - Zombie
+    - Dragon
+    - Xenoborg
+    - SimpleHostile
+    - Xeno
 
 - type: entity
   id: HairbolaGun
@@ -545,7 +570,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 300
+    rechargeCooldown: 5
     rechargeSound:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_hiss1.ogg
   - type: BasicEntityAmmoProvider
@@ -555,7 +580,7 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Nyanotrasen/Voice/Felinid/cat_hiss2.ogg
-    soundEmpty: null
+    #soundEmpty: null
     projectileSpeed: 20
 
 - type: entity
@@ -579,19 +604,26 @@
 - type: polymorph
   id: CatMercenaryBox
   configuration:
-    entity: MobCatMercenaryCamouflaged # MailLargeAdminFun # BigBox
+    entity: MobCatMercenaryCamouflaged
     transferName: true
+    transferDamage: true
     inventory: None
     revertOnDeath: true
     revertOnCrit: true
+    duration: 90
+    polymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Effects/chime.ogg
+    exitPolymorphSound: !type:SoundPathSpecifier
+      path: /Audio/Effects/chime.ogg
 
 - type: entity
   parent: BaseActionPolymorph
   id: ActionPolymorphMercenaryBox
-  name: Camouflage!
-  description: Hide in a cardboard box.
+  name: "[color=purple]Camouflage![/color]"
+  description: Hide in a cardboard box. This might fool hostiles. [color=yellow]Camouflage lasts for 90 seconds.[/color]"
   components:
   - type: Action
+    useDelay: 20
     icon:
       sprite: _NF/Objects/Specific/Mail/mail_large.rsi
       state: icon
