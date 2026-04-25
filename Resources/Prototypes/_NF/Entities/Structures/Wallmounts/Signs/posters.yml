@@ -111,6 +111,62 @@
   - type: Sprite
     sprite: _NF/Structures/Wallmounts/posters.rsi
     state: nf_poster11_legit
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterLegitFrontierSector
+  name: "Frontier Sector"
+  description: |-
+    The poster promotes the Frontier Space Sector as a land rich with opportunity. The advertisement reads: “Take command of your destiny!”
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster12_legit
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterLegitFrontierSr
+  name: "Station Representative"
+  description: |-
+    The poster depicts a determined-looking station representative. The text reads: “Serving the Frontier, serving you.”
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster13_legit
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterLegitFrontierStc
+  name: "Station Traffic Controller"
+  description: |-
+    The poster depicts a deeply focused station traffic controller. The text reads: “Keeping the docks clear for you.”
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster14_legit
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterLegitFrontierCats
+  name: "Frontier Cats"
+  description: |-
+    The poster depicts cats staring at you with wide, pleading eyes. The text reads: “Protect them at all costs!”
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster15_legit
+
+- type: entity
+  parent: PosterBase
+  id: NFPosterLegitFrontierSheriffDepartment
+  name: "NFSD"
+  description: |-
+    Promotional poster for the New Frontier Sheriff's Department. The text reads: “Here for you!”
+  components:
+  - type: Sprite
+    sprite: _NF/Structures/Wallmounts/posters.rsi
+    state: nf_poster15_legit
+
 #endregion
 
 #region Contraband posters

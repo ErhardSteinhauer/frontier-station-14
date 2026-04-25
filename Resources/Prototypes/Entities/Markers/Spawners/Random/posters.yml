@@ -214,5 +214,10 @@
       - NFPosterLegitNfsdFleetCommand
       - NFPosterLegitPaperPushers
       - NFPosterLegitRipleyAplu
+      - NFPosterLegitFrontierSector
+      - NFPosterLegitFrontierSr
+      - NFPosterLegitFrontierStc
+      - NFPosterLegitFrontierCats
+      - NFPosterLegitFrontierSheriffDepartment
         # End Frontier
     chance: 1

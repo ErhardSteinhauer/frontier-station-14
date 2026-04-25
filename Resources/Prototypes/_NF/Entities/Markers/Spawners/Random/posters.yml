@@ -79,6 +79,11 @@
     - id: NFPosterLegitNfsdFleetCommand
     - id: NFPosterLegitPaperPushers
     - id: NFPosterLegitRipleyAplu
+    - id: NFPosterLegitFrontierSector
+    - id: NFPosterLegitFrontierSr
+    - id: NFPosterLegitFrontierStc
+    - id: NFPosterLegitFrontierCats
+    - id: NFPosterLegitFrontierSheriffDepartment
 # endregion tables
 
 #region spawners
