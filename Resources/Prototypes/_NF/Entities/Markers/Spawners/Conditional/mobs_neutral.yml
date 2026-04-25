@@ -51,7 +51,7 @@
       - MobCatCappy
 
 - type: entity
-  name: Harold Spawner
+  name: Cranky Spawner
   id: SpawnMobCatMercenary
   parent: MarkerBase
   components:

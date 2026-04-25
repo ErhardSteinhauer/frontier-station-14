@@ -448,7 +448,7 @@
 - type: entity
   id: MobCatMercenary
   parent: [NFMobPet, MobCatGhost]
-  name: Harold
+  name: Cranky
   description: Just a cat that's good at what it does.
   components:
   - type: Sprite
@@ -510,7 +510,7 @@
   categories: [ HideSpawnMenu ]
   name: cardboard box
   description: Just a cardboard box.
-  suffix: Harold
+  suffix: Cranky
   components:
   - type: Sprite
     drawdepth: Mobs

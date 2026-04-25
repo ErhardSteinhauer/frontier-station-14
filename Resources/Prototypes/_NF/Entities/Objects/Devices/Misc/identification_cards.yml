@@ -354,7 +354,7 @@
 - type: entity
   parent: MercenaryIDCard
   id: MercenaryCatIDCard
-  name: harold ID card
+  name: Cranky ID card
   components:
   - type: PresetIdCard
-    name: Harold
+    name: Cranky
