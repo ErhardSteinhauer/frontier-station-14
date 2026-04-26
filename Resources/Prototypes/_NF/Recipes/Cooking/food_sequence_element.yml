@@ -639,7 +639,6 @@
   - Recyclable
 
 # Rotten meat steak
-
 - type: foodSequenceElement
   id: NFMeatRottenSteak
   sprites:
@@ -650,7 +649,6 @@
   - Meat
 
 # Grilled rat
-
 - type: foodSequenceElement
   id: GrilledRat
   sprites:
@@ -661,7 +659,6 @@
   - Meat
 
 # Glowshroom
-
 - type: foodSequenceElement
   id: Glowshroom
   sprites:
@@ -675,7 +672,6 @@
     state: skewer
 
 # Glowshroom Cooked
-
 - type: foodSequenceElement
   id: GlowshroomCooked
   sprites:
@@ -691,3 +687,25 @@
     state: skewer-cooked
   tags:
   - Cooked
+
+# Pomegranate
+- type: foodSequenceElement
+  id: Pomegranate
+  name: food-sequence-content-pomegranate
+  sprites:
+  - sprite: _NF/Objects/Specific/Hydroponics/pomegranate.rsi
+    state: produce
+  tags:
+  - Fruit
+  - Vegetable
+
+# Granatapfel
+- type: foodSequenceElement
+  id: Granatapfel
+  name: food-sequence-content-granatapfel
+  sprites:
+  - sprite: _NF/Objects/Specific/Hydroponics/granatapfel.rsi
+    state: produce
+  tags:
+  - Fruit
+  - Vegetable

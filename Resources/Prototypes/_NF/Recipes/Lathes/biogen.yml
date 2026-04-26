@@ -925,6 +925,14 @@
     sprite: Objects/Specific/Hydroponics/watermelon.rsi
     state: seed
 
+- type: latheRecipe
+  id: NFBioGenPomegranateSeeds
+  parent: BioGenSeedsRecipe
+  result: PomegranateSeeds
+  icon:
+    sprite: _NF/Objects/Specific/Hydroponics/pomegranate.rsi
+    state: seed
+
 # region Medical Seeds
 
 - type: latheRecipe

@@ -97,6 +97,7 @@
   - NFBioGenTowercapSeeds
   - NFBioGenWheatSeeds
   - NFBioGenWatermelonSeeds
+  - NFBioGenPomegranateSeeds
 
 - type: latheRecipePack
   id: NFBioGenSeedsMedicalStatic
