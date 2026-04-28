@@ -69,7 +69,7 @@
   - type: Item
     size: Tiny
     #heldPrefix: 0
-  - type: Food
+  - type: Edible
   - type: BadFood
   - type: FlavorProfile
     flavors:
@@ -86,17 +86,3 @@
     spawned:
     - id: FoodMeatXeno
       amount: 1
-
-- type: entity
-  save: false
-  parent: NFMobTick
-  id: NFMobTickDead
-  suffix: Dead
-  components:
-  - type: Damageable
-    damage:
-      types:
-        Bloodloss: 3
-        Asphyxiation: 4
-        Slash: 3
-        Blunt: 3

@@ -193,6 +193,3 @@
   - type: Rehydratable
     possibleSpawns:
     - NFMobRat
-    - NFMobRat
-    - NFMobRat
-    - NFMobRatDead

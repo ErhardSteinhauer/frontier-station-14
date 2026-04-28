@@ -115,18 +115,3 @@
     baseDecayRate: 10 # always thirsty
   - type: Item
     size: Tiny
-
-- type: entity
-  save: false
-  parent: NFMobRat
-  id: NFMobRatDead
-  name: rat
-  suffix: dead
-  components:
-  - type: Damageable
-    damage:
-      types:
-        Bloodloss: 7
-        Asphyxiation: 6
-        Slash: 7
-        Blunt: 5
