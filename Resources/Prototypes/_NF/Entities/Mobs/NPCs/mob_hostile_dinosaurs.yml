@@ -31,7 +31,7 @@
         shape:
           !type:PhysShapeCircle
           radius: 0.40 # Lowered the value, to allow them to fit through the airlocks
-        density: 1000
+        density: 500 # Low density to ensure that if entity is recycled in biomass reclaimer it wont spawn additional loot
         mask:
           - MobMask
         layer:
